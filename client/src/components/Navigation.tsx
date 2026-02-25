@@ -35,9 +35,15 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "glass-card border-b border-gold/20 py-3"
-            : "bg-transparent border-b border-transparent py-5"
+            ? "border-b border-gold/20 py-3"
+            : "border-b border-white/10 py-5"
         }`}
+        style={{
+          background: scrolled
+            ? "oklch(0.09 0.015 260 / 0.95)"
+            : "oklch(0.09 0.015 260 / 0.72)",
+          backdropFilter: "blur(16px)",
+        }}
       >
         <div className="container flex items-center justify-between">
           {/* Logo */}

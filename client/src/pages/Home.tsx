@@ -123,9 +123,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 glass-card-gold px-4 py-2 rounded-full mb-8">
-              <Star size={12} className="text-gold fill-gold" />
-              <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold">
+            <div className="inline-flex items-center gap-3 glass-card-gold px-6 py-3 rounded-full mb-8">
+              <Star size={14} className="text-gold fill-gold" />
+              <span className="font-accent text-sm tracking-[0.2em] uppercase text-gold">
                 A{" "}
                 <span className="relative inline-block">
                   <span className="text-gold/50">60th</span>
@@ -144,16 +144,17 @@ export default function Home() {
                       />
                     </svg>
                   </span>
-                  {/* Handwritten 50th */}
+                  {/* Handwritten 50th — rose pink for contrast */}
                   <span
-                    className="font-handwriting absolute text-gold"
+                    className="font-handwriting absolute"
                     style={{
-                      fontSize: "1.1rem",
-                      top: "-1.1rem",
+                      fontSize: "1.4rem",
+                      top: "-1.3rem",
                       left: "50%",
                       transform: "translateX(-40%) rotate(-8deg)",
                       whiteSpace: "nowrap",
-                      textShadow: "0 0 12px oklch(0.72 0.12 75 / 0.4)",
+                      color: "oklch(0.75 0.18 15)",
+                      textShadow: "0 0 16px oklch(0.75 0.18 15 / 0.5)",
                     }}
                   >
                     50th!
@@ -161,7 +162,7 @@ export default function Home() {
                 </span>
                 {" "}Birthday to Remember
               </span>
-              <Star size={12} className="text-gold fill-gold" />
+              <Star size={14} className="text-gold fill-gold" />
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-ivory mb-4 leading-none">
