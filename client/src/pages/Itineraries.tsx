@@ -3,8 +3,9 @@
   Itineraries: Three curated packages with full details, pricing, and day-by-day breakdowns
 */
 import { motion } from "framer-motion";
-import { Ship, MapPin, Plane, Clock, DollarSign, Check, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import { Ship, MapPin, Plane, Clock, DollarSign, Check, ExternalLink, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -273,12 +274,21 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
           )}
 
           {/* Book Button */}
-          <div className="mt-6 pt-6 border-t border-white/8">
+          <div className="mt-6 pt-6 border-t border-white/8 flex flex-wrap items-center gap-3">
+            {pkg.id === "rhine" && (
+              <Link href="/rhine-cruise">
+                <span className="inline-flex items-center gap-2 font-body font-semibold px-5 py-2.5 rounded-full transition-all duration-300 text-sm cursor-pointer" style={{ background: '#c9a84c', color: '#0a0f1e' }}>
+                  Full Day-by-Day Itinerary
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            )}
             <a
               href={pkg.bookUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gold text-navy font-body font-medium px-5 py-2.5 rounded-full hover:bg-gold-light transition-all duration-300 text-sm"
+              className="inline-flex items-center gap-2 font-body font-medium px-5 py-2.5 rounded-full hover:bg-gold-light transition-all duration-300 text-sm"
+              style={{ border: '1px solid rgba(201,168,76,0.4)', color: '#c9a84c' }}
             >
               {pkg.id === "rhine" ? "View on AmaWaterways" : "Search Flights on Google"}
               <ExternalLink size={14} />

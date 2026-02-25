@@ -10,6 +10,7 @@ import Destinations from "./pages/Destinations";
 import Relocation from "./pages/Relocation";
 import GradSchools from "./pages/GradSchools";
 import Flights from "./pages/Flights";
+import RhineCruise from "./pages/RhineCruise";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/relocation"} component={Relocation} />
       <Route path={"/grad-schools"} component={GradSchools} />
       <Route path={"/flights"} component={Flights} />
+      <Route path={"/rhine-cruise"} component={RhineCruise} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
