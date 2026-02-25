@@ -41,8 +41,8 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground font-body">
             Made with <Heart size={10} className="inline text-gold mx-1" /> by Curtis, for Melanie · March 26, 2026
           </p>
-          <p className="text-xs text-muted-foreground font-accent tracking-widest uppercase">
-            Las Vegas → Europe
+            <p className="text-xs text-muted-foreground font-accent tracking-widest uppercase">
+            Los Angeles → Europe
           </p>
         </div>
       </div>

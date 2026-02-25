@@ -126,7 +126,40 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 glass-card-gold px-4 py-2 rounded-full mb-8">
               <Star size={12} className="text-gold fill-gold" />
               <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold">
-                A 60th Birthday to Remember
+                A{" "}
+                <span className="relative inline-block">
+                  <span className="text-gold/50">60th</span>
+                  {/* Strikethrough line */}
+                  <span
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                    style={{ top: "50%", transform: "translateY(-50%)" }}
+                  >
+                    <svg viewBox="0 0 48 10" className="w-full" style={{ height: "10px", overflow: "visible" }}>
+                      <path
+                        d="M2,5 Q10,2 20,6 Q30,10 38,4 Q42,2 46,5"
+                        stroke="oklch(0.72 0.12 75)"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                  {/* Handwritten 50th */}
+                  <span
+                    className="font-handwriting absolute text-gold"
+                    style={{
+                      fontSize: "1.1rem",
+                      top: "-1.1rem",
+                      left: "50%",
+                      transform: "translateX(-40%) rotate(-8deg)",
+                      whiteSpace: "nowrap",
+                      textShadow: "0 0 12px oklch(0.72 0.12 75 / 0.4)",
+                    }}
+                  >
+                    50th!
+                  </span>
+                </span>
+                {" "}Birthday to Remember
               </span>
               <Star size={12} className="text-gold fill-gold" />
             </div>
@@ -331,9 +364,9 @@ export default function Home() {
             </Link>
             <Link href="/flights">
               <div className="glass-card package-card rounded-2xl p-6 cursor-pointer border-gold/10 hover:border-gold/25 transition-all">
-                <p className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-2">Flights from LAS</p>
+                <p className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-2">Flights from LAX</p>
                 <h3 className="font-display text-xl font-light text-ivory mb-2">Paris from $923</h3>
-                <p className="font-body text-sm text-muted-foreground">Round-trip to Paris CDG from Las Vegas. See Annie first, then explore. Open-jaw tickets recommended.</p>
+                <p className="font-body text-sm text-muted-foreground">Round-trip to Paris CDG from Los Angeles. See Annie first, then explore. Open-jaw tickets recommended.</p>
               </div>
             </Link>
           </div>

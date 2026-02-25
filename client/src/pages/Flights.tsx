@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 const flightRoutes = [
   {
-    route: "LAS → CDG (Paris)",
+    route: "LAX → CDG (Paris)",
     airline: "United Airlines / Air France",
     stops: "1 stop (EWR or IAD)",
     duration: "~13–15 hrs",
@@ -21,7 +21,7 @@ const flightRoutes = [
     flag: "🇫🇷",
   },
   {
-    route: "LAS → LIS (Lisbon)",
+    route: "LAX → LIS (Lisbon)",
     airline: "TAP Air Portugal / Iberia",
     stops: "1 stop (JFK, ORD, or MAD)",
     duration: "~14–16 hrs",
@@ -33,7 +33,7 @@ const flightRoutes = [
     flag: "🇵🇹",
   },
   {
-    route: "LAS → NCE (Nice)",
+    route: "LAX → NCE (Nice)",
     airline: "Air France / British Airways",
     stops: "1–2 stops (CDG or LHR)",
     duration: "~15–17 hrs",
@@ -45,7 +45,7 @@ const flightRoutes = [
     flag: "🇫🇷",
   },
   {
-    route: "LAS → BSL (Basel) for Rhine Cruise",
+    route: "LAX → BSL (Basel) for Rhine Cruise",
     airline: "Swiss / Lufthansa",
     stops: "1 stop (ZRH or FRA)",
     duration: "~14–16 hrs",
@@ -119,7 +119,7 @@ export default function Flights() {
             </h1>
             <div className="gold-divider mx-auto mb-6" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              From Las Vegas to Europe — the smartest flight strategies, open-jaw routing, mileage programs, packing tips, and travel insurance recommendations. Everything you need to get there in style.
+              From Los Angeles to Europe — the smartest flight strategies, open-jaw routing, mileage programs, packing tips, and travel insurance recommendations. Everything you need to get there in style.
             </p>
           </motion.div>
         </div>
@@ -130,7 +130,7 @@ export default function Flights() {
         <div className="container max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
             <h2 className="font-display text-3xl font-light text-ivory mb-2">
-              Flights from <span className="text-gold italic">Las Vegas (LAS)</span>
+              Flights from <span className="text-gold italic">Los Angeles (LAX)</span>
             </h2>
             <p className="font-body text-sm text-muted-foreground mb-6">Prices are estimates for late March / early April 2026. Book 3–4 months in advance for best rates.</p>
           </motion.div>

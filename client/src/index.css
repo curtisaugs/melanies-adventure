@@ -50,7 +50,8 @@
   
   /* Custom design tokens */
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-body: 'Montserrat', system-ui, sans-serif;
+  --font-handwriting: 'Caveat', cursive;
   --font-accent: 'Cinzel', Georgia, serif;
   
   --gold: oklch(0.72 0.12 75);
@@ -105,10 +106,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
@@ -196,6 +198,11 @@
   /* Accent font */
   .font-accent {
     font-family: var(--font-accent);
+  }
+
+  /* Handwriting font */
+  .font-handwriting {
+    font-family: var(--font-handwriting);
   }
 
   /* Section full bleed */
