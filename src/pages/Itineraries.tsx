@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Ship, Map, Palette, ArrowRight, Check, Star } from "lucide-react";
@@ -88,7 +87,7 @@ const compareData = [
 ];
 
 export default function Itineraries() {
-  const [activeTab, setActiveTab] = useState<string | null>(null);
+  
 
   return (
     <div className="min-h-screen bg-navy text-ivory">

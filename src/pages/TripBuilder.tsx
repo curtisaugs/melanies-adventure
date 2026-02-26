@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Send, ArrowLeft, ArrowRight, Copy, Check, Gift, ChevronDown } from "lucide-react";
-import { Link } from "wouter";
+import { Sparkles, Send, ArrowLeft, ArrowRight, Copy, Check, Gift } from "lucide-react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 

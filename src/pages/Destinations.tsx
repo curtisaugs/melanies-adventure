@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Utensils, Building, Home, TrendingUp } from "lucide-react";
+import { MapPin, Utensils, Home, TrendingUp } from "lucide-react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 

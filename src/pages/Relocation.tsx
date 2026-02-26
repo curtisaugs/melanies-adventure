@@ -78,7 +78,7 @@ const costData = [
   { city: "Athens", flag: "🇬🇷", rent2br: "$800–1,400", groceries: "$290", dining: "$480", transport: "$65", utilities: "$110", total: "$1,745–2,345", vsLV: "-46%" },
 ];
 
-const LV_BASELINE = 3350; // Average monthly spend for couple in Las Vegas
+// const LV_BASELINE = 3350; // Average monthly spend for couple in Las Vegas
 
 export default function Relocation() {
   const [activeVisa, setActiveVisa] = useState("portugal-d8");

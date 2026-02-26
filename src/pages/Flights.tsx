@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Plane, Clock, DollarSign, Calendar, Info } from "lucide-react";
+import { Plane, Clock, DollarSign, Info } from "lucide-react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
