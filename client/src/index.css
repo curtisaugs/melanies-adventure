@@ -162,19 +162,19 @@
 
   /* Glass morphism card */
   .glass-card {
-    background: oklch(1 0 0 / 0.05);
+    background: oklch(0.08 0.015 260 / 0.78);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid oklch(1 0 0 / 0.12);
-    box-shadow: 0 8px 32px oklch(0 0 0 / 0.3), inset 0 1px 0 oklch(1 0 0 / 0.1);
+    border: 1px solid oklch(1 0 0 / 0.18);
+    box-shadow: 0 8px 32px oklch(0 0 0 / 0.5), inset 0 1px 0 oklch(1 0 0 / 0.12);
   }
 
   .glass-card-gold {
-    background: oklch(0.72 0.12 75 / 0.08);
+    background: oklch(0.18 0.04 75 / 0.72);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid oklch(0.72 0.12 75 / 0.25);
-    box-shadow: 0 8px 32px oklch(0 0 0 / 0.3), inset 0 1px 0 oklch(0.72 0.12 75 / 0.15);
+    border: 1px solid oklch(0.72 0.12 75 / 0.45);
+    box-shadow: 0 8px 32px oklch(0 0 0 / 0.4), inset 0 1px 0 oklch(0.72 0.12 75 / 0.2);
   }
 
   /* Gold text */
