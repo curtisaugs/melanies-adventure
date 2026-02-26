@@ -39,6 +39,12 @@ const cities = [
     reloNote: "Lisbon is the #1 destination for American expats in Europe. The D8 Digital Nomad Visa is straightforward for high earners. Monthly costs for a comfortable life: €2,500–4,000. The Príncipe Real and Chiado neighborhoods are particularly popular with international professionals.",
     visa: "Portugal D8 Digital Nomad Visa",
     color: "from-amber-950/40 to-orange-900/20",
+    accent: "text-amber-300",
+    tabActive: "bg-amber-400 text-navy",
+    iconColor: "text-amber-300",
+    statColor: "text-amber-300/60",
+    reloCardClass: "glass-card rounded-xl p-4 border border-amber-400/20 bg-amber-950/30",
+    hotelPriceColor: "text-amber-300",
   },
   {
     id: "porto",
@@ -66,6 +72,12 @@ const cities = [
     reloNote: "Porto is increasingly popular with remote workers and offers the same D8 Visa access as Lisbon at 20–30% lower cost. The Bonfim and Cedofeita neighborhoods are vibrant and walkable. Monthly comfortable living: €2,000–3,200.",
     visa: "Portugal D8 Digital Nomad Visa",
     color: "from-orange-950/40 to-red-900/20",
+    accent: "text-orange-300",
+    tabActive: "bg-orange-400 text-navy",
+    iconColor: "text-orange-300",
+    statColor: "text-orange-300/60",
+    reloCardClass: "glass-card rounded-xl p-4 border border-orange-400/20 bg-orange-950/30",
+    hotelPriceColor: "text-orange-300",
   },
   {
     id: "seville",
@@ -93,6 +105,12 @@ const cities = [
     reloNote: "Seville is one of Spain's most livable cities — warm, walkable, and culturally rich. The Non-Lucrative Visa is the primary pathway for Americans. Monthly comfortable living: €2,200–3,500. The Triana neighborhood across the Guadalquivir is beloved by expats.",
     visa: "Spain Non-Lucrative Visa",
     color: "from-red-950/40 to-orange-900/20",
+    accent: "text-coral",
+    tabActive: "bg-coral text-navy",
+    iconColor: "text-coral",
+    statColor: "text-coral/60",
+    reloCardClass: "glass-card rounded-xl p-4 border border-coral/20 bg-red-950/30",
+    hotelPriceColor: "text-coral",
   },
   {
     id: "madrid",
@@ -120,6 +138,12 @@ const cities = [
     reloNote: "Madrid is Spain's business capital and offers the most international job market. IE Business School is here, making it ideal for graduate study. Monthly comfortable living: €2,800–4,500. The Chamberí and Malasaña neighborhoods are popular with expats.",
     visa: "Spain Non-Lucrative Visa",
     color: "from-red-950/40 to-rose-900/20",
+    accent: "text-rose-300",
+    tabActive: "bg-rose-400 text-navy",
+    iconColor: "text-rose-300",
+    statColor: "text-rose-300/60",
+    reloCardClass: "glass-card rounded-xl p-4 border border-rose-400/20 bg-rose-950/30",
+    hotelPriceColor: "text-rose-300",
   },
   {
     id: "nice",
@@ -147,6 +171,12 @@ const cities = [
     reloNote: "Nice has the largest English-speaking expat community on the French Riviera. The French Tech Visa or a Long-Stay Visa are the primary pathways. Monthly comfortable living: €3,000–5,000. The Cimiez neighborhood (where Matisse lived) is elegant and quieter than the seafront.",
     visa: "French Long-Stay Visa / French Tech Visa",
     color: "from-blue-950/40 to-cyan-900/20",
+    accent: "text-cyan-300",
+    tabActive: "bg-cyan-400 text-navy",
+    iconColor: "text-cyan-300",
+    statColor: "text-cyan-300/60",
+    reloCardClass: "glass-card rounded-xl p-4 border border-cyan-400/20 bg-cyan-950/30",
+    hotelPriceColor: "text-cyan-300",
   },
   {
     id: "paris",
@@ -174,6 +204,12 @@ const cities = [
     reloNote: "Paris is where Annie is — which changes the calculus entirely. The French Long-Stay Visa is the first step. Monthly comfortable living in Paris: €4,000–7,000 (expensive but manageable on a CRO salary). HEC Paris and INSEAD (Fontainebleau, 45 min from Paris) are both within reach for graduate study.",
     visa: "French Long-Stay Visa / French Tech Visa",
     color: "from-purple-950/40 to-pink-900/20",
+    accent: "text-lavender",
+    tabActive: "bg-lavender text-navy",
+    iconColor: "text-lavender",
+    statColor: "text-lavender/60",
+    reloCardClass: "glass-card rounded-xl p-4 border border-lavender/20 bg-purple-950/30",
+    hotelPriceColor: "text-lavender",
   },
 ];
 
@@ -195,7 +231,7 @@ function CityCard({ city, index }: { city: typeof cities[0]; index: number }) {
         <div className="absolute bottom-4 left-6 right-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-accent text-xs tracking-[0.15em] uppercase text-gold/80">{city.country}</p>
+              <p className={`font-accent text-xs tracking-[0.15em] uppercase ${city.accent} opacity-80`}>{city.country}</p>
               <h3 className="font-display text-3xl font-light text-ivory">{city.name}</h3>
               <p className="font-body text-sm text-ivory/60 italic mt-1">{city.tagline}</p>
             </div>
@@ -205,7 +241,7 @@ function CityCard({ city, index }: { city: typeof cities[0]; index: number }) {
                   <Star key={i} size={12} className={i < city.reloScore ? "text-gold fill-gold" : "text-white/20"} />
                 ))}
               </div>
-              <p className="font-accent text-[0.6rem] tracking-widest uppercase text-gold/60">Relo Score</p>
+              <p className={`font-accent text-[0.6rem] tracking-widest uppercase ${city.accent} opacity-60`}>Relo Score</p>
             </div>
           </div>
         </div>
@@ -220,7 +256,7 @@ function CityCard({ city, index }: { city: typeof cities[0]; index: number }) {
           { label: "Visa Path", value: city.visa },
         ].map((stat) => (
           <div key={stat.label} className="flex-1 min-w-[120px]">
-            <p className="font-accent text-[0.6rem] tracking-widest uppercase text-gold/50 mb-0.5">{stat.label}</p>
+            <p className={`font-accent text-[0.6rem] tracking-widest uppercase ${city.statColor} mb-0.5`}>{stat.label}</p>
             <p className="font-body text-xs text-ivory/80">{stat.value}</p>
           </div>
         ))}
@@ -235,7 +271,7 @@ function CityCard({ city, index }: { city: typeof cities[0]; index: number }) {
               onClick={() => setTab(t)}
               className={`px-3 py-1.5 rounded-full font-accent text-[0.65rem] tracking-widest uppercase transition-all ${
                 tab === t
-                  ? "bg-gold text-navy"
+                  ? city.tabActive
                   : "glass-card text-muted-foreground hover:text-ivory"
               }`}
             >
@@ -250,7 +286,7 @@ function CityCard({ city, index }: { city: typeof cities[0]; index: number }) {
             <div className="space-y-3">
               {city.attractions.map((a) => (
                 <div key={a.name} className="flex items-start gap-3">
-                  <MapPin size={14} className="text-gold mt-0.5 flex-shrink-0" />
+                  <MapPin size={14} className={`${city.iconColor} mt-0.5 flex-shrink-0`} />
                   <div>
                     <p className="font-body text-sm text-ivory font-medium">{a.name}</p>
                     <p className="font-body text-xs text-muted-foreground">{a.desc}</p>
@@ -262,7 +298,7 @@ function CityCard({ city, index }: { city: typeof cities[0]; index: number }) {
 
           {tab === "food" && (
             <div className="flex items-start gap-3">
-              <Utensils size={14} className="text-gold mt-0.5 flex-shrink-0" />
+              <Utensils size={14} className={`${city.iconColor} mt-0.5 flex-shrink-0`} />
               <p className="font-body text-sm text-ivory/80 leading-relaxed">{city.food}</p>
             </div>
           )}
@@ -273,19 +309,19 @@ function CityCard({ city, index }: { city: typeof cities[0]; index: number }) {
                 <div key={h.name} className="glass-card rounded-xl p-3 flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-2">
-                      <Building size={12} className="text-gold" />
+                      <Building size={12} className={city.iconColor} />
                       <p className="font-body text-sm text-ivory">{h.name}</p>
                     </div>
                     <p className="font-body text-xs text-muted-foreground ml-5">{h.area} {h.stars > 0 ? `· ${h.stars}★` : ""}</p>
                   </div>
-                  <p className="font-display text-sm text-gold">{h.price}</p>
+                  <p className={`font-display text-sm ${city.hotelPriceColor}`}>{h.price}</p>
                 </div>
               ))}
             </div>
           )}
 
           {tab === "relo" && (
-            <div className="glass-card-gold rounded-xl p-4">
+            <div className={city.reloCardClass}>
               <p className="font-body text-sm text-ivory/80 leading-relaxed">{city.reloNote}</p>
             </div>
           )}
@@ -303,11 +339,11 @@ export default function Destinations() {
       <section className="pt-32 pb-16">
         <div className="container text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold block mb-4">Six Cities, One Journey</span>
+            <span className="font-accent text-xs tracking-[0.2em] uppercase text-coral block mb-4">Six Cities, One Journey</span>
             <h1 className="font-display text-5xl md:text-7xl font-light text-ivory mb-6">
-              Your <span className="text-gold italic">Destinations</span>
+              Your <span className="text-coral italic">Destinations</span>
             </h1>
-            <div className="gold-divider mx-auto mb-6" />
+            <div className="mx-auto mb-6 w-16 h-px bg-gradient-to-r from-transparent via-coral to-transparent" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Each city has been researched not just as a tourist destination, but as a potential home. Explore the attractions, taste the food, find the right hotel — and read the relocation notes that matter most.
             </p>

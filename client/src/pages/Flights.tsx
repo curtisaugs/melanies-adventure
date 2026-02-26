@@ -113,11 +113,11 @@ export default function Flights() {
       <section className="pt-32 pb-16">
         <div className="container text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold block mb-4">Getting There & Back</span>
+            <span className="font-accent text-xs tracking-[0.2em] uppercase text-coral block mb-4">Getting There & Back</span>
             <h1 className="font-display text-5xl md:text-7xl font-light text-ivory mb-6">
-              Flights & <span className="text-gold italic">Logistics</span>
+              Flights & <span className="text-coral italic">Logistics</span>
             </h1>
-            <div className="gold-divider mx-auto mb-6" />
+            <div className="mx-auto mb-6 w-16 h-px bg-gradient-to-r from-transparent via-coral to-transparent" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               From Los Angeles to Europe — the smartest flight strategies, open-jaw routing, mileage programs, packing tips, and travel insurance recommendations. Everything you need to get there in style.
             </p>
@@ -130,7 +130,7 @@ export default function Flights() {
         <div className="container max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
             <h2 className="font-display text-3xl font-light text-ivory mb-2">
-              Flights from <span className="text-gold italic">Los Angeles (LAX)</span>
+              Flights from <span className="text-coral italic">Los Angeles (LAX)</span>
             </h2>
             <p className="font-body text-sm text-muted-foreground mb-6">Prices are estimates for late March / early April 2026. Book 3–4 months in advance for best rates.</p>
           </motion.div>
@@ -149,13 +149,13 @@ export default function Flights() {
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-xl">{route.flag}</span>
-                      <span className="font-accent text-xs tracking-widest uppercase text-gold/70">{route.dates}</span>
+                      <span className="font-accent text-xs tracking-widest uppercase text-coral/70">{route.dates}</span>
                     </div>
                     <h3 className="font-display text-xl font-light text-ivory">{route.route}</h3>
                     <p className="font-body text-xs text-muted-foreground">{route.airline}</p>
                   </div>
                   <div className="text-right">
-                    <div className="font-display text-2xl text-gold">{route.price}</div>
+                    <div className="font-display text-2xl text-coral">{route.price}</div>
                     <div className="font-accent text-[0.6rem] tracking-widest uppercase text-muted-foreground">Round-trip</div>
                   </div>
                 </div>
@@ -166,19 +166,19 @@ export default function Flights() {
                     { icon: Clock, value: route.duration },
                   ].map((stat, j) => (
                     <div key={j} className="glass-card rounded-lg px-3 py-1.5 flex items-center gap-1.5">
-                      <stat.icon size={12} className="text-gold" />
+                      <stat.icon size={12} className="text-coral" />
                       <span className="font-body text-xs text-ivory/80">{stat.value}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="glass-card-gold rounded-xl p-3 mb-3">
-                  <p className="font-accent text-[0.6rem] tracking-widest uppercase text-gold/60 mb-1">Best For</p>
+                <div className="glass-card rounded-xl p-3 mb-3 border border-coral/20 bg-coral/5">
+                  <p className="font-accent text-[0.6rem] tracking-widest uppercase text-coral/60 mb-1">Best For</p>
                   <p className="font-body text-xs text-ivory/80">{route.bestFor}</p>
                 </div>
 
                 <div className="flex items-start gap-2">
-                  <Zap size={12} className="text-gold mt-0.5 flex-shrink-0" />
+                  <Zap size={12} className="text-coral mt-0.5 flex-shrink-0" />
                   <p className="font-body text-xs text-muted-foreground italic">{route.tip}</p>
                 </div>
               </motion.div>
@@ -188,7 +188,7 @@ export default function Flights() {
           {/* Search CTA */}
           <div className="text-center mb-16">
             <a href="https://www.google.com/travel/flights" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gold text-navy font-body font-medium px-6 py-3 rounded-full hover:bg-gold-light transition-all">
+              className="inline-flex items-center gap-2 bg-coral text-navy font-body font-medium px-6 py-3 rounded-full hover:opacity-90 transition-all">
               Search Current Prices on Google Flights <ExternalLink size={16} />
             </a>
             <p className="font-body text-xs text-muted-foreground mt-3">Also check: Kayak, Scott's Cheap Flights, and Google Flights price alerts</p>
@@ -197,7 +197,7 @@ export default function Flights() {
           {/* Open-Jaw Strategy */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <h2 className="font-display text-3xl font-light text-ivory mb-2">
-              The <span className="text-gold italic">Open-Jaw</span> Strategy
+              The <span className="text-teal italic">Open-Jaw</span> Strategy
             </h2>
             <p className="font-body text-sm text-muted-foreground mb-6">Fly into one city, out of another — save hours of backtracking and see more destinations without retracing your steps.</p>
 
@@ -213,16 +213,16 @@ export default function Flights() {
                 >
                   <div className="flex flex-wrap items-center gap-4">
                     <div className="flex-1 min-w-[200px]">
-                      <p className="font-accent text-xs tracking-widest uppercase text-gold/70 mb-1">{item.package}</p>
+                      <p className="font-accent text-xs tracking-widest uppercase text-teal/70 mb-1">{item.package}</p>
                       <div className="flex items-center gap-2">
                         <span className="font-display text-lg text-ivory">{item.flyIn}</span>
-                        <ArrowRight size={16} className="text-gold" />
+                        <ArrowRight size={16} className="text-teal" />
                         <span className="font-display text-lg text-ivory">{item.flyOut}</span>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-3">
-                      <div className="glass-card-gold px-3 py-1.5 rounded-full">
-                        <span className="font-body text-xs text-gold">{item.savings}</span>
+                      <div className="glass-card px-3 py-1.5 rounded-full border border-teal/30 bg-teal/10">
+                        <span className="font-body text-xs text-teal">{item.savings}</span>
                       </div>
                       <div className="glass-card px-3 py-1.5 rounded-full">
                         <span className="font-body text-xs text-ivory/70">{item.airlines}</span>
@@ -238,14 +238,14 @@ export default function Flights() {
           {/* Mileage Programs */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <h2 className="font-display text-3xl font-light text-ivory mb-6">
-              Miles & <span className="text-gold italic">Points</span>
+              Miles & <span className="text-lavender italic">Points</span>
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full glass-card rounded-2xl overflow-hidden">
                 <thead>
                   <tr className="border-b border-white/8">
                     {["Program", "Alliance/Partners", "Best For", "Value"].map(h => (
-                      <th key={h} className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">{h}</th>
+                      <th key={h} className="text-left p-4 font-accent text-xs tracking-widest uppercase text-lavender/70">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -255,7 +255,7 @@ export default function Flights() {
                       <td className="p-4 font-display text-ivory text-sm">{row.program}</td>
                       <td className="p-4 font-body text-xs text-muted-foreground">{row.partner}</td>
                       <td className="p-4 font-body text-xs text-ivory/80">{row.bestFor}</td>
-                      <td className="p-4 font-display text-gold">{row.value}</td>
+                      <td className="p-4 font-display text-lavender">{row.value}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -266,7 +266,7 @@ export default function Flights() {
           {/* Packing Tips */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <h2 className="font-display text-3xl font-light text-ivory mb-6">
-              Packing <span className="text-gold italic">Smart</span>
+              Packing <span className="text-rose italic">Smart</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {packingTips.map((section, i) => (
@@ -279,13 +279,13 @@ export default function Flights() {
                   className="glass-card rounded-2xl p-5"
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <Luggage size={16} className="text-gold" />
+                    <Luggage size={16} className="text-rose" />
                     <h3 className="font-display text-lg font-light text-ivory">{section.category}</h3>
                   </div>
                   <div className="space-y-2">
                     {section.items.map((item) => (
                       <div key={item} className="flex items-start gap-2">
-                        <Star size={10} className="text-gold mt-1 flex-shrink-0 fill-gold" />
+                        <Star size={10} className="text-rose mt-1 flex-shrink-0 fill-rose" />
                         <p className="font-body text-xs text-muted-foreground">{item}</p>
                       </div>
                     ))}
@@ -298,7 +298,7 @@ export default function Flights() {
           {/* Travel Insurance */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl font-light text-ivory mb-6">
-              Travel <span className="text-gold italic">Insurance</span>
+              Travel <span className="text-teal italic">Insurance</span>
             </h2>
             <div className="space-y-4">
               {travelInsurance.map((ins) => (
@@ -306,15 +306,15 @@ export default function Flights() {
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <Shield size={14} className="text-gold" />
+                        <Shield size={14} className="text-teal" />
                         <h3 className="font-display text-lg font-light text-ivory">{ins.provider}</h3>
                         {ins.recommended && (
-                          <span className="glass-card-gold px-2 py-0.5 rounded-full font-accent text-[0.6rem] tracking-widest uppercase text-gold">Recommended</span>
+                          <span className="glass-card px-2 py-0.5 rounded-full font-accent text-[0.6rem] tracking-widest uppercase text-teal border border-teal/30 bg-teal/10">Recommended</span>
                         )}
                       </div>
                       <p className="font-body text-xs text-muted-foreground">{ins.coverage}</p>
                     </div>
-                    <div className="font-display text-lg text-gold">{ins.price}</div>
+                    <div className="font-display text-lg text-teal">{ins.price}</div>
                   </div>
                   <p className="font-body text-xs text-ivory/60 mt-2 italic">{ins.note}</p>
                 </div>

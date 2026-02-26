@@ -51,7 +51,20 @@ const packages = [
     bookUrl: "https://www.amawaterways.com/river-cruises/europe/rhine/enchanting-rhine",
     relocationNote: "Strasbourg and Heidelberg are both exceptional relocation candidates — Strasbourg sits on the French-German border with EU institutions, while Heidelberg has one of Germany's top universities.",
     color: "from-blue-950/50 to-blue-900/20",
-    accentColor: "text-blue-300",
+    accentColor: "text-teal",
+    badgeClass: "border border-teal/40 bg-teal/10 text-teal",
+    iconBg: "bg-teal/20 border border-teal/30",
+    taglineColor: "text-teal/80",
+    priceCardClass: "glass-card border border-teal/20 bg-teal/5 px-4 py-3 rounded-xl flex-1 min-w-[120px]",
+    priceIconColor: "text-teal",
+    priceLabel: "text-teal/70",
+    checkColor: "text-teal",
+    depPriceColor: "text-teal",
+    reloCardClass: "rounded-xl p-4 border border-teal/20 bg-teal/5",
+    reloTitleColor: "text-teal",
+    btnStyle: { background: 'oklch(0.72 0.12 195)', color: '#0a0f1e' } as React.CSSProperties,
+    btnBorderStyle: { border: '1px solid oklch(0.72 0.12 195 / 0.4)', color: 'oklch(0.72 0.12 195)' } as React.CSSProperties,
+    sectionHeaderColor: "text-teal/70",
   },
   {
     id: "iberian",
@@ -88,7 +101,20 @@ const packages = [
     bookUrl: "https://www.google.com/travel/flights",
     relocationNote: "Portugal's Digital Nomad D8 Visa is tailor-made for Melanie's profile. Lisbon and Porto are the two most popular American expat cities in Europe, with thriving English-speaking communities and costs roughly 40% lower than Paris.",
     color: "from-amber-950/50 to-amber-900/20",
-    accentColor: "text-amber-300",
+    accentColor: "text-coral",
+    badgeClass: "border border-coral/40 bg-coral/10 text-coral",
+    iconBg: "bg-coral/20 border border-coral/30",
+    taglineColor: "text-coral/80",
+    priceCardClass: "glass-card border border-coral/20 bg-coral/5 px-4 py-3 rounded-xl flex-1 min-w-[120px]",
+    priceIconColor: "text-coral",
+    priceLabel: "text-coral/70",
+    checkColor: "text-coral",
+    depPriceColor: "text-coral",
+    reloCardClass: "rounded-xl p-4 border border-coral/20 bg-coral/5",
+    reloTitleColor: "text-coral",
+    btnStyle: { background: 'oklch(0.72 0.18 25)', color: '#0a0f1e' } as React.CSSProperties,
+    btnBorderStyle: { border: '1px solid oklch(0.72 0.18 25 / 0.4)', color: 'oklch(0.72 0.18 25)' } as React.CSSProperties,
+    sectionHeaderColor: "text-coral/70",
   },
   {
     id: "france",
@@ -125,7 +151,20 @@ const packages = [
     bookUrl: "https://www.google.com/travel/flights",
     relocationNote: "Nice and Aix-en-Provence rank among the top 5 cities for American expats in France. Both offer excellent quality of life, strong English-speaking communities, and proximity to Annie in Paris (2.5 hours by TGV). The French Tech Visa could be a pathway given Melanie's tech industry background.",
     color: "from-purple-950/50 to-purple-900/20",
-    accentColor: "text-purple-300",
+    accentColor: "text-lavender",
+    badgeClass: "border border-lavender/40 bg-lavender/10 text-lavender",
+    iconBg: "bg-lavender/20 border border-lavender/30",
+    taglineColor: "text-lavender/80",
+    priceCardClass: "glass-card border border-lavender/20 bg-lavender/5 px-4 py-3 rounded-xl flex-1 min-w-[120px]",
+    priceIconColor: "text-lavender",
+    priceLabel: "text-lavender/70",
+    checkColor: "text-lavender",
+    depPriceColor: "text-lavender",
+    reloCardClass: "rounded-xl p-4 border border-lavender/20 bg-lavender/5",
+    reloTitleColor: "text-lavender",
+    btnStyle: { background: 'oklch(0.72 0.12 295)', color: '#0a0f1e' } as React.CSSProperties,
+    btnBorderStyle: { border: '1px solid oklch(0.72 0.12 295 / 0.4)', color: 'oklch(0.72 0.12 295)' } as React.CSSProperties,
+    sectionHeaderColor: "text-lavender/70",
   },
 ];
 
@@ -150,16 +189,16 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
           <div className="absolute top-4 left-4">
-            <span className="glass-card-gold px-3 py-1.5 rounded-full font-accent text-xs tracking-widest uppercase text-gold">
+            <span className={`px-3 py-1.5 rounded-full font-accent text-xs tracking-widest uppercase ${pkg.badgeClass}`}>
               {pkg.badge}
             </span>
           </div>
           <div className="absolute bottom-6 left-6 right-6">
             <div className="flex items-center gap-3 mb-2">
-              <div className="glass-card-gold p-2 rounded-lg">
-                <pkg.icon size={18} className="text-gold" />
+              <div className={`p-2 rounded-lg ${pkg.iconBg}`}>
+                <pkg.icon size={18} className={pkg.accentColor} />
               </div>
-              <span className="font-accent text-xs tracking-[0.15em] uppercase text-gold/80">
+              <span className={`font-accent text-xs tracking-[0.15em] uppercase ${pkg.accentColor} opacity-80`}>
                 {pkg.subtitle}
               </span>
             </div>
@@ -173,25 +212,25 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
         <div className="p-6 md:p-8">
           {/* Price & Duration Row */}
           <div className="flex flex-wrap gap-4 mb-6">
-            <div className="glass-card-gold px-4 py-3 rounded-xl flex-1 min-w-[120px]">
+            <div className={pkg.priceCardClass}>
               <div className="flex items-center gap-2 mb-1">
-                <DollarSign size={14} className="text-gold" />
-                <span className="font-accent text-[0.6rem] tracking-widest uppercase text-gold/70">Price</span>
+                <DollarSign size={14} className={pkg.priceIconColor} />
+                <span className={`font-accent text-[0.6rem] tracking-widest uppercase ${pkg.priceLabel}`}>Price</span>
               </div>
               <div className="font-display text-xl text-ivory">{pkg.price}</div>
               <div className="text-xs text-muted-foreground">{pkg.priceNote}</div>
             </div>
             <div className="glass-card px-4 py-3 rounded-xl flex-1 min-w-[120px]">
               <div className="flex items-center gap-2 mb-1">
-                <Clock size={14} className="text-gold" />
-                <span className="font-accent text-[0.6rem] tracking-widest uppercase text-gold/70">Duration</span>
+                <Clock size={14} className={pkg.priceIconColor} />
+                <span className={`font-accent text-[0.6rem] tracking-widest uppercase ${pkg.priceLabel}`}>Duration</span>
               </div>
               <div className="font-display text-xl text-ivory">{pkg.duration}</div>
             </div>
           </div>
 
           {/* Tagline */}
-          <p className="font-display text-lg italic text-gold/80 mb-4">"{pkg.tagline}"</p>
+          <p className={`font-display text-lg italic ${pkg.taglineColor} mb-4`}>"{pkg.tagline}"</p>
 
           {/* Description */}
           <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">
@@ -200,13 +239,13 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
 
           {/* Highlights */}
           <div className="mb-6">
-            <h4 className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-3">
+            <h4 className={`font-accent text-xs tracking-[0.15em] uppercase ${pkg.sectionHeaderColor} mb-3`}>
               Destination Highlights
             </h4>
             <div className="grid sm:grid-cols-2 gap-2">
               {pkg.highlights.map((h) => (
                 <div key={h} className="flex items-start gap-2">
-                  <Check size={14} className="text-gold mt-0.5 flex-shrink-0" />
+                  <Check size={14} className={`${pkg.checkColor} mt-0.5 flex-shrink-0`} />
                   <span className="font-body text-sm text-ivory/80">{h}</span>
                 </div>
               ))}
@@ -216,7 +255,7 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
           {/* Expandable Details */}
           <button
             onClick={() => setExpanded(!expanded)}
-            className="flex items-center gap-2 text-gold/70 hover:text-gold transition-colors mb-4 font-body text-sm"
+            className={`flex items-center gap-2 ${pkg.sectionHeaderColor} hover:opacity-100 transition-colors mb-4 font-body text-sm`}
           >
             {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             {expanded ? "Show less" : "Show departures, inclusions & relocation notes"}
@@ -230,13 +269,13 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
             >
               {/* What's Included */}
               <div>
-                <h4 className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-3">
+                <h4 className={`font-accent text-xs tracking-[0.15em] uppercase ${pkg.sectionHeaderColor} mb-3`}>
                   What's Included
                 </h4>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {pkg.included.map((item) => (
                     <div key={item} className="flex items-start gap-2">
-                      <Check size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
+                      <Check size={14} className={`${pkg.checkColor} mt-0.5 flex-shrink-0`} />
                       <span className="font-body text-sm text-ivory/80">{item}</span>
                     </div>
                   ))}
@@ -245,7 +284,7 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
 
               {/* Departures */}
               <div>
-                <h4 className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-3">
+                <h4 className={`font-accent text-xs tracking-[0.15em] uppercase ${pkg.sectionHeaderColor} mb-3`}>
                   {pkg.id === "rhine" ? "Available Departures" : "Flight Strategy"}
                 </h4>
                 <div className="space-y-2">
@@ -255,15 +294,15 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
                         <div className="font-body text-sm text-ivory">{dep.date}</div>
                         <div className="font-body text-xs text-muted-foreground">{dep.ship}</div>
                       </div>
-                      <div className="font-display text-lg text-gold">{dep.price}</div>
+                      <div className={`font-display text-lg ${pkg.depPriceColor}`}>{dep.price}</div>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Relocation Note */}
-              <div className="glass-card-gold rounded-xl p-4">
-                <h4 className="font-accent text-xs tracking-[0.15em] uppercase text-gold mb-2">
+              <div className={pkg.reloCardClass}>
+                <h4 className={`font-accent text-xs tracking-[0.15em] uppercase ${pkg.reloTitleColor} mb-2`}>
                   Relocation Scout's Note
                 </h4>
                 <p className="font-body text-sm text-ivory/80 leading-relaxed">
@@ -277,7 +316,7 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
           <div className="mt-6 pt-6 border-t border-white/8 flex flex-wrap items-center gap-3">
             {pkg.id === "rhine" && (
               <Link href="/rhine-cruise">
-                <span className="inline-flex items-center gap-2 font-body font-semibold px-5 py-2.5 rounded-full transition-all duration-300 text-sm cursor-pointer" style={{ background: '#c9a84c', color: '#0a0f1e' }}>
+                <span className="inline-flex items-center gap-2 font-body font-semibold px-5 py-2.5 rounded-full transition-all duration-300 text-sm cursor-pointer" style={pkg.btnStyle}>
                   Full Day-by-Day Itinerary
                   <ArrowRight size={14} />
                 </span>
@@ -287,8 +326,8 @@ function PackageCard({ pkg, index }: { pkg: typeof packages[0]; index: number })
               href={pkg.bookUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body font-medium px-5 py-2.5 rounded-full hover:bg-gold-light transition-all duration-300 text-sm"
-              style={{ border: '1px solid rgba(201,168,76,0.4)', color: '#c9a84c' }}
+              className="inline-flex items-center gap-2 font-body font-medium px-5 py-2.5 rounded-full transition-all duration-300 text-sm"
+              style={pkg.btnBorderStyle}
             >
               {pkg.id === "rhine" ? "View on AmaWaterways" : "Search Flights on Google"}
               <ExternalLink size={14} />
@@ -313,13 +352,13 @@ export default function Itineraries() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold block mb-4">
+            <span className="font-accent text-xs tracking-[0.2em] uppercase text-rose block mb-4">
               Three Ways to Celebrate
             </span>
             <h1 className="font-display text-5xl md:text-7xl font-light text-ivory mb-6">
-              Your <span className="text-gold italic">Itineraries</span>
+              Your <span className="text-rose italic">Itineraries</span>
             </h1>
-            <div className="gold-divider mx-auto mb-6" />
+            <div className="mx-auto mb-6 w-16 h-px bg-gradient-to-r from-transparent via-rose to-transparent" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Three distinct packages, each designed around a different travel philosophy — from the pampered ease of a river cruise to the freedom of self-guided exploration. All researched for late March and early April 2026, all built around Melanie's birthday.
             </p>
@@ -346,7 +385,7 @@ export default function Itineraries() {
             className="text-center mb-10"
           >
             <h2 className="font-display text-3xl md:text-4xl font-light text-ivory">
-              Quick <span className="text-gold italic">Comparison</span>
+              Quick <span className="text-rose italic">Comparison</span>
             </h2>
           </motion.div>
 
@@ -354,10 +393,10 @@ export default function Itineraries() {
             <table className="w-full glass-card rounded-2xl overflow-hidden">
               <thead>
                 <tr className="border-b border-white/8">
-                  <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">Package</th>
-                  <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">Duration</th>
-                  <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">Price</th>
-                  <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">Style</th>
+                  <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-teal/70">Package</th>
+                  <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-coral/70">Duration</th>
+                  <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-rose/70">Price</th>
+                  <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-lavender/70">Style</th>
                   <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">Best For</th>
                 </tr>
               </thead>
@@ -370,7 +409,7 @@ export default function Itineraries() {
                   <tr key={row.name} className={i < 2 ? "border-b border-white/5" : ""}>
                     <td className="p-4 font-display text-ivory">{row.name}</td>
                     <td className="p-4 font-body text-sm text-muted-foreground">{row.dur}</td>
-                    <td className="p-4 font-display text-gold">{row.price}</td>
+                    <td className={`p-4 font-display ${i === 0 ? 'text-teal' : i === 1 ? 'text-coral' : 'text-lavender'}`}>{row.price}</td>
                     <td className="p-4 font-body text-sm text-muted-foreground">{row.style}</td>
                     <td className="p-4 font-body text-sm text-muted-foreground">{row.best}</td>
                   </tr>

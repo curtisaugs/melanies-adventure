@@ -49,3 +49,10 @@
 - [x] Add cheeky distance/driving warnings in wizard and itinerary output
 - [x] Budget wizard step rewritten with Curtis gift framing + upgrade tiers
 - [x] Curtis Gift Breakdown card in generated itinerary output
+
+## Phase 4 — Spring Color Treatment (All Pages)
+- [x] Destinations page: city-specific accent colors (amber/orange/coral/rose/cyan/lavender per city)
+- [x] Itineraries page: teal for Rhine, coral for Iberian, lavender for French Art de Vivre
+- [x] Graduate Schools page: per-school accent colors, colorful CTA buttons, lavender comparison header
+- [x] Relocation page: teal for visa section, coral for cost comparison, lavender for expat community
+- [x] Flights page: coral for flights, teal for open-jaw, lavender for miles, rose for packing

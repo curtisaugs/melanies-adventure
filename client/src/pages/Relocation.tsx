@@ -179,11 +179,11 @@ export default function Relocation() {
       <section className="pt-32 pb-16">
         <div className="container text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold block mb-4">The Next Chapter</span>
+            <span className="font-accent text-xs tracking-[0.2em] uppercase text-teal block mb-4">The Next Chapter</span>
             <h1 className="font-display text-5xl md:text-7xl font-light text-ivory mb-6">
-              European <span className="text-gold italic">Relocation</span>
+              European <span className="text-teal italic">Relocation</span>
             </h1>
-            <div className="gold-divider mx-auto mb-6" />
+            <div className="mx-auto mb-6 w-16 h-px bg-gradient-to-r from-transparent via-teal to-transparent" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Four visa pathways, seven cities compared, and the practical steps to make the move. This is the reconnaissance mission — the birthday trip is the scouting expedition.
             </p>
@@ -196,7 +196,7 @@ export default function Relocation() {
         <div className="container max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
             <h2 className="font-display text-3xl font-light text-ivory mb-6">
-              <span className="text-gold">Visa</span> Pathways
+              <span className="text-teal">Visa</span> Pathways
             </h2>
             <div className="flex flex-wrap gap-3 mb-8">
               {visas.map((v) => (
@@ -205,7 +205,7 @@ export default function Relocation() {
                   onClick={() => setActiveVisa(v.id)}
                   className={`px-4 py-2 rounded-full font-body text-sm transition-all ${
                     activeVisa === v.id
-                      ? "bg-gold text-navy font-medium"
+                      ? "bg-teal text-navy font-medium"
                       : "glass-card text-muted-foreground hover:text-ivory"
                   }`}
                 >
@@ -227,7 +227,7 @@ export default function Relocation() {
                     <span className="text-3xl">{selectedVisa.flag}</span>
                     <div>
                       <h3 className="font-display text-2xl font-light text-ivory">{selectedVisa.name}</h3>
-                      <p className="font-body text-sm italic text-gold/80">{selectedVisa.tagline}</p>
+                      <p className="font-body text-sm italic text-teal/80">{selectedVisa.tagline}</p>
                     </div>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function Relocation() {
                     { label: "Processing", value: selectedVisa.processingTime, color: "text-ivory" },
                   ].map((stat) => (
                     <div key={stat.label} className="glass-card px-3 py-2 rounded-xl text-center">
-                      <p className="font-accent text-[0.6rem] tracking-widest uppercase text-gold/50">{stat.label}</p>
+                      <p className="font-accent text-[0.6rem] tracking-widest uppercase text-teal/50">{stat.label}</p>
                       <p className={`font-body text-xs font-medium ${stat.color}`}>{stat.value}</p>
                     </div>
                   ))}
@@ -247,8 +247,8 @@ export default function Relocation() {
 
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <DollarSign size={14} className="text-gold" />
-                  <span className="font-accent text-xs tracking-widest uppercase text-gold/70">Income Requirement</span>
+                  <DollarSign size={14} className="text-teal" />
+                  <span className="font-accent text-xs tracking-widest uppercase text-teal/70">Income Requirement</span>
                 </div>
                 <p className="font-body text-sm text-ivory/80">{selectedVisa.income}</p>
               </div>
@@ -286,29 +286,29 @@ export default function Relocation() {
 
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <FileText size={14} className="text-gold" />
-                  <span className="font-accent text-xs tracking-widest uppercase text-gold/70">Application Steps</span>
+                  <FileText size={14} className="text-teal" />
+                  <span className="font-accent text-xs tracking-widest uppercase text-teal/70">Application Steps</span>
                 </div>
                 <div className="space-y-2">
                   {selectedVisa.steps.map((step, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <span className="font-accent text-xs text-gold/60 mt-0.5 w-4 flex-shrink-0">{i + 1}.</span>
+                      <span className="font-accent text-xs text-teal/60 mt-0.5 w-4 flex-shrink-0">{i + 1}.</span>
                       <p className="font-body text-xs text-ivory/80">{step}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="glass-card-gold rounded-xl p-4 mb-4">
+              <div className="glass-card rounded-xl p-4 mb-4 border border-teal/20 bg-teal/5">
                 <div className="flex items-center gap-2 mb-2">
-                  <Heart size={14} className="text-gold" />
-                  <span className="font-accent text-xs tracking-widest uppercase text-gold">Melanie's Note</span>
+                  <Heart size={14} className="text-rose" />
+                  <span className="font-accent text-xs tracking-widest uppercase text-rose">Melanie's Note</span>
                 </div>
                 <p className="font-body text-sm text-ivory/80 leading-relaxed">{selectedVisa.reloNote}</p>
               </div>
 
               <a href={selectedVisa.url} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-body text-sm">
+                className="inline-flex items-center gap-2 text-teal hover:opacity-80 transition-colors font-body text-sm">
                 Official Visa Information <ExternalLink size={14} />
               </a>
             </motion.div>
@@ -321,7 +321,7 @@ export default function Relocation() {
         <div className="container max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl font-light text-ivory mb-2">
-              Cost of Living <span className="text-gold italic">Comparison</span>
+              Cost of Living <span className="text-coral italic">Comparison</span>
             </h2>
             <p className="font-body text-sm text-muted-foreground mb-8">Monthly estimates for a comfortable single-person lifestyle (1BR apartment, dining out regularly, transport, entertainment)</p>
 
@@ -329,11 +329,11 @@ export default function Relocation() {
               <table className="w-full glass-card rounded-2xl overflow-hidden">
                 <thead>
                   <tr className="border-b border-white/8">
-                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">City</th>
-                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">1BR Rent</th>
-                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">Dining Out</th>
-                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">Monthly Total</th>
-                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-gold/70">vs. Las Vegas</th>
+                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-coral/70">City</th>
+                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-coral/70">1BR Rent</th>
+                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-coral/70">Dining Out</th>
+                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-coral/70">Monthly Total</th>
+                    <th className="text-left p-4 font-accent text-xs tracking-widest uppercase text-coral/70">vs. Las Vegas</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -355,7 +355,7 @@ export default function Relocation() {
                         </td>
                         <td className="p-4 font-body text-sm text-ivory/80">{row.rent1br}/mo</td>
                         <td className="p-4 font-body text-sm text-ivory/80">{row.dining}/meal</td>
-                        <td className="p-4 font-display text-gold">{row.total}/mo</td>
+                        <td className="p-4 font-display text-coral">{row.total}/mo</td>
                         <td className="p-4">
                           {isLV ? (
                             <span className="font-accent text-xs text-muted-foreground">Baseline</span>
@@ -380,7 +380,7 @@ export default function Relocation() {
         <div className="container max-w-5xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl font-light text-ivory mb-8">
-              Expat <span className="text-gold italic">Community</span> Notes
+              Expat <span className="text-lavender italic">Community</span> Notes
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -404,7 +404,7 @@ export default function Relocation() {
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-2xl">{item.flag}</span>
                     <div className="flex items-center gap-2">
-                      <Users size={14} className="text-gold" />
+                      <Users size={14} className="text-lavender" />
                       <h3 className="font-display text-lg font-light text-ivory">{item.city}</h3>
                     </div>
                   </div>
