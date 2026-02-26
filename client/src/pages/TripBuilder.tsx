@@ -840,7 +840,7 @@ export default function TripBuilder() {
               <div>
                 <p className="text-xs tracking-widest uppercase mb-2" style={{ color: "#e8748a", fontFamily: FONT_BODY }}>Margaux</p>
                 <p className="text-sm" style={{ fontFamily: FONT_BODY, color: "rgba(232,224,208,0.75)", lineHeight: 1.7 }}>
-                  Melanie. I'm glad you're here. Curtis told me a lot about you, which means I already know this trip needs to be exactly right. I'm going to ask you a few questions. Answer however feels true, and I'll build you something real.
+                  Alright, Melanie. Curtis told me you'd have opinions. He was right, and honestly? That's exactly what I need. I don't do generic. A few questions, your real answers, and I'll build you something that actually fits.
                 </p>
               </div>
             </div>

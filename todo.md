@@ -99,3 +99,6 @@
 ## Phase 15 — Tagline Consistency
 - [x] Destinations: Fix Seville tagline punctuation
 - [x] Destinations: Fix Paris tagline punctuation
+
+## Phase 16 — Margaux Wizard Opening
+- [x] TripBuilder: Rewrite Margaux's first screen with peer voice — direct, warm, no preamble
