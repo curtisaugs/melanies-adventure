@@ -562,6 +562,42 @@
     font-family: 'Cinzel', serif;
   }
 
+  /* ── Force accordion day cards to expand in print ── */
+  /* AnimatePresence / motion divs that are hidden need to show */
+  [data-day-card] > div,
+  .day-card > div {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Force all motion.div children visible */
+  [style*="height: 0"],
+  [style*="height:0"],
+  [style*="overflow: hidden"] {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure all collapsed accordion content is shown */
+  [aria-hidden="true"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Remove fixed positioning from nav (already hidden, but just in case) */
+  nav {
+    position: static !important;
+  }
+
+  /* Remove the fixed top padding that compensates for the fixed nav */
+  body > div > div:first-child {
+    padding-top: 0 !important;
+  }
+
   /* ── Ensure text is visible on white ── */
   * {
     -webkit-print-color-adjust: exact !important;

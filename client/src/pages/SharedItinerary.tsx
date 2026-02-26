@@ -3,7 +3,7 @@
  * Accessed via /trip/:shareId
  */
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Link, useParams } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -79,8 +79,9 @@ const NAV = { background: "rgba(10,15,30,0.92)", borderBottom: "1px solid rgba(2
 
 // ─── Day Card ─────────────────────────────────────────────────────────────────
 
-function DayCard({ day, index }: { day: ItineraryDay; index: number }) {
+function DayCard({ day, index, forceExpanded }: { day: ItineraryDay; index: number; forceExpanded?: boolean }) {
   const [expanded, setExpanded] = useState(index === 0);
+  const isExpanded = forceExpanded || expanded;
 
   return (
     <motion.div
@@ -90,7 +91,7 @@ function DayCard({ day, index }: { day: ItineraryDay; index: number }) {
       className="rounded-2xl overflow-hidden"
       style={{ border: expanded ? "1px solid rgba(201,168,76,0.35)" : "1px solid rgba(201,168,76,0.1)", background: "rgba(255,255,255,0.02)" }}
     >
-      <button className="w-full flex items-center gap-4 p-5 text-left" onClick={() => setExpanded(!expanded)}>
+      <button className="w-full flex items-center gap-4 p-5 text-left" onClick={() => setExpanded(!expanded)} data-no-print>
         <div className="flex-shrink-0 w-12 h-12 rounded-xl flex flex-col items-center justify-center" style={{ background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.25)" }}>
           <span className="text-xs" style={{ color: GOLD, fontFamily: FONT_BODY, fontWeight: 600 }}>DAY</span>
           <span className="text-lg font-bold leading-none" style={{ color: GOLD, fontFamily: FONT_DISPLAY }}>{day.day}</span>
@@ -102,12 +103,12 @@ function DayCard({ day, index }: { day: ItineraryDay; index: number }) {
           <p className="text-sm mt-0.5" style={{ fontFamily: FONT_BODY, color: "rgba(232,224,208,0.55)" }}>{day.headline}</p>
         </div>
         <div style={{ color: GOLD, flexShrink: 0 }}>
-          {expanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+          {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </div>
       </button>
 
       <AnimatePresence>
-        {expanded && (
+        {isExpanded && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -183,6 +184,28 @@ export default function SharedItinerary() {
     setTimeout(() => setCopied(false), 2500);
   };
 
+  const [printExpanded, setPrintExpanded] = useState(false);
+
+  useEffect(() => {
+    const beforePrint = () => setPrintExpanded(true);
+    const afterPrint = () => setPrintExpanded(false);
+    window.addEventListener('beforeprint', beforePrint);
+    window.addEventListener('afterprint', afterPrint);
+    return () => {
+      window.removeEventListener('beforeprint', beforePrint);
+      window.removeEventListener('afterprint', afterPrint);
+    };
+  }, []);
+
+  const handlePrint = useCallback(() => {
+    setPrintExpanded(true);
+    // Small delay to let React re-render before the print dialog opens
+    setTimeout(() => {
+      window.print();
+      // afterprint event will reset printExpanded
+    }, 150);
+  }, []);
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: NAVY }}>
@@ -215,10 +238,6 @@ export default function SharedItinerary() {
   }
 
   const itinerary = data.itinerary as FullItinerary;
-
-  const handlePrint = useCallback(() => {
-    window.print();
-  }, []);
 
   return (
     <div className="min-h-screen" style={{ background: NAVY, color: IVORY }}>
@@ -330,7 +349,7 @@ export default function SharedItinerary() {
         <div className="mb-10">
           <h2 className="text-2xl mb-6" style={{ fontFamily: FONT_DISPLAY, color: IVORY, fontWeight: 300 }}>Day-by-Day Itinerary</h2>
           <div className="space-y-3">
-            {itinerary.days.map((day, i) => <DayCard key={day.day} day={day} index={i} />)}
+            {itinerary.days.map((day, i) => <DayCard key={day.day} day={day} index={i} forceExpanded={printExpanded} />)}
           </div>
         </div>
 

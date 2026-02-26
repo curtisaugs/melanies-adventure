@@ -88,3 +88,7 @@
 ## Phase 12 — PDF Download
 - [x] SharedItinerary: Add print CSS for beautiful travel document output
 - [x] SharedItinerary: Add Download as PDF button that triggers window.print()
+
+## Phase 13 — Print Preview Test
+- [x] Generate itinerary and test print layout for page break issues
+- [x] Fix any awkward breaks in day cards, cost table, or Margaux note (hooks error fixed, accordion expands on print, print CSS updated)
