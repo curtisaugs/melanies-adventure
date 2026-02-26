@@ -131,6 +131,17 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
+            {/* Glass morphism panel wrapping all hero text */}
+            <div
+              className="rounded-3xl px-8 py-10 md:px-14 md:py-14 max-w-3xl mx-auto"
+              style={{
+                background: "rgba(8, 12, 28, 0.55)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: "1px solid rgba(232, 224, 208, 0.10)",
+                boxShadow: "0 8px 48px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)",
+              }}
+            >
             <div className="inline-flex items-center gap-3 glass-card-birthday px-6 py-3 rounded-full mb-8">
               <Star size={14} className="text-rose-pink fill-rose-pink" style={{ color: "oklch(0.78 0.16 355)" }} />
               <span className="font-accent text-sm tracking-[0.2em] uppercase" style={{ color: "oklch(0.88 0.10 355)" }}>
@@ -204,6 +215,7 @@ export default function Home() {
                 </button>
               </Link>
             </div>
+            </div>{/* end glass morphism panel */}
           </motion.div>
         </div>
 

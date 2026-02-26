@@ -71,3 +71,6 @@
 - [x] Homepage: Add cheeky "or" pre-built trips section below Margaux with self-aware humor
 - [x] Home.tsx: Replace all em-dashes with natural punctuation
 - [x] All other pages: Replace all em-dashes with natural punctuation (142 total across 7 files)
+
+## Phase 8 — Hero Glass Morphism
+- [x] Hero section: Wrap welcome text in glass morphism panel for legibility
