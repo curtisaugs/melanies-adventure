@@ -183,7 +183,7 @@ const cities = [
     name: "Paris",
     country: "France",
     image: PARIS_IMG,
-    tagline: "Where Annie lives. and where every birthday deserves to be celebrated",
+    tagline: "Where Annie lives, and where every birthday deserves to be celebrated",
     reloScore: 5,
     costOfLiving: "€€€€",
     climate: "Cool, 10°C avg in March",

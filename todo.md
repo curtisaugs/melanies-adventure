@@ -95,3 +95,7 @@
 
 ## Phase 14 — Punctuation Polish
 - [x] Destinations: Fix Porto tagline punctuation for consistency with Nice
+
+## Phase 15 — Tagline Consistency
+- [x] Destinations: Fix Seville tagline punctuation
+- [x] Destinations: Fix Paris tagline punctuation
