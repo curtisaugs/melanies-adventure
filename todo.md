@@ -74,3 +74,6 @@
 
 ## Phase 8 — Hero Glass Morphism
 - [x] Hero section: Wrap welcome text in glass morphism panel for legibility
+
+## Phase 9 — Image Fixes
+- [x] Destinations: Replace Tower Bridge image on Nice card with correct French Riviera photo

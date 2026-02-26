@@ -149,7 +149,7 @@ const cities = [
     id: "nice",
     name: "Nice",
     country: "France",
-    image: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1200&q=80",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/ntCmqXJVzdNYkGPL.jpg",
     tagline: "The French Riviera capital. glamour, warmth, and Italian soul",
     reloScore: 4,
     costOfLiving: "€€€",
