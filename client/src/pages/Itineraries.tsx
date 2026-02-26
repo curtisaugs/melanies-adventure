@@ -1,5 +1,5 @@
 /* 
-  Design: The Modern European — Refined Glass & Gold
+  Design: The Modern European. Refined Glass & Gold
   Itineraries: Three curated packages with full details, pricing, and day-by-day breakdowns
 */
 import { motion } from "framer-motion";
@@ -27,16 +27,16 @@ const packages = [
     tagline: "Drift past 1,000 years of European history without unpacking twice.",
     description: "AmaWaterways' Enchanting Rhine is the gold standard of river cruising. From the Swiss city of Basel, you'll glide north through Alsace, the UNESCO Middle Rhine Valley, and the legendary Lorelei Rock before arriving in cosmopolitan Amsterdam. Every meal is included, every excursion is guided, and every evening you're moored in a new medieval town.",
     highlights: [
-      "Basel, Switzerland — cosmopolitan gateway city",
-      "Breisach & Colmar — the 'Little Venice' of Alsace",
-      "Strasbourg — half-French, half-German, entirely magical",
-      "Heidelberg — Germany's most romantic university city",
-      "Rüdesheim — wine tastings in the Drosselgasse",
-      "Cologne — the iconic twin-spired Gothic cathedral",
-      "Amsterdam — canals, Rijksmuseum, and Dutch masters",
+      "Basel, Switzerland. cosmopolitan gateway city",
+      "Breisach & Colmar. the 'Little Venice' of Alsace",
+      "Strasbourg. half-French, half-German, entirely magical",
+      "Heidelberg. Germany's most romantic university city",
+      "Rüdesheim. wine tastings in the Drosselgasse",
+      "Cologne. the iconic twin-spired Gothic cathedral",
+      "Amsterdam. canals, Rijksmuseum, and Dutch masters",
     ],
     included: [
-      "Fine dining — breakfast, lunch, and dinner daily",
+      "Fine dining. breakfast, lunch, and dinner daily",
       "Unlimited wine, beer & soft drinks with meals",
       "All guided shore excursions",
       "Onboard Wi-Fi",
@@ -49,7 +49,7 @@ const packages = [
       { date: "April 29, 2026", ship: "AmaPrima", price: "$4,349" },
     ],
     bookUrl: "https://www.amawaterways.com/river-cruises/europe/rhine/enchanting-rhine",
-    relocationNote: "Strasbourg and Heidelberg are both exceptional relocation candidates — Strasbourg sits on the French-German border with EU institutions, while Heidelberg has one of Germany's top universities.",
+    relocationNote: "Strasbourg and Heidelberg are both exceptional relocation candidates. Strasbourg sits on the French-German border with EU institutions, while Heidelberg has one of Germany's top universities.",
     color: "from-blue-950/50 to-blue-900/20",
     accentColor: "text-teal",
     badgeClass: "border border-teal/40 bg-teal/10 text-teal",
@@ -77,14 +77,14 @@ const packages = [
     duration: "10–14 days",
     image: LISBON_IMG,
     tagline: "Two countries, one peninsula, infinite possibilities for your next chapter.",
-    description: "Late March is the sweet spot for the Iberian Peninsula — mild temperatures, manageable crowds, and spring blooms everywhere. This self-guided journey moves from Portugal's melancholic beauty to Spain's passionate grandeur, connecting by high-speed train and leaving time to linger wherever you feel most at home.",
+    description: "Late March is the sweet spot for the Iberian Peninsula. mild temperatures, manageable crowds, and spring blooms everywhere. This self-guided journey moves from Portugal's melancholic beauty to Spain's passionate grandeur, connecting by high-speed train and leaving time to linger wherever you feel most at home.",
     highlights: [
-      "Lisbon — Alfama district, Belém Tower, Fado music at night",
-      "Sintra — fairy-tale palaces in the hills above Lisbon",
-      "Porto — Douro Valley wine, Dom Luís I Bridge, Livraria Lello",
-      "Seville — Real Alcázar, Flamenco shows, Tapas culture",
-      "Madrid — Prado Museum, Royal Palace, El Retiro park",
-      "Toledo — medieval walled city, day trip from Madrid",
+      "Lisbon. Alfama district, Belém Tower, Fado music at night",
+      "Sintra. fairy-tale palaces in the hills above Lisbon",
+      "Porto. Douro Valley wine, Dom Luís I Bridge, Livraria Lello",
+      "Seville. Real Alcázar, Flamenco shows, Tapas culture",
+      "Madrid. Prado Museum, Royal Palace, El Retiro park",
+      "Toledo. medieval walled city, day trip from Madrid",
     ],
     included: [
       "Boutique hotel recommendations in each city",
@@ -127,14 +127,14 @@ const packages = [
     duration: "10–14 days",
     image: PARIS_IMG,
     tagline: "Lavender, the Riviera, and a birthday dinner with Annie in Paris.",
-    description: "This itinerary begins in the sun-drenched south and ends in the city where Annie and Thomas have made their home. Provence in late March is awakening — the lavender won't bloom until June, but the light is extraordinary, the markets are full, and the crowds haven't arrived yet. The French Riviera is glamorous year-round, and Paris in spring is, simply, Paris in spring.",
+    description: "This itinerary begins in the sun-drenched south and ends in the city where Annie and Thomas have made their home. Provence in late March is awakening. the lavender won't bloom until June, but the light is extraordinary, the markets are full, and the crowds haven't arrived yet. The French Riviera is glamorous year-round, and Paris in spring is, simply, Paris in spring.",
     highlights: [
-      "Nice — the Promenade des Anglais, Old Town, Cours Saleya market",
-      "Cannes — the Croisette, Île Sainte-Marguerite, glamour without the film festival crowds",
-      "Aix-en-Provence — Cézanne's city, the Cours Mirabeau, exceptional restaurants",
-      "Avignon — the Papal Palace, the famous broken bridge, Rhône Valley wines",
-      "Lyon — France's gastronomic capital, UNESCO-listed old town",
-      "Paris — Annie & Thomas, the Seine, Montmartre, and a birthday celebration",
+      "Nice. the Promenade des Anglais, Old Town, Cours Saleya market",
+      "Cannes. the Croisette, Île Sainte-Marguerite, glamour without the film festival crowds",
+      "Aix-en-Provence. Cézanne's city, the Cours Mirabeau, exceptional restaurants",
+      "Avignon. the Papal Palace, the famous broken bridge, Rhône Valley wines",
+      "Lyon. France's gastronomic capital, UNESCO-listed old town",
+      "Paris. Annie & Thomas, the Seine, Montmartre, and a birthday celebration",
     ],
     included: [
       "Hotel and Airbnb recommendations by city",
@@ -360,7 +360,7 @@ export default function Itineraries() {
             </h1>
             <div className="mx-auto mb-6 w-16 h-px bg-gradient-to-r from-transparent via-rose to-transparent" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Three distinct packages, each designed around a different travel philosophy — from the pampered ease of a river cruise to the freedom of self-guided exploration. All researched for late March and early April 2026, all built around Melanie's birthday.
+              Three distinct packages, each designed around a different travel philosophy. from the pampered ease of a river cruise to the freedom of self-guided exploration. All researched for late March and early April 2026, all built around Melanie's birthday.
             </p>
           </motion.div>
         </div>

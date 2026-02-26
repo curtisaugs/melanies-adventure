@@ -1,5 +1,5 @@
 /* 
-  Design: The Modern European — Refined Glass & Gold
+  Design: The Modern European. Refined Glass & Gold
   Destinations: City-by-city guide with attractions, food, hotels, and relocation notes
 */
 import { motion } from "framer-motion";
@@ -26,7 +26,7 @@ const cities = [
     attractions: [
       { name: "Belém Tower & Jerónimos Monastery", desc: "UNESCO World Heritage, 16th-century Manueline architecture" },
       { name: "Alfama District", desc: "Lisbon's oldest neighborhood, Moorish roots, Fado music at night" },
-      { name: "LX Factory", desc: "Industrial creative hub — markets, restaurants, bookshops" },
+      { name: "LX Factory", desc: "Industrial creative hub. markets, restaurants, bookshops" },
       { name: "Sintra Day Trip", desc: "Fairy-tale palaces 40 minutes by train, UNESCO-listed" },
       { name: "Time Out Market", desc: "The original food hall concept, 35 of Lisbon's best chefs" },
     ],
@@ -34,7 +34,7 @@ const cities = [
     hotels: [
       { name: "Bairro Alto Hotel", stars: 5, area: "Bairro Alto", price: "€350–550/night" },
       { name: "Hotel da Baixa", stars: 4, area: "Baixa-Chiado", price: "€150–250/night" },
-      { name: "Airbnb — Alfama Apartment", stars: 0, area: "Alfama", price: "€80–150/night" },
+      { name: "Airbnb. Alfama Apartment", stars: 0, area: "Alfama", price: "€80–150/night" },
     ],
     reloNote: "Lisbon is the #1 destination for American expats in Europe. The D8 Digital Nomad Visa is straightforward for high earners. Monthly costs for a comfortable life: €2,500–4,000. The Príncipe Real and Chiado neighborhoods are particularly popular with international professionals.",
     visa: "Portugal D8 Digital Nomad Visa",
@@ -51,14 +51,14 @@ const cities = [
     name: "Porto",
     country: "Portugal",
     image: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80",
-    tagline: "Gritty, gorgeous, and utterly authentic — Portugal's second city",
+    tagline: "Gritty, gorgeous, and utterly authentic. Portugal's second city",
     reloScore: 4,
     costOfLiving: "€",
     climate: "Mild, 14°C avg in March",
     english: "Good",
     attractions: [
       { name: "Dom Luís I Bridge", desc: "Iconic iron bridge with panoramic views of the Douro" },
-      { name: "Port Wine Caves (Vila Nova de Gaia)", desc: "Taylor's, Graham's, Sandeman — tastings and tours" },
+      { name: "Port Wine Caves (Vila Nova de Gaia)", desc: "Taylor's, Graham's, Sandeman. tastings and tours" },
       { name: "Livraria Lello", desc: "One of the world's most beautiful bookshops" },
       { name: "Douro Valley Day Trip", desc: "UNESCO wine region, quintas, and breathtaking scenery" },
       { name: "Serralves Museum", desc: "Contemporary art in a stunning Art Deco mansion and gardens" },
@@ -67,7 +67,7 @@ const cities = [
     hotels: [
       { name: "The Yeatman", stars: 5, area: "Vila Nova de Gaia", price: "€300–500/night" },
       { name: "Torel Avantgarde", stars: 5, area: "Bonfim", price: "€200–350/night" },
-      { name: "Airbnb — Ribeira Apartment", stars: 0, area: "Ribeira", price: "€60–120/night" },
+      { name: "Airbnb. Ribeira Apartment", stars: 0, area: "Ribeira", price: "€60–120/night" },
     ],
     reloNote: "Porto is increasingly popular with remote workers and offers the same D8 Visa access as Lisbon at 20–30% lower cost. The Bonfim and Cedofeita neighborhoods are vibrant and walkable. Monthly comfortable living: €2,000–3,200.",
     visa: "Portugal D8 Digital Nomad Visa",
@@ -90,19 +90,19 @@ const cities = [
     climate: "Warm, 18°C avg in March",
     english: "Moderate",
     attractions: [
-      { name: "Real Alcázar", desc: "Stunning Mudéjar palace — used as Dorne in Game of Thrones" },
+      { name: "Real Alcázar", desc: "Stunning Mudéjar palace. used as Dorne in Game of Thrones" },
       { name: "Seville Cathedral & La Giralda", desc: "World's largest Gothic cathedral; climb the tower for panoramic views" },
       { name: "Plaza de España", desc: "Magnificent semicircular plaza from the 1929 Ibero-American Exposition" },
       { name: "Santa Cruz Neighborhood", desc: "Former Jewish quarter, labyrinthine lanes, orange trees everywhere" },
-      { name: "Flamenco Shows", desc: "Authentic tablao performances — Casa de la Memoria is exceptional" },
+      { name: "Flamenco Shows", desc: "Authentic tablao performances. Casa de la Memoria is exceptional" },
     ],
-    food: "Salmorejo (cold tomato soup), Jamón ibérico, Croquetas, Patatas bravas, Pescaíto frito. Tapas culture is strongest here — many bars give free tapas with drinks. Budget: €20–50/day.",
+    food: "Salmorejo (cold tomato soup), Jamón ibérico, Croquetas, Patatas bravas, Pescaíto frito. Tapas culture is strongest here. many bars give free tapas with drinks. Budget: €20–50/day.",
     hotels: [
       { name: "Hotel Alfonso XIII", stars: 5, area: "Centro", price: "€300–600/night" },
       { name: "Hotel Murillo", stars: 3, area: "Santa Cruz", price: "€80–150/night" },
-      { name: "Airbnb — Santa Cruz Apartment", stars: 0, area: "Santa Cruz", price: "€70–130/night" },
+      { name: "Airbnb. Santa Cruz Apartment", stars: 0, area: "Santa Cruz", price: "€70–130/night" },
     ],
-    reloNote: "Seville is one of Spain's most livable cities — warm, walkable, and culturally rich. The Non-Lucrative Visa is the primary pathway for Americans. Monthly comfortable living: €2,200–3,500. The Triana neighborhood across the Guadalquivir is beloved by expats.",
+    reloNote: "Seville is one of Spain's most livable cities. warm, walkable, and culturally rich. The Non-Lucrative Visa is the primary pathway for Americans. Monthly comfortable living: €2,200–3,500. The Triana neighborhood across the Guadalquivir is beloved by expats.",
     visa: "Spain Non-Lucrative Visa",
     color: "from-red-950/40 to-orange-900/20",
     accent: "text-coral",
@@ -123,17 +123,17 @@ const cities = [
     climate: "Cool, 12°C avg in March",
     english: "Good",
     attractions: [
-      { name: "Museo del Prado", desc: "Velázquez, Goya, El Greco — one of the world's top art museums" },
-      { name: "Reina Sofía Museum", desc: "Picasso's Guernica, Dalí, Miró — 20th-century Spanish masters" },
+      { name: "Museo del Prado", desc: "Velázquez, Goya, El Greco. one of the world's top art museums" },
+      { name: "Reina Sofía Museum", desc: "Picasso's Guernica, Dalí, Miró. 20th-century Spanish masters" },
       { name: "Royal Palace of Madrid", desc: "Europe's largest royal palace, still used for state ceremonies" },
-      { name: "El Retiro Park", desc: "The city's green lung — rowing boats, Crystal Palace, Sunday markets" },
+      { name: "El Retiro Park", desc: "The city's green lung. rowing boats, Crystal Palace, Sunday markets" },
       { name: "Mercado de San Miguel", desc: "Elegant iron-and-glass market with gourmet tapas and wine" },
     ],
     food: "Bocadillo de calamares (calamari sandwich), Cocido madrileño (chickpea stew), Churros con chocolate, Jamón ibérico, Patatas bravas. Budget: €25–60/day.",
     hotels: [
       { name: "Rosewood Villa Magna", stars: 5, area: "Paseo de la Castellana", price: "€400–800/night" },
       { name: "Catalonia Plaza España", stars: 4, area: "Plaza España", price: "€150–280/night" },
-      { name: "Airbnb — Malasaña Apartment", stars: 0, area: "Malasaña", price: "€80–160/night" },
+      { name: "Airbnb. Malasaña Apartment", stars: 0, area: "Malasaña", price: "€80–160/night" },
     ],
     reloNote: "Madrid is Spain's business capital and offers the most international job market. IE Business School is here, making it ideal for graduate study. Monthly comfortable living: €2,800–4,500. The Chamberí and Malasaña neighborhoods are popular with expats.",
     visa: "Spain Non-Lucrative Visa",
@@ -150,23 +150,23 @@ const cities = [
     name: "Nice",
     country: "France",
     image: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1200&q=80",
-    tagline: "The French Riviera capital — glamour, warmth, and Italian soul",
+    tagline: "The French Riviera capital. glamour, warmth, and Italian soul",
     reloScore: 4,
     costOfLiving: "€€€",
     climate: "Mild, 14°C avg in March",
     english: "Moderate",
     attractions: [
-      { name: "Promenade des Anglais", desc: "The iconic 7km seafront boulevard — perfect for morning walks" },
+      { name: "Promenade des Anglais", desc: "The iconic 7km seafront boulevard. perfect for morning walks" },
       { name: "Vieux-Nice (Old Town)", desc: "Baroque churches, Cours Saleya market, Italian-influenced architecture" },
-      { name: "Musée Matisse", desc: "Henri Matisse lived and worked in Nice — his largest collection" },
+      { name: "Musée Matisse", desc: "Henri Matisse lived and worked in Nice. his largest collection" },
       { name: "Castle Hill (Colline du Château)", desc: "Free panoramic views over the Baie des Anges" },
-      { name: "Day Trip to Monaco", desc: "25 minutes by train — the Casino, the Prince's Palace, the harbor" },
+      { name: "Day Trip to Monaco", desc: "25 minutes by train. the Casino, the Prince's Palace, the harbor" },
     ],
     food: "Socca (chickpea pancake), Salade Niçoise (the original), Pan Bagnat, Pissaladière (onion tart), Ratatouille. Budget: €35–80/day.",
     hotels: [
       { name: "Hôtel Negresco", stars: 5, area: "Promenade des Anglais", price: "€350–700/night" },
       { name: "Hôtel Windsor", stars: 3, area: "City Center", price: "€120–200/night" },
-      { name: "Airbnb — Vieux-Nice Apartment", stars: 0, area: "Old Town", price: "€90–180/night" },
+      { name: "Airbnb. Vieux-Nice Apartment", stars: 0, area: "Old Town", price: "€90–180/night" },
     ],
     reloNote: "Nice has the largest English-speaking expat community on the French Riviera. The French Tech Visa or a Long-Stay Visa are the primary pathways. Monthly comfortable living: €3,000–5,000. The Cimiez neighborhood (where Matisse lived) is elegant and quieter than the seafront.",
     visa: "French Long-Stay Visa / French Tech Visa",
@@ -183,15 +183,15 @@ const cities = [
     name: "Paris",
     country: "France",
     image: PARIS_IMG,
-    tagline: "Where Annie lives — and where every birthday deserves to be celebrated",
+    tagline: "Where Annie lives. and where every birthday deserves to be celebrated",
     reloScore: 5,
     costOfLiving: "€€€€",
     climate: "Cool, 10°C avg in March",
     english: "Good",
     attractions: [
-      { name: "Annie & Thomas's Paris", desc: "The real reason to visit — explore the city through local eyes" },
-      { name: "Montmartre", desc: "The artist's village on the hill — Sacré-Cœur, Place du Tertre, Moulin Rouge" },
-      { name: "Le Marais", desc: "Trendy, historic, Jewish quarter — galleries, boutiques, falafel" },
+      { name: "Annie & Thomas's Paris", desc: "The real reason to visit. explore the city through local eyes" },
+      { name: "Montmartre", desc: "The artist's village on the hill. Sacré-Cœur, Place du Tertre, Moulin Rouge" },
+      { name: "Le Marais", desc: "Trendy, historic, Jewish quarter. galleries, boutiques, falafel" },
       { name: "Musée d'Orsay", desc: "Impressionism's greatest collection in a stunning Beaux-Arts train station" },
       { name: "Saint-Germain-des-Prés", desc: "Literary cafés, Café de Flore, Brasserie Lipp, bookshops" },
     ],
@@ -201,7 +201,7 @@ const cities = [
       { name: "Hôtel des Grands Boulevards", stars: 4, area: "2nd Arrondissement", price: "€200–400/night" },
       { name: "Stay with Annie & Thomas", stars: 0, area: "Annie's neighborhood", price: "Priceless" },
     ],
-    reloNote: "Paris is where Annie is — which changes the calculus entirely. The French Long-Stay Visa is the first step. Monthly comfortable living in Paris: €4,000–7,000 (expensive but manageable on a CRO salary). HEC Paris and INSEAD (Fontainebleau, 45 min from Paris) are both within reach for graduate study.",
+    reloNote: "Paris is where Annie is. which changes the calculus entirely. The French Long-Stay Visa is the first step. Monthly comfortable living in Paris: €4,000–7,000 (expensive but manageable on a CRO salary). HEC Paris and INSEAD (Fontainebleau, 45 min from Paris) are both within reach for graduate study.",
     visa: "French Long-Stay Visa / French Tech Visa",
     color: "from-purple-950/40 to-pink-900/20",
     accent: "text-lavender",
@@ -345,7 +345,7 @@ export default function Destinations() {
             </h1>
             <div className="mx-auto mb-6 w-16 h-px bg-gradient-to-r from-transparent via-coral to-transparent" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Each city has been researched not just as a tourist destination, but as a potential home. Explore the attractions, taste the food, find the right hotel — and read the relocation notes that matter most.
+              Each city has been researched not just as a tourist destination, but as a potential home. Explore the attractions, taste the food, find the right hotel. and read the relocation notes that matter most.
             </p>
           </motion.div>
         </div>

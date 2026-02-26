@@ -66,3 +66,8 @@
 - [x] Homepage: Rewrite Margaux section — she's already here, Curtis introduced you, peer energy not concierge
 - [x] Homepage: Chat preview bubble rewrites to match peer/empathetic voice
 - [x] Trip builder: Update AI system prompt — Margaux understands ADHD decision style, curated taste, adapts to Melanie's responses
+
+## Phase 7 — Margaux OR + Em-Dash Purge
+- [x] Homepage: Add cheeky "or" pre-built trips section below Margaux with self-aware humor
+- [x] Home.tsx: Replace all em-dashes with natural punctuation
+- [x] All other pages: Replace all em-dashes with natural punctuation (142 total across 7 files)

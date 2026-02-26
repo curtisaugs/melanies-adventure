@@ -120,16 +120,16 @@ const steps: WizardStep[] = [
   {
     id: "regions",
     question: "Which corners of Europe are calling?",
-    subtext: "Pick as many as you like — Margaux will make them flow.",
+    subtext: "Pick as many as you like. Margaux will make them flow.",
     field: "regions",
     type: "multi",
     options: [
       { label: "Rhine River Cruise", value: "Rhine River", icon: <Ship size={18} />, desc: "Basel → Amsterdam, 4 countries, 0 repacking" },
-      { label: "Portugal", value: "Portugal", icon: <MapPin size={18} />, desc: "Lisbon, Porto — sun, tiles, and the best wine you've never heard of" },
-      { label: "Spain", value: "Spain", icon: <MapPin size={18} />, desc: "Seville, Madrid, Barcelona — flamenco, Gaudí, and jamón" },
+      { label: "Portugal", value: "Portugal", icon: <MapPin size={18} />, desc: "Lisbon, Porto. Sun, tiles, and the best wine you've never heard of." },
+      { label: "Spain", value: "Spain", icon: <MapPin size={18} />, desc: "Seville, Madrid, Barcelona. Flamenco, Gaudí, and jamón." },
       { label: "Southern France", value: "Southern France", icon: <MapPin size={18} />, desc: "Provence, the Riviera, lavender fields in bloom" },
-      { label: "Paris", value: "Paris", icon: <Heart size={18} />, desc: "Annie & Thomas are there — enough said" },
-      { label: "Switzerland", value: "Switzerland", icon: <Mountain size={18} />, desc: "Basel or Lucerne — chocolate, watches, and jaw-dropping Alps" },
+      { label: "Paris", value: "Paris", icon: <Heart size={18} />, desc: "Annie & Thomas are there. Enough said." },
+      { label: "Switzerland", value: "Switzerland", icon: <Mountain size={18} />, desc: "Basel or Lucerne. Chocolate, watches, and jaw-dropping Alps." },
       { label: "Netherlands", value: "Netherlands", icon: <MapPin size={18} />, desc: "Amsterdam, Kinderdijk windmills, tulip fields" },
       { label: "Germany", value: "Germany", icon: <MapPin size={18} />, desc: "Heidelberg, Cologne, the Rhine Gorge" },
     ],
@@ -149,15 +149,15 @@ const steps: WizardStep[] = [
   },
   {
     id: "budget",
-    question: "Now — about the budget...",
+    question: "Alright. About the budget.",
     subtext: "Curtis has already covered the base trip (~$5k for two: flights + hotels + one special experience 🎁). How much do YOU want to add on top?",
     field: "budget",
     type: "single",
     options: [
-      { label: "Just the Gift", value: "Curtis's gift covers it — base $5,000 for two (flights + hotels + one special experience)", icon: <Heart size={18} />, desc: "Flights + mid-range hotels + one special experience. Fully covered. ❤️" },
+      { label: "Just the Gift", value: "Curtis's gift covers it: base $5,000 for two (flights + hotels + one special experience)", icon: <Heart size={18} />, desc: "Flights + mid-range hotels + one special experience. Fully covered. ❤️" },
       { label: "A Little Extra", value: "$1,000–$2,000 extra for upgrades and splurges on top of Curtis's base gift", icon: <DollarSign size={18} />, desc: "A nicer hotel here, a Michelin dinner there. Totally worth it." },
       { label: "Upgrade Mode", value: "$3,000–$5,000 extra for boutique hotels, fine dining, and business class on top of Curtis's base", icon: <Star size={18} />, desc: "Business class, 5-star hotels, the full European royalty experience." },
-      { label: "No Ceiling", value: "No budget limit — best of everything. Curtis can find out later.", icon: <Sparkles size={18} />, desc: "This is a 60th birthday. What he doesn't know won't hurt him. 😉" },
+      { label: "No Ceiling", value: "No budget limit. Best of everything. Curtis can find out later.", icon: <Sparkles size={18} />, desc: "This is a 60th birthday. What he doesn't know won't hurt him. 😉" },
     ],
   },
   {
@@ -184,10 +184,10 @@ const steps: WizardStep[] = [
     field: "travelCompanion",
     type: "single",
     options: [
-      { label: "With Curtis", value: "With Curtis (partner)", icon: <Heart size={18} />, desc: "The two of you — romantic, flexible, perfect" },
+      { label: "With Curtis", value: "With Curtis (partner)", icon: <Heart size={18} />, desc: "The two of you. Romantic, flexible, perfect." },
       { label: "Solo", value: "Solo", icon: <Star size={18} />, desc: "Your trip, your rules, your pace. Powerful." },
-      { label: "With Annie", value: "With Annie (daughter)", icon: <Users size={18} />, desc: "Mother-daughter adventure — unforgettable" },
-      { label: "Small Group", value: "Small group of friends", icon: <Users size={18} />, desc: "3–6 people — the more the merrier" },
+      { label: "With Annie", value: "With Annie (daughter)", icon: <Users size={18} />, desc: "Mother-daughter adventure. Unforgettable." },
+      { label: "Small Group", value: "Small group of friends", icon: <Users size={18} />, desc: "3 to 6 people. The more the merrier." },
     ],
   },
   {
@@ -197,16 +197,16 @@ const steps: WizardStep[] = [
     field: "fitnessLevel",
     type: "single",
     options: [
-      { label: "Leisurely", value: "Easy walks only — leisurely pace", icon: <Heart size={18} />, desc: "Cafés, museums, gentle strolls. Bliss." },
-      { label: "Moderate", value: "Moderate activity — some walking and light hikes", icon: <MapPin size={18} />, desc: "A few miles a day, some stairs, no problem" },
-      { label: "Active", value: "Active — hiking, cycling, exploring on foot", icon: <Mountain size={18} />, desc: "Bike tours, vineyard hikes, castle climbs" },
-      { label: "Mix", value: "Mix — active days balanced with rest days", icon: <Zap size={18} />, desc: "Push hard some days, recover in style others" },
+      { label: "Leisurely", value: "Easy walks only, leisurely pace", icon: <Heart size={18} />, desc: "Cafés, museums, gentle strolls. Bliss." },
+      { label: "Moderate", value: "Moderate activity, some walking and light hikes", icon: <MapPin size={18} />, desc: "A few miles a day, some stairs, no problem." },
+      { label: "Active", value: "Active: hiking, cycling, exploring on foot", icon: <Mountain size={18} />, desc: "Bike tours, vineyard hikes, castle climbs." },
+      { label: "Mix", value: "Mix of active days balanced with rest days", icon: <Zap size={18} />, desc: "Push hard some days, recover in style others." },
     ],
   },
   {
     id: "mustSee",
     question: "Anything specific you absolutely must see?",
-    subtext: "A city, a restaurant, a vineyard, a museum — tell Margaux everything.",
+    subtext: "A city, a restaurant, a vineyard, a museum. Tell Margaux everything.",
     field: "mustSee",
     type: "text",
     placeholder: "e.g. 'The Alhambra in Granada', 'A Michelin-starred dinner in Lyon', 'The Lorelei Rock on the Rhine'...",
@@ -458,7 +458,7 @@ export default function TripBuilder() {
         startCity: answers.startCity,
         endCity: answers.endCity,
         travelCompanion: answers.travelCompanion || "With Curtis (partner)",
-        fitnessLevel: answers.fitnessLevel || "Moderate activity — some walking and light hikes",
+        fitnessLevel: answers.fitnessLevel || "Moderate activity, some walking and light hikes",
       };
 
       const result = await generateMutation.mutateAsync(prefs);
@@ -838,9 +838,9 @@ export default function TripBuilder() {
                 <Sparkles size={18} style={{ color: "#e8748a" }} />
               </div>
               <div>
-                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: "#e8748a", fontFamily: FONT_BODY }}>Margaux, Your Travel Concierge</p>
+                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: "#e8748a", fontFamily: FONT_BODY }}>Margaux</p>
                 <p className="text-sm" style={{ fontFamily: FONT_BODY, color: "rgba(232,224,208,0.75)", lineHeight: 1.7 }}>
-                  Bonjour, Melanie! Curtis asked me to help you design the European adventure of your dreams — or as he put it, your "50th birthday trip." 😉 I'll ask you a few questions, then build you a fully costed, day-by-day itinerary you can save and share. Let's begin, shall we?
+                  Melanie. I'm glad you're here. Curtis told me a lot about you, which means I already know this trip needs to be exactly right. I'm going to ask you a few questions. Answer however feels true, and I'll build you something real.
                 </p>
               </div>
             </div>

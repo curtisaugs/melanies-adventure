@@ -1,5 +1,5 @@
 /* 
-  Design: The Modern European — Refined Glass & Gold
+  Design: The Modern European. Refined Glass & Gold
   Relocation: Visa pathways, cost of living, expat communities, practical steps
 */
 import { motion } from "framer-motion";
@@ -37,7 +37,7 @@ const visas = [
     steps: [
       "Gather documents: passport, proof of income (12 months), health insurance, accommodation proof",
       "Apply at the Portuguese Consulate in Los Angeles or San Francisco",
-      "Obtain NIF (Portuguese Tax Number) — can be done via representative",
+      "Obtain NIF (Portuguese Tax Number). can be done via representative",
       "Travel to Portugal on the issued visa",
       "Attend AIMA appointment to finalize 2-year residence permit",
       "Open Portuguese bank account",
@@ -78,7 +78,7 @@ const visas = [
       "Enter Spain within 3 months of visa issuance",
       "Apply for Foreigner Identity Card (TIE) within 30 days of arrival",
     ],
-    reloNote: "The NLV works if Melanie has investment income or savings. If she plans to continue working remotely for Vid Tech, she should consult a Spanish immigration lawyer — some remote workers use the NLV but this is technically a gray area.",
+    reloNote: "The NLV works if Melanie has investment income or savings. If she plans to continue working remotely for Vid Tech, she should consult a Spanish immigration lawyer. some remote workers use the NLV but this is technically a gray area.",
     url: "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Pages/Consular/Non-lucrative-residence-visa.aspx",
     color: "from-red-950/40 to-orange-900/20",
   },
@@ -87,22 +87,22 @@ const visas = [
     country: "France",
     flag: "🇫🇷",
     name: "French Tech Visa (Talent Passport)",
-    tagline: "For tech executives, founders, and investors — Annie's country",
+    tagline: "For tech executives, founders, and investors. Annie's country",
     difficulty: "Moderate",
     difficultyColor: "text-yellow-400",
     duration: "4-year renewable residence permit",
     income: "Varies by category (employee, founder, investor)",
     processingTime: "2–4 months",
     pros: [
-      "4-year permit — the longest initial duration in Europe",
+      "4-year permit. the longest initial duration in Europe",
       "No separate work permit required for employees",
       "Family members included",
-      "Annie is already in Paris — built-in support network",
+      "Annie is already in Paris. built-in support network",
       "Access to HEC Paris, INSEAD, and top French universities",
       "EU's 2nd largest economy with strong tech sector",
     ],
     cons: [
-      "Strict eligibility — must work for a recognized innovative company",
+      "Strict eligibility. must work for a recognized innovative company",
       "Investor category requires €300,000 minimum investment",
       "French bureaucracy is notoriously complex",
       "Higher cost of living, especially in Paris",
@@ -136,7 +136,7 @@ const visas = [
       "Strong tech and real estate sectors",
       "Excellent healthcare and infrastructure",
       "Path to permanent residency (Blue Card or Niederlassungserlaubnis)",
-      "Rhine cruise embarkation point — great base for European travel",
+      "Rhine cruise embarkation point. great base for European travel",
     ],
     cons: [
       "Most complex visa process of the four options",
@@ -185,7 +185,7 @@ export default function Relocation() {
             </h1>
             <div className="mx-auto mb-6 w-16 h-px bg-gradient-to-r from-transparent via-teal to-transparent" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Four visa pathways, seven cities compared, and the practical steps to make the move. This is the reconnaissance mission — the birthday trip is the scouting expedition.
+              Four visa pathways, seven cities compared, and the practical steps to make the move. This is the reconnaissance mission. the birthday trip is the scouting expedition.
             </p>
           </motion.div>
         </div>
@@ -397,7 +397,7 @@ export default function Relocation() {
                 {
                   city: "Paris & Nice",
                   flag: "🇫🇷",
-                  note: "France has the most complex bureaucracy but the most personal reward — especially with Annie already in Paris. The American Community in France (ACF) is the oldest American organization in Europe. Nice's English-speaking community is large and active, particularly among retirees and remote workers.",
+                  note: "France has the most complex bureaucracy but the most personal reward. especially with Annie already in Paris. The American Community in France (ACF) is the oldest American organization in Europe. Nice's English-speaking community is large and active, particularly among retirees and remote workers.",
                 },
               ].map((item) => (
                 <div key={item.city} className="glass-card rounded-2xl p-5">

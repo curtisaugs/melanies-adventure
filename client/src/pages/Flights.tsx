@@ -1,5 +1,5 @@
 /* 
-  Design: The Modern European — Refined Glass & Gold
+  Design: The Modern European. Refined Glass & Gold
   Flights & Logistics: Flight options from LAS, open-jaw strategy, packing tips, travel insurance
 */
 import { motion } from "framer-motion";
@@ -14,7 +14,7 @@ const flightRoutes = [
     stops: "1 stop (EWR or IAD)",
     duration: "~13–15 hrs",
     price: "$923–$1,400",
-    bestFor: "French Art de Vivre package — see Annie first",
+    bestFor: "French Art de Vivre package. see Annie first",
     tip: "Book United Polaris Business for the transatlantic leg if using miles",
     dates: "Late March / Early April 2026",
     color: "from-blue-950/40 to-blue-900/20",
@@ -26,7 +26,7 @@ const flightRoutes = [
     stops: "1 stop (JFK, ORD, or MAD)",
     duration: "~14–16 hrs",
     price: "$1,050–$1,600",
-    bestFor: "Iberian Explorer — start in Lisbon, end in Madrid",
+    bestFor: "Iberian Explorer. start in Lisbon, end in Madrid",
     tip: "TAP's stopover program lets you add a free Lisbon layover on transatlantic routes",
     dates: "Late March / Early April 2026",
     color: "from-green-950/40 to-emerald-900/20",
@@ -38,8 +38,8 @@ const flightRoutes = [
     stops: "1–2 stops (CDG or LHR)",
     duration: "~15–17 hrs",
     price: "$1,100–$1,700",
-    bestFor: "French Art de Vivre — start in Nice, end in Paris",
-    tip: "Open-jaw: fly into Nice, out of Paris CDG — saves backtracking",
+    bestFor: "French Art de Vivre. start in Nice, end in Paris",
+    tip: "Open-jaw: fly into Nice, out of Paris CDG. saves backtracking",
     dates: "Late March / Early April 2026",
     color: "from-purple-950/40 to-indigo-900/20",
     flag: "🇫🇷",
@@ -50,8 +50,8 @@ const flightRoutes = [
     stops: "1 stop (ZRH or FRA)",
     duration: "~14–16 hrs",
     price: "$1,200–$1,900",
-    bestFor: "Rhine River Cruise — Basel embarkation point",
-    tip: "Fly into Basel, cruise to Amsterdam, fly home from AMS — perfect open-jaw",
+    bestFor: "Rhine River Cruise. Basel embarkation point",
+    tip: "Fly into Basel, cruise to Amsterdam, fly home from AMS. perfect open-jaw",
     dates: "April 4–29, 2026 (cruise departures)",
     color: "from-amber-950/40 to-orange-900/20",
     flag: "🇨🇭",
@@ -81,7 +81,7 @@ const openJawStrategy = [
     flyOut: "Paris (CDG)",
     savings: "Saves 6+ hours of backtracking",
     airlines: "Air France",
-    tip: "TGV from Nice to Paris is 5.5 hours — scenic and comfortable",
+    tip: "TGV from Nice to Paris is 5.5 hours. scenic and comfortable",
   },
 ];
 
@@ -93,14 +93,14 @@ const mileagePrograms = [
 ];
 
 const packingTips = [
-  { category: "The One-Bag Rule", items: ["For Rhine cruise: pack once, stay on the ship — one carry-on + personal item is ideal", "For self-guided trips: a 40L backpack (Osprey Farpoint 40 or Away Bigger Carry-On) covers 14 days", "European cobblestones are brutal on wheeled luggage — a backpack is your friend"] },
-  { category: "Clothing Strategy", items: ["3 pairs of pants (1 dressy, 2 casual)", "5–7 tops that mix and match", "1 smart blazer or jacket for dinners", "Comfortable walking shoes (Allbirds or Ecco) — non-negotiable", "1 pair of dressier shoes for evenings", "Packable rain jacket (March can be unpredictable)"] },
+  { category: "The One-Bag Rule", items: ["For Rhine cruise: pack once, stay on the ship. one carry-on + personal item is ideal", "For self-guided trips: a 40L backpack (Osprey Farpoint 40 or Away Bigger Carry-On) covers 14 days", "European cobblestones are brutal on wheeled luggage. a backpack is your friend"] },
+  { category: "Clothing Strategy", items: ["3 pairs of pants (1 dressy, 2 casual)", "5–7 tops that mix and match", "1 smart blazer or jacket for dinners", "Comfortable walking shoes (Allbirds or Ecco). non-negotiable", "1 pair of dressier shoes for evenings", "Packable rain jacket (March can be unpredictable)"] },
   { category: "Tech & Documents", items: ["Universal power adapter (Type C for Europe)", "Unlocked phone + local SIM or T-Mobile International Plan", "Passport valid 6+ months beyond return date", "Printed copies of hotel confirmations and travel insurance", "VPN app installed (useful for streaming US content)", "Google Translate app downloaded offline"] },
   { category: "Health & Wellness", items: ["Travel health insurance (GeoBlue or IMG Global recommended)", "Any prescription medications + 2-week extra supply", "Melatonin for jet lag (Las Vegas to Europe is 9 hours ahead)", "Comfortable walking insoles", "Small first aid kit"] },
 ];
 
 const travelInsurance = [
-  { provider: "GeoBlue Voyager", coverage: "Medical + Emergency Evacuation", price: "~$150–250 for 2 weeks", recommended: true, note: "Best for medical coverage — highly recommended for Europe" },
+  { provider: "GeoBlue Voyager", coverage: "Medical + Emergency Evacuation", price: "~$150–250 for 2 weeks", recommended: true, note: "Best for medical coverage. highly recommended for Europe" },
   { provider: "Allianz Travel", coverage: "Comprehensive (cancel, delay, medical)", price: "~$200–350 for 2 weeks", recommended: true, note: "Best all-around coverage including trip cancellation" },
   { provider: "Credit Card Coverage", coverage: "Varies by card (Chase Sapphire Preferred/Reserve)", price: "Free with card", recommended: false, note: "Good supplemental coverage but check medical limits" },
 ];
@@ -119,7 +119,7 @@ export default function Flights() {
             </h1>
             <div className="mx-auto mb-6 w-16 h-px bg-gradient-to-r from-transparent via-coral to-transparent" />
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              From Los Angeles to Europe — the smartest flight strategies, open-jaw routing, mileage programs, packing tips, and travel insurance recommendations. Everything you need to get there in style.
+              From Los Angeles to Europe. the smartest flight strategies, open-jaw routing, mileage programs, packing tips, and travel insurance recommendations. Everything you need to get there in style.
             </p>
           </motion.div>
         </div>
@@ -199,7 +199,7 @@ export default function Flights() {
             <h2 className="font-display text-3xl font-light text-ivory mb-2">
               The <span className="text-teal italic">Open-Jaw</span> Strategy
             </h2>
-            <p className="font-body text-sm text-muted-foreground mb-6">Fly into one city, out of another — save hours of backtracking and see more destinations without retracing your steps.</p>
+            <p className="font-body text-sm text-muted-foreground mb-6">Fly into one city, out of another. save hours of backtracking and see more destinations without retracing your steps.</p>
 
             <div className="space-y-4">
               {openJawStrategy.map((item, i) => (

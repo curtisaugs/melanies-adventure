@@ -91,7 +91,7 @@ const overviewCards = [
     icon: GraduationCap,
     title: "The Next Chapter",
     subtitle: "Graduate Schools & Relocation",
-    desc: "INSEAD, HEC Paris, IE Madrid, Lisbon MBA — top executive programs. Plus visa pathways and cost of living guides.",
+    desc: "INSEAD, HEC Paris, IE Madrid, Lisbon MBA. Top executive programs, visa pathways, and cost of living guides.",
     href: "/grad-schools",
     color: "from-emerald-900/30 to-emerald-800/10",
     accentColor: "oklch(0.72 0.12 75)",  // gold
@@ -180,7 +180,7 @@ export default function Home() {
               Your European Adventure Awaits
             </p>
             <p className="font-body text-sm md:text-base text-ivory/50 max-w-xl mx-auto mb-12 leading-relaxed">
-              From the Rhine's medieval castles to Lisbon's sun-drenched hills, from Provençal lavender fields to a reunion with Annie in Paris — this is your moment to explore, celebrate, and dream of what comes next.
+              From the Rhine's medieval castles to Lisbon's sun-drenched hills, from Provençal lavender fields to a reunion with Annie in Paris. This is your moment to explore, celebrate, and dream of what comes next.
             </p>
 
             {/* Countdown */}
@@ -256,10 +256,10 @@ export default function Home() {
                 A New Chapter Begins in <span className="text-gold italic">Europe</span>
               </h2>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-6">
-                Sixty is not an ending — it is the most sophisticated beginning. With Annie and Thomas already making their home in Paris, with the political winds shifting, and with a career that has taken you to the highest levels of real estate technology, the question isn't whether Europe is calling. It's which part of Europe to answer first.
+                Sixty is not an ending. It is the most sophisticated beginning. With Annie and Thomas already making their home in Paris, with the political winds shifting, and with a career that has taken you to the highest levels of real estate technology, the question isn't whether Europe is calling. It's which part of Europe to answer first.
               </p>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
-                This guide is Curtis's gift to you: a deeply researched, lovingly curated exploration of three travel packages, six destination cities, five world-class graduate programs, and four visa pathways — all designed around your birthday, your expertise as a Chief Revenue Officer, and your vision for what the next chapter could look like.
+                This guide is Curtis's gift to you: a deeply researched, lovingly curated exploration of three travel packages, six destination cities, five world-class graduate programs, and four visa pathways. All designed around your birthday, your expertise as a Chief Revenue Officer, and your vision for what the next chapter could look like.
               </p>
               <div className="gold-divider mx-auto" />
             </motion.div>
@@ -284,16 +284,16 @@ export default function Home() {
                 <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "#e8748a" }}>Already here. Curtis introduced us.</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-3 leading-tight">
-                Hi — I'm <span className="italic" style={{ color: "#e8748a" }}>Margaux</span>
+                Hi. I'm <span className="italic" style={{ color: "#e8748a" }}>Margaux</span>
               </h2>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
-                Curtis thought we'd get along. He was right — I already know you're the kind of person who has very strong opinions about what you <em>don't</em> want, even if the rest is still deliciously open.
+                Curtis thought we'd get along. He was right. I already know you're the kind of person who has very strong opinions about what you <em>don't</em> want, even if the rest is still deliciously open.
               </p>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
-                I'm not going to hand you a brochure. I'm going to ask you a few questions, listen to how you answer them, and build you something that actually fits — day by day, budget and all.
+                I'm not going to hand you a brochure. I'm going to ask you a few questions, listen to how you answer them, and build you something that actually fits. Day by day, budget and all.
               </p>
               <p className="font-body text-sm leading-relaxed mb-6" style={{ fontStyle: "italic", color: "rgba(232,224,208,0.45)" }}>
-                (I'll also gently mention that Bergamo to Positano is not quite the same as LA to Tempe — even if the miles look similar on a map. We'll talk.)
+                (I'll also gently mention that Bergamo to Positano is not quite the same as LA to Tempe. Even if the miles look similar on a map. We'll talk.)
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/build-my-trip">
@@ -327,7 +327,7 @@ export default function Home() {
                     <p className="font-accent text-xs tracking-widest uppercase mb-1.5" style={{ color: "#e8748a" }}>Margaux</p>
                     <div className="rounded-2xl rounded-tl-none p-4" style={{ background: "rgba(232,116,138,0.08)", border: "1px solid rgba(232,116,138,0.15)" }}>
                       <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
-                        Melanie. Finally. Curtis has been telling me about you for months. <span style={{ color: "#e8748a" }}>Happy birthday, by the way</span> — 50 looks extraordinary on you. 🥂
+                        Melanie. Finally. Curtis has been telling me about you for months. <span style={{ color: "#e8748a" }}>Happy birthday, by the way.</span> 50 looks extraordinary on you. 🥂
                       </p>
                     </div>
                   </div>
@@ -340,7 +340,7 @@ export default function Home() {
                   <div className="flex-1">
                     <div className="rounded-2xl rounded-tl-none p-4" style={{ background: "rgba(232,116,138,0.08)", border: "1px solid rgba(232,116,138,0.15)" }}>
                       <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
-                        I'm not going to overwhelm you with options. First question — <strong style={{ color: "rgba(232,224,208,1)" }}>how long do we have?</strong> Because Europe rewards the unhurried, and you deserve unhurried.
+                        I'm not going to overwhelm you with options. First question: <strong style={{ color: "rgba(232,224,208,1)" }}>how long do we have?</strong> Because Europe rewards the unhurried, and you deserve unhurried.
                       </p>
                     </div>
                   </div>
@@ -368,7 +368,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Overview Cards */}
+      {/* OR Divider + Pre-Built Trips */}
       <section className="py-8 pb-20">
         <div className="container">
           <motion.div
@@ -377,12 +377,21 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold">
-              Your Journey
-            </span>
+            {/* OR divider */}
+            <div className="flex items-center gap-6 justify-center mb-8">
+              <div className="flex-1 max-w-[120px] h-px" style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.12))" }} />
+              <span className="font-display text-3xl font-light text-ivory/30 italic">or</span>
+              <div className="flex-1 max-w-[120px] h-px" style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.12))" }} />
+            </div>
+            <p className="font-body text-sm text-muted-foreground/60 italic mb-1">
+              We know. We know. But we put these together anyway, just in case.
+            </p>
             <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mt-2">
-              Everything in One Place
+              The Pre-Built Trips
             </h2>
+            <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto mt-3">
+              Three itineraries we curated with you in mind. They won't fit perfectly. Nothing pre-built ever does. But they're a good place to start dreaming, and Margaux can always take it from there.
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -438,7 +447,7 @@ export default function Home() {
               <span className="text-gold italic">River Cruise</span>
             </h2>
             <p className="font-body text-base text-ivory/70 leading-relaxed mb-8">
-              Drift past medieval castles, terraced vineyards, and charming villages. AmaWaterways' 7-night Enchanting Rhine takes you from Basel to Amsterdam — unpack once, experience everything. Prices from $4,349 per person for April 2026 departures.
+              Drift past medieval castles, terraced vineyards, and charming villages. AmaWaterways' 7-night Enchanting Rhine takes you from Basel to Amsterdam. Unpack once, experience everything. Prices from $4,349 per person for April 2026 departures.
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
               {["Basel → Amsterdam", "7 Nights", "All-Inclusive", "From $4,349"].map((tag) => (
