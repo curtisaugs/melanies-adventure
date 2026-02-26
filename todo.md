@@ -40,3 +40,12 @@
 - [ ] French Art de Vivre day-by-day detail page
 - [ ] Interactive neighborhood deep-dive (Lisbon, Nice, Paris)
 - [ ] Printable PDF summary of all itineraries
+
+## Phase 3 — Margaux Upgrade
+- [x] Test and fix save/share end-to-end flow
+- [x] Upgrade Margaux personality (European travel wisdom, Bergamo/Positano energy)
+- [x] Add Curtis gift budget framing (~$5k base covered, Melanie upgrades on top)
+- [x] Elevate Margaux to homepage centerpiece (moved above overview cards, two-column layout)
+- [x] Add cheeky distance/driving warnings in wizard and itinerary output
+- [x] Budget wizard step rewritten with Curtis gift framing + upgrade tiers
+- [x] Curtis Gift Breakdown card in generated itinerary output

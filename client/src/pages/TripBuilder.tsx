@@ -50,11 +50,22 @@ interface WizardStep {
   placeholder?: string;
 }
 
+interface CurtisGiftBreakdown {
+  coverageNote?: string;
+  baseCostForTwo?: string;
+  breakdown?: { item: string; cost: string; coveredBy: string }[];
+  upgradeOptions?: { item: string; additionalCost: string; margauxVerdict: string }[];
+  margauxBudgetNote?: string;
+}
+
 interface GeneratedItinerary {
   title: string;
   tagline: string;
   totalDays: number;
+  curtisGiftBreakdown?: CurtisGiftBreakdown;
   estimatedBudget?: {
+    baseForTwo?: string;
+    withUpgrades?: string;
     perPerson?: string;
     forTwo?: string;
     notes?: string;
@@ -138,15 +149,15 @@ const steps: WizardStep[] = [
   },
   {
     id: "budget",
-    question: "What's the budget looking like?",
-    subtext: "Per person, excluding flights from LAX. Margaux won't judge.",
+    question: "Now — about the budget...",
+    subtext: "Curtis has already covered the base trip (~$5k for two: flights + hotels + one special experience 🎁). How much do YOU want to add on top?",
     field: "budget",
     type: "single",
     options: [
-      { label: "Under $5,000", value: "Under $5,000 per person", icon: <DollarSign size={18} />, desc: "Smart choices, great experiences, zero waste" },
-      { label: "$5,000–$8,000", value: "$5,000–$8,000 per person", icon: <DollarSign size={18} />, desc: "Comfortable, with room for a splurge or two" },
-      { label: "$8,000–$12,000", value: "$8,000–$12,000 per person", icon: <DollarSign size={18} />, desc: "Luxury hotels, fine dining, business class upgrades" },
-      { label: "No Limit", value: "No budget limit — best of everything", icon: <Star size={18} />, desc: "This is a 60th birthday. Go big." },
+      { label: "Just the Gift", value: "Curtis's gift covers it — base $5,000 for two (flights + hotels + one special experience)", icon: <Heart size={18} />, desc: "Flights + mid-range hotels + one special experience. Fully covered. ❤️" },
+      { label: "A Little Extra", value: "$1,000–$2,000 extra for upgrades and splurges on top of Curtis's base gift", icon: <DollarSign size={18} />, desc: "A nicer hotel here, a Michelin dinner there. Totally worth it." },
+      { label: "Upgrade Mode", value: "$3,000–$5,000 extra for boutique hotels, fine dining, and business class on top of Curtis's base", icon: <Star size={18} />, desc: "Business class, 5-star hotels, the full European royalty experience." },
+      { label: "No Ceiling", value: "No budget limit — best of everything. Curtis can find out later.", icon: <Sparkles size={18} />, desc: "This is a 60th birthday. What he doesn't know won't hurt him. 😉" },
     ],
   },
   {
@@ -638,6 +649,70 @@ export default function TripBuilder() {
             </div>
           </div>
 
+          {/* Curtis's Gift Breakdown */}
+          {generatedItinerary.curtisGiftBreakdown && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-2xl p-6 mb-6"
+              style={{ background: "rgba(232,116,138,0.04)", border: "1px solid rgba(232,116,138,0.2)" }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span style={{ fontSize: "1.2rem" }}>🎁</span>
+                <p className="text-xs tracking-widest uppercase" style={{ color: "#e8748a", fontFamily: FONT_BODY }}>Curtis's Birthday Gift</p>
+              </div>
+              {generatedItinerary.curtisGiftBreakdown.coverageNote && (
+                <p className="text-sm italic mb-5" style={{ fontFamily: FONT_DISPLAY, fontSize: "1.05rem", color: "rgba(232,224,208,0.8)", lineHeight: 1.7 }}>
+                  "{generatedItinerary.curtisGiftBreakdown.coverageNote}"
+                </p>
+              )}
+              {/* What's covered */}
+              {generatedItinerary.curtisGiftBreakdown.breakdown && generatedItinerary.curtisGiftBreakdown.breakdown.length > 0 && (
+                <div className="mb-5">
+                  <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "rgba(232,224,208,0.4)", fontFamily: FONT_BODY }}>What Curtis Is Covering</p>
+                  <div className="space-y-2">
+                    {generatedItinerary.curtisGiftBreakdown.breakdown.map((item, i) => (
+                      <div key={i} className="flex items-center justify-between rounded-xl px-4 py-2.5" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                        <span className="text-sm" style={{ fontFamily: FONT_BODY, color: "rgba(232,224,208,0.75)" }}>{item.item}</span>
+                        <div className="flex items-center gap-2 flex-shrink-0 ml-4">
+                          <span className="text-sm font-semibold" style={{ fontFamily: FONT_BODY, color: GOLD }}>{item.cost}</span>
+                          <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: "rgba(232,116,138,0.15)", color: "#e8748a", fontFamily: FONT_BODY }}>{item.coveredBy}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {generatedItinerary.curtisGiftBreakdown.baseCostForTwo && (
+                    <div className="mt-3 flex items-center justify-between rounded-xl px-4 py-3" style={{ background: "rgba(232,116,138,0.08)", border: "1px solid rgba(232,116,138,0.25)" }}>
+                      <span className="text-sm font-semibold" style={{ fontFamily: FONT_BODY, color: IVORY }}>Total Gift Value</span>
+                      <span className="text-base font-bold" style={{ fontFamily: FONT_DISPLAY, color: "#e8748a" }}>{generatedItinerary.curtisGiftBreakdown.baseCostForTwo}</span>
+                    </div>
+                  )}
+                </div>
+              )}
+              {/* Upgrade options */}
+              {generatedItinerary.curtisGiftBreakdown.upgradeOptions && generatedItinerary.curtisGiftBreakdown.upgradeOptions.length > 0 && (
+                <div className="mb-4">
+                  <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "rgba(232,224,208,0.4)", fontFamily: FONT_BODY }}>Melanie's Upgrade Menu ✨</p>
+                  <div className="space-y-2">
+                    {generatedItinerary.curtisGiftBreakdown.upgradeOptions.map((opt, i) => (
+                      <div key={i} className="rounded-xl p-3" style={{ background: "rgba(201,168,76,0.04)", border: "1px solid rgba(201,168,76,0.12)" }}>
+                        <div className="flex items-start justify-between gap-3">
+                          <span className="text-sm" style={{ fontFamily: FONT_BODY, color: "rgba(232,224,208,0.75)" }}>{opt.item}</span>
+                          <span className="text-sm font-semibold flex-shrink-0" style={{ fontFamily: FONT_BODY, color: GOLD }}>{opt.additionalCost}</span>
+                        </div>
+                        <p className="text-xs mt-1 italic" style={{ fontFamily: FONT_BODY, color: "rgba(232,224,208,0.45)" }}>Margaux says: {opt.margauxVerdict}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {generatedItinerary.curtisGiftBreakdown.margauxBudgetNote && (
+                <p className="text-xs italic mt-2" style={{ fontFamily: FONT_BODY, color: "rgba(232,224,208,0.5)", lineHeight: 1.7 }}>
+                  💌 {generatedItinerary.curtisGiftBreakdown.margauxBudgetNote}
+                </p>
+              )}
+            </motion.div>
+          )}
           {/* Budget Summary */}
           {generatedItinerary.estimatedBudget && (
             <motion.div
@@ -646,11 +721,11 @@ export default function TripBuilder() {
               className="rounded-2xl p-6 mb-10"
               style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.18)" }}
             >
-              <p className="text-xs tracking-widest uppercase mb-4" style={{ color: GOLD, fontFamily: FONT_BODY }}>Budget Summary</p>
+              <p className="text-xs tracking-widest uppercase mb-4" style={{ color: GOLD, fontFamily: FONT_BODY }}>Full Budget Summary</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
-                  { label: "Per Person", value: generatedItinerary.estimatedBudget.perPerson },
-                  { label: "For Two", value: generatedItinerary.estimatedBudget.forTwo },
+                  { label: "Base (Curtis's Gift)", value: generatedItinerary.estimatedBudget.baseForTwo || generatedItinerary.estimatedBudget.forTwo },
+                  { label: "With Upgrades", value: generatedItinerary.estimatedBudget.withUpgrades },
                   { label: "Notes", value: generatedItinerary.estimatedBudget.notes },
                 ].filter(s => s.value).map((s) => (
                   <div key={s.label}>

@@ -256,6 +256,104 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Margaux Feature Section — elevated above overview cards */}
+      <section className="py-16 pb-8 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(232,116,138,0.06) 0%, rgba(201,168,76,0.04) 50%, rgba(10,15,30,0) 100%)" }} />
+        <div className="container relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            {/* Left: Margaux intro */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 glass-card-gold px-4 py-2 rounded-full mb-5">
+                <Sparkles size={13} className="text-gold" />
+                <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold">Your Personal Concierge</span>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-3 leading-tight">
+                Meet <span className="italic" style={{ color: "#e8748a" }}>Margaux</span>
+              </h2>
+              <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
+                None of the pre-built packages quite right? Margaux is your AI travel concierge — warm, witty, and deeply knowledgeable about European travel. She'll ask you a few smart questions, then build you a fully costed, day-by-day itinerary tailored exactly to you.
+              </p>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6" style={{ fontStyle: "italic", color: "rgba(232,224,208,0.5)" }}>
+                She'll also gently remind you that driving from Bergamo to Positano is not quite the same as a road trip from LA to Tempe — even if the miles look similar on a map.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/build-my-trip">
+                  <button className="inline-flex items-center gap-2 font-body font-semibold px-6 py-3 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg" style={{ background: "#e8748a", color: "#0a0f1e" }}>
+                    <Sparkles size={15} />
+                    Start with Margaux
+                    <ArrowRight size={15} />
+                  </button>
+                </Link>
+                <Link href="/itineraries">
+                  <button className="inline-flex items-center gap-2 glass-card font-body text-ivory px-6 py-3 rounded-full text-sm hover:border-gold/30 transition-all duration-300">
+                    Browse Pre-Built Trips
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+            {/* Right: Margaux chat preview */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="glass-card rounded-2xl p-6 space-y-4">
+                {/* Margaux greeting bubble */}
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(232,116,138,0.2)" }}>
+                    <Sparkles size={16} style={{ color: "#e8748a" }} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-accent text-xs tracking-widest uppercase mb-1.5" style={{ color: "#e8748a" }}>Margaux</p>
+                    <div className="rounded-2xl rounded-tl-none p-4" style={{ background: "rgba(232,116,138,0.08)", border: "1px solid rgba(232,116,138,0.15)" }}>
+                      <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
+                        Bonjour, Melanie! Curtis asked me to help you design the European adventure of your dreams — or as he put it, your <span style={{ color: "#e8748a" }}>'50th birthday trip.'</span> 😉
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Sample question */}
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(232,116,138,0.2)" }}>
+                    <Sparkles size={16} style={{ color: "#e8748a" }} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="rounded-2xl rounded-tl-none p-4" style={{ background: "rgba(232,116,138,0.08)", border: "1px solid rgba(232,116,138,0.15)" }}>
+                      <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
+                        Let's start simple: <strong style={{ color: "rgba(232,224,208,1)" }}>How long is this adventure?</strong> Europe rewards the unhurried.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Sample chips */}
+                <div className="flex flex-wrap gap-2 pl-12">
+                  {["8 Days", "10 Days", "12 Days", "14 Days"].map((d) => (
+                    <Link key={d} href="/build-my-trip">
+                      <span className="font-body text-xs px-3 py-1.5 rounded-full cursor-pointer transition-all" style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.25)", color: "#c9a84c" }}>
+                        {d}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+                <div className="pt-2 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                  <Link href="/build-my-trip">
+                    <button className="w-full font-body text-xs tracking-widest uppercase py-2 rounded-xl transition-all" style={{ color: "#e8748a", background: "rgba(232,116,138,0.06)" }}>
+                      Continue the conversation →
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Overview Cards */}
       <section className="py-8 pb-20">
         <div className="container">
@@ -374,51 +472,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Build My Trip CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(10,15,30,0) 60%)" }} />
-        <div className="container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <div className="inline-flex items-center gap-2 glass-card-gold px-4 py-2 rounded-full mb-6">
-              <Sparkles size={14} className="text-gold" />
-              <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold">New Feature</span>
-            </div>
-            <h2 className="font-display text-4xl md:text-6xl font-light text-ivory mb-4 leading-tight">
-              None of these quite right?<br />
-              <span className="text-gold italic">Build your own.</span>
-            </h2>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
-              Meet Margaux — your personal European travel concierge. Answer a few questions about how long you want to go, where you're drawn, what matters most, and your budget. She'll craft a fully costed, day-by-day itinerary you can save and share.
-            </p>
-            <div className="glass-card rounded-2xl p-6 mb-8 max-w-lg mx-auto text-left">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(232,116,138,0.15)" }}>
-                  <Sparkles size={18} style={{ color: "#e8748a" }} />
-                </div>
-                <div>
-                  <p className="font-accent text-xs tracking-widest uppercase mb-2" style={{ color: "#e8748a" }}>Margaux, Your Travel Concierge</p>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                    "Bonjour, Melanie! Curtis asked me to help you design the European adventure of your dreams — or as he put it, your '50th birthday trip.' 😉 I'll ask you a few questions, then build you a fully costed, day-by-day itinerary you can save and share."
-                  </p>
-                </div>
-              </div>
-            </div>
-            <Link href="/build-my-trip">
-              <button className="inline-flex items-center gap-3 bg-gold text-navy font-body font-semibold px-8 py-4 rounded-full hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 text-sm tracking-widest uppercase">
-                <Sparkles size={16} />
-                Start Building with Margaux
-                <ArrowRight size={16} />
-              </button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      {/* Margaux bottom reminder before footer */}
 
       <Footer />
     </div>

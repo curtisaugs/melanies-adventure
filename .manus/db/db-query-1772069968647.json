@@ -1,0 +1,37 @@
+{
+  "query": "SHOW TABLES LIKE 'saved_itineraries'; DESCRIBE saved_itineraries;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2SfAH3ZfPZ2w7aN.86938adbca22 --database i3aBqyUeBtoiGkHs9yqP6w --execute SHOW TABLES LIKE 'saved_itineraries'; DESCRIBE saved_itineraries;",
+  "rows": [
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "saved_itineraries"
+    },
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "Field\tType\tNull\tKey\tDefault\tExtra"
+    },
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "id\tint(11)\tNO\tPRI\tNULL\tauto_increment"
+    },
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "shareId\tvarchar(32)\tNO\tUNI\tNULL\t"
+    },
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "title\tvarchar(255)\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "itineraryJson\ttext\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "preferencesJson\ttext\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "userId\tint(11)\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)": "createdAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_i3aBqyUeBtoiGkHs9yqP6w (saved_itineraries)\nsaved_itineraries\nField\tType\tNull\tKey\tDefault\tExtra\nid\tint(11)\tNO\tPRI\tNULL\tauto_increment\nshareId\tvarchar(32)\tNO\tUNI\tNULL\t\ntitle\tvarchar(255)\tNO\t\tNULL\t\nitineraryJson\ttext\tNO\t\tNULL\t\npreferencesJson\ttext\tNO\t\tNULL\t\nuserId\tint(11)\tYES\t\tNULL\t\ncreatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t\n",
+  "stderr": "",
+  "execution_time_ms": 670
+}
