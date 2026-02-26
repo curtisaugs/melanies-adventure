@@ -281,25 +281,25 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5" style={{ background: "rgba(232,116,138,0.12)", border: "1px solid rgba(232,116,138,0.3)" }}>
                 <Sparkles size={13} style={{ color: "#e8748a" }} />
-                <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "#e8748a" }}>Your Personal Concierge</span>
+                <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "#e8748a" }}>Already here. Curtis introduced us.</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-3 leading-tight">
-                Meet <span className="italic" style={{ color: "#e8748a" }}>Margaux</span>
+                Hi — I'm <span className="italic" style={{ color: "#e8748a" }}>Margaux</span>
               </h2>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
-                We know that no pre-built tour would ever quite work for someone as discerning as you — and while we have them at the ready, we thought it better to let you pick. So I've been asked to help.
+                Curtis thought we'd get along. He was right — I already know you're the kind of person who has very strong opinions about what you <em>don't</em> want, even if the rest is still deliciously open.
               </p>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
-                Meet Margaux — your AI travel concierge. Warm, witty, and deeply knowledgeable about European travel. She'll ask you a few smart questions, then build you a fully costed, day-by-day itinerary tailored exactly to you.
+                I'm not going to hand you a brochure. I'm going to ask you a few questions, listen to how you answer them, and build you something that actually fits — day by day, budget and all.
               </p>
               <p className="font-body text-sm leading-relaxed mb-6" style={{ fontStyle: "italic", color: "rgba(232,224,208,0.45)" }}>
-                She'll also gently remind you that driving from Bergamo to Positano is not quite the same as a road trip from LA to Tempe — even if the miles look similar on a map.
+                (I'll also gently mention that Bergamo to Positano is not quite the same as LA to Tempe — even if the miles look similar on a map. We'll talk.)
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/build-my-trip">
                   <button className="inline-flex items-center gap-2 font-body font-semibold px-6 py-3 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg" style={{ background: "#e8748a", color: "#0a0f1e" }}>
                     <Sparkles size={15} />
-                    Start with Margaux
+                    Talk to Margaux
                     <ArrowRight size={15} />
                   </button>
                 </Link>
@@ -327,7 +327,7 @@ export default function Home() {
                     <p className="font-accent text-xs tracking-widest uppercase mb-1.5" style={{ color: "#e8748a" }}>Margaux</p>
                     <div className="rounded-2xl rounded-tl-none p-4" style={{ background: "rgba(232,116,138,0.08)", border: "1px solid rgba(232,116,138,0.15)" }}>
                       <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
-                        Bonjour, Melanie! Curtis asked me to help you design the European adventure of your dreams — or as he put it, your <span style={{ color: "#e8748a" }}>'50th birthday trip.'</span> 😉
+                        Melanie. Finally. Curtis has been telling me about you for months. <span style={{ color: "#e8748a" }}>Happy birthday, by the way</span> — 50 looks extraordinary on you. 🥂
                       </p>
                     </div>
                   </div>
@@ -340,7 +340,7 @@ export default function Home() {
                   <div className="flex-1">
                     <div className="rounded-2xl rounded-tl-none p-4" style={{ background: "rgba(232,116,138,0.08)", border: "1px solid rgba(232,116,138,0.15)" }}>
                       <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
-                        Let's start simple: <strong style={{ color: "rgba(232,224,208,1)" }}>How long is this adventure?</strong> Europe rewards the unhurried.
+                        I'm not going to overwhelm you with options. First question — <strong style={{ color: "rgba(232,224,208,1)" }}>how long do we have?</strong> Because Europe rewards the unhurried, and you deserve unhurried.
                       </p>
                     </div>
                   </div>
@@ -358,7 +358,7 @@ export default function Home() {
                 <div className="pt-2 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                   <Link href="/build-my-trip">
                     <button className="w-full font-body text-xs tracking-widest uppercase py-2 rounded-xl transition-all" style={{ color: "#e8748a", background: "rgba(232,116,138,0.06)" }}>
-                      Continue the conversation →
+                      Let's talk →
                     </button>
                   </Link>
                 </div>

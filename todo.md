@@ -61,3 +61,8 @@
 - [x] Replace brown/gold badge and day-chips with spring rose/teal palette
 - [x] Rewrite Margaux intro copy in Curtis's voice ("no pre-built tour would work for someone as discerning as you... I've been asked to help")
 - [x] Section background gradient updated to rose → teal (no more brown)
+
+## Phase 6 — Margaux Persona Rewrite
+- [x] Homepage: Rewrite Margaux section — she's already here, Curtis introduced you, peer energy not concierge
+- [x] Homepage: Chat preview bubble rewrites to match peer/empathetic voice
+- [x] Trip builder: Update AI system prompt — Margaux understands ADHD decision style, curated taste, adapts to Melanie's responses
