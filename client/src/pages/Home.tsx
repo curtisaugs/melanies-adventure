@@ -64,6 +64,8 @@ const overviewCards = [
     desc: "Unpack once, drift through castles, vineyards, and medieval towns. Three curated cruise packages from $2,699.",
     href: "/itineraries",
     color: "from-blue-900/30 to-blue-800/10",
+    accentColor: "oklch(0.68 0.12 195)",  // teal
+    iconBg: "rgba(104,196,210,0.12)",
   },
   {
     icon: MapPin,
@@ -72,6 +74,8 @@ const overviewCards = [
     desc: "Lisbon's azulejos, Porto's port wine, Seville's flamenco, and Madrid's world-class art. 10–14 days of wonder.",
     href: "/destinations",
     color: "from-amber-900/30 to-amber-800/10",
+    accentColor: "oklch(0.72 0.18 28)",  // coral
+    iconBg: "rgba(220,100,60,0.12)",
   },
   {
     icon: Plane,
@@ -80,6 +84,8 @@ const overviewCards = [
     desc: "Lavender fields, the Côte d'Azur, and a reunion with Annie in Paris. The art de vivre at its finest.",
     href: "/destinations",
     color: "from-purple-900/30 to-purple-800/10",
+    accentColor: "oklch(0.72 0.12 295)",  // lavender
+    iconBg: "rgba(140,100,200,0.12)",
   },
   {
     icon: GraduationCap,
@@ -88,14 +94,16 @@ const overviewCards = [
     desc: "INSEAD, HEC Paris, IE Madrid, Lisbon MBA — top executive programs. Plus visa pathways and cost of living guides.",
     href: "/grad-schools",
     color: "from-emerald-900/30 to-emerald-800/10",
+    accentColor: "oklch(0.72 0.12 75)",  // gold
+    iconBg: "rgba(180,150,80,0.12)",
   },
 ];
 
 const highlights = [
-  { num: "3", label: "Curated Itineraries" },
-  { num: "6", label: "Destination Cities" },
-  { num: "5", label: "Top Graduate Programs" },
-  { num: "4", label: "Visa Pathways" },
+  { num: "3", label: "Curated Itineraries", color: "oklch(0.72 0.18 28)" },
+  { num: "6", label: "Destination Cities", color: "oklch(0.72 0.12 75)" },
+  { num: "5", label: "Top Graduate Programs", color: "oklch(0.72 0.12 295)" },
+  { num: "4", label: "Visa Pathways", color: "oklch(0.68 0.12 195)" },
 ];
 
 export default function Home() {
@@ -123,12 +131,12 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-3 glass-card-gold px-6 py-3 rounded-full mb-8">
-              <Star size={14} className="text-gold fill-gold" />
-              <span className="font-accent text-sm tracking-[0.2em] uppercase text-gold">
+            <div className="inline-flex items-center gap-3 glass-card-birthday px-6 py-3 rounded-full mb-8">
+              <Star size={14} className="text-rose-pink fill-rose-pink" style={{ color: "oklch(0.78 0.16 355)" }} />
+              <span className="font-accent text-sm tracking-[0.2em] uppercase" style={{ color: "oklch(0.88 0.10 355)" }}>
                 A{" "}
                 <span className="relative inline-block">
-                  <span className="text-gold/50">60th</span>
+                  <span style={{ color: "oklch(0.78 0.16 355 / 0.5)" }}>60th</span>
                   {/* Strikethrough line */}
                   <span
                     className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -153,8 +161,8 @@ export default function Home() {
                       left: "50%",
                       transform: "translateX(-40%) rotate(-8deg)",
                       whiteSpace: "nowrap",
-                      color: "oklch(0.75 0.18 15)",
-                      textShadow: "0 0 16px oklch(0.75 0.18 15 / 0.5)",
+                      color: "oklch(0.82 0.20 28)",
+                      textShadow: "0 0 16px oklch(0.82 0.20 28 / 0.6)",
                     }}
                   >
                     50th!
@@ -162,7 +170,7 @@ export default function Home() {
                 </span>
                 {" "}Birthday to Remember
               </span>
-              <Star size={14} className="text-gold fill-gold" />
+              <Star size={14} style={{ color: "oklch(0.78 0.16 355)", fill: "oklch(0.78 0.16 355)" }} />
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-ivory mb-4 leading-none">
@@ -176,8 +184,8 @@ export default function Home() {
             </p>
 
             {/* Countdown */}
-            <div className="glass-card rounded-2xl p-6 md:p-8 max-w-lg mx-auto mb-10">
-              <p className="font-accent text-xs tracking-[0.2em] uppercase text-gold/70 mb-4">
+            <div className="glass-card rounded-2xl p-6 md:p-8 max-w-lg mx-auto mb-10" style={{ borderColor: "oklch(0.78 0.16 355 / 0.2)" }}>
+              <p className="font-accent text-xs tracking-[0.2em] uppercase mb-4" style={{ color: "oklch(0.78 0.16 355 / 0.8)" }}>
                 Countdown to March 26, 2026
               </p>
               <Countdown />
@@ -185,13 +193,13 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/itineraries">
-                <button className="inline-flex items-center gap-2 bg-gold text-navy font-body font-medium px-6 py-3 rounded-full hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20">
+                <button className="inline-flex items-center gap-2 font-body font-medium px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg" style={{ background: "linear-gradient(135deg, oklch(0.72 0.12 75), oklch(0.72 0.18 28))", color: "oklch(0.10 0.02 240)", boxShadow: "0 4px 20px oklch(0.72 0.18 28 / 0.3)" }}>
                   Explore Itineraries
                   <ArrowRight size={16} />
                 </button>
               </Link>
               <Link href="/destinations">
-                <button className="inline-flex items-center gap-2 glass-card text-ivory font-body px-6 py-3 rounded-full hover:border-gold/30 transition-all duration-300">
+                <button className="inline-flex items-center gap-2 glass-card text-ivory font-body px-6 py-3 rounded-full transition-all duration-300" style={{ borderColor: "oklch(0.72 0.12 295 / 0.4)", color: "oklch(0.82 0.09 295)" }}>
                   Browse Destinations
                 </button>
               </Link>
@@ -210,7 +218,9 @@ export default function Home() {
       <section className="py-12 border-y border-white/8">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {highlights.map(({ num, label }) => (
+            {highlights.map((highlight) => {
+              const { num, label } = highlight;
+              return (
               <motion.div
                 key={label}
                 initial={{ opacity: 0, y: 20 }}
@@ -218,14 +228,15 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="font-display text-4xl md:text-5xl font-light text-gold mb-1">
+                <div className="font-display text-4xl md:text-5xl font-light mb-1" style={{ color: highlight.color }}>
                   {num}
                 </div>
                 <div className="font-accent text-[0.65rem] tracking-[0.15em] uppercase text-muted-foreground">
                   {label}
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
@@ -381,17 +392,17 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
               >
                 <Link href={card.href}>
-                  <div className={`glass-card package-card rounded-2xl p-8 cursor-pointer bg-gradient-to-br ${card.color}`}>
+                  <div className={`glass-card package-card rounded-2xl p-8 cursor-pointer bg-gradient-to-br ${card.color}`} style={{ borderColor: `${card.accentColor.replace(')', ' / 0.25)')}` }}>
                     <div className="flex items-start justify-between mb-4">
-                      <div className="glass-card-gold p-3 rounded-xl">
-                        <card.icon size={22} className="text-gold" />
+                      <div className="p-3 rounded-xl" style={{ background: card.iconBg, border: `1px solid ${card.accentColor.replace(')', ' / 0.3)')}` }}>
+                        <card.icon size={22} style={{ color: card.accentColor }} />
                       </div>
-                      <ArrowRight size={18} className="text-gold/40 mt-1" />
+                      <ArrowRight size={18} style={{ color: `${card.accentColor.replace(')', ' / 0.5)')}` }} className="mt-1" />
                     </div>
                     <h3 className="font-display text-2xl font-light text-ivory mb-1">
                       {card.title}
                     </h3>
-                    <p className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-3">
+                    <p className="font-accent text-xs tracking-[0.15em] uppercase mb-3" style={{ color: `${card.accentColor.replace(')', ' / 0.8)')}` }}>
                       {card.subtitle}
                     </p>
                     <p className="font-body text-sm text-muted-foreground leading-relaxed">
@@ -448,22 +459,22 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/relocation">
-              <div className="glass-card package-card rounded-2xl p-6 cursor-pointer border-gold/10 hover:border-gold/25 transition-all">
-                <p className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-2">Relocation Guide</p>
+              <div className="glass-card package-card rounded-2xl p-6 cursor-pointer transition-all" style={{ borderColor: "oklch(0.72 0.18 28 / 0.2)" }}>
+                <p className="font-accent text-xs tracking-[0.15em] uppercase mb-2" style={{ color: "oklch(0.72 0.18 28 / 0.9)" }}>Relocation Guide</p>
                 <h3 className="font-display text-xl font-light text-ivory mb-2">Portugal D8 Visa</h3>
                 <p className="font-body text-sm text-muted-foreground">The easiest path for remote workers. Earn 4× Portugal's minimum wage and you qualify. Lisbon awaits.</p>
               </div>
             </Link>
             <Link href="/grad-schools">
-              <div className="glass-card package-card rounded-2xl p-6 cursor-pointer border-gold/10 hover:border-gold/25 transition-all">
-                <p className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-2">Graduate Schools</p>
+              <div className="glass-card package-card rounded-2xl p-6 cursor-pointer transition-all" style={{ borderColor: "oklch(0.72 0.12 295 / 0.2)" }}>
+                <p className="font-accent text-xs tracking-[0.15em] uppercase mb-2" style={{ color: "oklch(0.72 0.12 295 / 0.9)" }}>Graduate Schools</p>
                 <h3 className="font-display text-xl font-light text-ivory mb-2">The Lisbon MBA</h3>
                 <p className="font-body text-sm text-muted-foreground">€39,500 for an Executive MBA with MIT Sloan immersion. Triple Crown accredited. The best value in Europe.</p>
               </div>
             </Link>
             <Link href="/flights">
-              <div className="glass-card package-card rounded-2xl p-6 cursor-pointer border-gold/10 hover:border-gold/25 transition-all">
-                <p className="font-accent text-xs tracking-[0.15em] uppercase text-gold/70 mb-2">Flights from LAX</p>
+              <div className="glass-card package-card rounded-2xl p-6 cursor-pointer transition-all" style={{ borderColor: "oklch(0.68 0.12 195 / 0.2)" }}>
+                <p className="font-accent text-xs tracking-[0.15em] uppercase mb-2" style={{ color: "oklch(0.68 0.12 195 / 0.9)" }}>Flights from LAX</p>
                 <h3 className="font-display text-xl font-light text-ivory mb-2">Paris from $923</h3>
                 <p className="font-body text-sm text-muted-foreground">Round-trip to Paris CDG from Los Angeles. See Annie first, then explore. Open-jaw tickets recommended.</p>
               </div>

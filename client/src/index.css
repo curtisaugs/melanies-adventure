@@ -62,6 +62,15 @@
   --navy-light: oklch(0.28 0.04 240);
   --ivory: oklch(0.97 0.01 80);
   --sage: oklch(0.62 0.07 155);
+  /* Celebratory palette — Melanie's courageous colors */
+  --champagne: oklch(0.88 0.08 55);       /* warm champagne — toasting */
+  --coral: oklch(0.72 0.18 28);           /* Riviera coral — vibrant, warm */
+  --coral-light: oklch(0.82 0.14 28);     /* soft coral blush */
+  --lavender: oklch(0.72 0.12 295);       /* Provençal lavender */
+  --lavender-light: oklch(0.82 0.09 295); /* soft lavender mist */
+  --rose-pink: oklch(0.78 0.16 355);      /* birthday rose pink */
+  --rose-pink-light: oklch(0.88 0.10 355);/* blush */
+  --teal: oklch(0.68 0.12 195);           /* Mediterranean teal */
 }
 
 :root {
@@ -177,6 +186,33 @@
     box-shadow: 0 8px 32px oklch(0 0 0 / 0.4), inset 0 1px 0 oklch(0.72 0.12 75 / 0.2);
   }
 
+  /* Birthday badge — champagne pink glass */
+  .glass-card-birthday {
+    background: oklch(0.22 0.06 355 / 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.78 0.16 355 / 0.5);
+    box-shadow: 0 8px 32px oklch(0.78 0.16 355 / 0.15), inset 0 1px 0 oklch(0.88 0.10 355 / 0.2);
+  }
+
+  /* Coral accent glass — Riviera energy */
+  .glass-card-coral {
+    background: oklch(0.20 0.06 28 / 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.72 0.18 28 / 0.45);
+    box-shadow: 0 8px 32px oklch(0.72 0.18 28 / 0.15), inset 0 1px 0 oklch(0.82 0.14 28 / 0.2);
+  }
+
+  /* Lavender accent glass — Provençal */
+  .glass-card-lavender {
+    background: oklch(0.18 0.06 295 / 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.72 0.12 295 / 0.45);
+    box-shadow: 0 8px 32px oklch(0.72 0.12 295 / 0.15), inset 0 1px 0 oklch(0.82 0.09 295 / 0.2);
+  }
+
   /* Gold text */
   .text-gold {
     color: oklch(0.72 0.12 75);
@@ -184,6 +220,15 @@
   .text-gold-light {
     color: oklch(0.85 0.09 75);
   }
+
+  /* Celebratory accent text colors */
+  .text-coral { color: oklch(0.72 0.18 28); }
+  .text-coral-light { color: oklch(0.82 0.14 28); }
+  .text-lavender { color: oklch(0.72 0.12 295); }
+  .text-lavender-light { color: oklch(0.82 0.09 295); }
+  .text-rose-pink { color: oklch(0.78 0.16 355); }
+  .text-champagne { color: oklch(0.88 0.08 55); }
+  .text-teal { color: oklch(0.68 0.12 195); }
 
   /* Gold border */
   .border-gold {
@@ -260,6 +305,31 @@
     transform: translateY(-4px);
     box-shadow: 0 16px 48px oklch(0 0 0 / 0.4), 0 0 0 1px oklch(0.72 0.12 75 / 0.2);
   }
+
+  /* Gradient text utility */
+  .text-gradient-celebration {
+    background: linear-gradient(135deg, oklch(0.72 0.12 75), oklch(0.78 0.16 355), oklch(0.72 0.18 28));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Coral CTA button */
+  .btn-coral {
+    background: linear-gradient(135deg, oklch(0.72 0.18 28), oklch(0.65 0.20 20));
+    color: oklch(0.97 0.01 80);
+    transition: all 0.3s ease;
+  }
+  .btn-coral:hover {
+    background: linear-gradient(135deg, oklch(0.78 0.18 28), oklch(0.72 0.20 20));
+    box-shadow: 0 8px 24px oklch(0.72 0.18 28 / 0.4);
+    transform: translateY(-1px);
+  }
+
+  /* Celebration glow effects */
+  .glow-coral { box-shadow: 0 0 20px oklch(0.72 0.18 28 / 0.3); }
+  .glow-lavender { box-shadow: 0 0 20px oklch(0.72 0.12 295 / 0.3); }
+  .glow-gold { box-shadow: 0 0 20px oklch(0.72 0.12 75 / 0.3); }
 
   /* Scrollbar */
   ::-webkit-scrollbar {
