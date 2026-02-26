@@ -56,3 +56,8 @@
 - [x] Graduate Schools page: per-school accent colors, colorful CTA buttons, lavender comparison header
 - [x] Relocation page: teal for visa section, coral for cost comparison, lavender for expat community
 - [x] Flights page: coral for flights, teal for open-jaw, lavender for miles, rose for packing
+
+## Phase 5 — Margaux Section Polish
+- [x] Replace brown/gold badge and day-chips with spring rose/teal palette
+- [x] Rewrite Margaux intro copy in Curtis's voice ("no pre-built tour would work for someone as discerning as you... I've been asked to help")
+- [x] Section background gradient updated to rose → teal (no more brown)

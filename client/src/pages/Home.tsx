@@ -269,7 +269,7 @@ export default function Home() {
 
       {/* Margaux Feature Section — elevated above overview cards */}
       <section className="py-16 pb-8 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(232,116,138,0.06) 0%, rgba(201,168,76,0.04) 50%, rgba(10,15,30,0) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(232,116,138,0.07) 0%, rgba(100,210,200,0.04) 50%, rgba(10,15,30,0) 100%)" }} />
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left: Margaux intro */}
@@ -279,17 +279,20 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-2 glass-card-gold px-4 py-2 rounded-full mb-5">
-                <Sparkles size={13} className="text-gold" />
-                <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold">Your Personal Concierge</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5" style={{ background: "rgba(232,116,138,0.12)", border: "1px solid rgba(232,116,138,0.3)" }}>
+                <Sparkles size={13} style={{ color: "#e8748a" }} />
+                <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "#e8748a" }}>Your Personal Concierge</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-3 leading-tight">
                 Meet <span className="italic" style={{ color: "#e8748a" }}>Margaux</span>
               </h2>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
-                None of the pre-built packages quite right? Margaux is your AI travel concierge — warm, witty, and deeply knowledgeable about European travel. She'll ask you a few smart questions, then build you a fully costed, day-by-day itinerary tailored exactly to you.
+                We know that no pre-built tour would ever quite work for someone as discerning as you — and while we have them at the ready, we thought it better to let you pick. So I've been asked to help.
               </p>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6" style={{ fontStyle: "italic", color: "rgba(232,224,208,0.5)" }}>
+              <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
+                Meet Margaux — your AI travel concierge. Warm, witty, and deeply knowledgeable about European travel. She'll ask you a few smart questions, then build you a fully costed, day-by-day itinerary tailored exactly to you.
+              </p>
+              <p className="font-body text-sm leading-relaxed mb-6" style={{ fontStyle: "italic", color: "rgba(232,224,208,0.45)" }}>
                 She'll also gently remind you that driving from Bergamo to Positano is not quite the same as a road trip from LA to Tempe — even if the miles look similar on a map.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -301,7 +304,7 @@ export default function Home() {
                   </button>
                 </Link>
                 <Link href="/itineraries">
-                  <button className="inline-flex items-center gap-2 glass-card font-body text-ivory px-6 py-3 rounded-full text-sm hover:border-gold/30 transition-all duration-300">
+                  <button className="inline-flex items-center gap-2 glass-card font-body text-ivory px-6 py-3 rounded-full text-sm hover:border-rose/30 transition-all duration-300">
                     Browse Pre-Built Trips
                   </button>
                 </Link>
@@ -346,7 +349,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-2 pl-12">
                   {["8 Days", "10 Days", "12 Days", "14 Days"].map((d) => (
                     <Link key={d} href="/build-my-trip">
-                      <span className="font-body text-xs px-3 py-1.5 rounded-full cursor-pointer transition-all" style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.25)", color: "#c9a84c" }}>
+                      <span className="font-body text-xs px-3 py-1.5 rounded-full cursor-pointer transition-all" style={{ background: "rgba(100,210,200,0.1)", border: "1px solid rgba(100,210,200,0.3)", color: "oklch(0.75 0.12 185)" }}>
                         {d}
                       </span>
                     </Link>
