@@ -8,6 +8,7 @@ import Flights from "./pages/Flights";
 import RhineCruise from "./pages/RhineCruise";
 import TripBuilder from "./pages/TripBuilder";
 
+// v2 — image fixes + home page restructure
 function App() {
   return (
     <Switch>
