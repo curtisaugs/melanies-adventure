@@ -442,33 +442,99 @@ export default function ExtendedStay() {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
 
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-950/30 via-background to-lavender-950/20" />
+      {/* Hero — Margaux Overview */}
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        {/* Subtle background */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, oklch(0.12 0.04 240 / 0.8) 0%, oklch(0.10 0.02 240) 60%, oklch(0.13 0.05 295 / 0.4) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 20% 50%, oklch(0.68 0.12 195 / 0.06) 0%, transparent 60%)" }} />
+
         <div className="relative container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full"
-              style={{ background: "oklch(0.68 0.12 195 / 0.15)", border: "1px solid oklch(0.68 0.12 195 / 0.3)" }}>
-              <GraduationCap size={13} className="text-teal-300" />
-              <span className="font-accent text-xs tracking-[0.2em] uppercase text-teal-300">
+          <div className="max-w-4xl">
+
+            {/* Page label */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full"
+              style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)" }}
+            >
+              <GraduationCap size={13} style={{ color: "#c9a84c" }} />
+              <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "#c9a84c" }}>
                 Extended Stay Through Study
               </span>
-            </div>
-            <h1 className="font-display text-5xl md:text-7xl font-light text-ivory mb-4 leading-none">
-              Beyond <span className="text-teal-300 italic">90 Days</span>
-            </h1>
-            <p className="font-display text-xl md:text-2xl font-light text-ivory/60 italic mb-6">
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-display font-light leading-none mb-4"
+              style={{ fontSize: "clamp(3rem, 8vw, 5.5rem)", color: "#e8e0d0" }}
+            >
+              Beyond{" "}
+              <span style={{ color: "#c9a84c", fontStyle: "italic" }}>90 Days</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="font-display font-light italic mb-10"
+              style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)", color: "rgba(232,224,208,0.5)" }}
+            >
               The practical answer to the Schengen limit
-            </p>
-            <p className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl">
-              Every American in Europe eventually hits the same wall: 90 days, then you have to leave. A student visa changes that. Enroll in a language school, an accredited wellness program, or a culinary academy for 20 hours a week, and you can stay legally for a year or more. The courses are real. The visas are real. And the cost is far lower than most people expect.
-            </p>
-          </motion.div>
+            </motion.p>
+
+            {/* Margaux overview card — matches TripBuilder intro card exactly */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="rounded-2xl p-6 mb-10"
+              style={{ background: "rgba(232,116,138,0.05)", border: "1px solid rgba(232,116,138,0.18)" }}
+            >
+              <div className="flex items-start gap-4">
+                {/* Margaux avatar */}
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-sm"
+                  style={{ background: "rgba(232,116,138,0.15)", border: "1px solid rgba(232,116,138,0.3)" }}
+                >
+                  <Sparkles size={18} style={{ color: "#e8748a" }} />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "#e8748a", fontFamily: "'Montserrat', sans-serif" }}>Margaux</p>
+                  <p className="text-sm leading-relaxed mb-3" style={{ fontFamily: "'Montserrat', sans-serif", color: "rgba(232,224,208,0.8)", lineHeight: 1.8 }}>
+                    Here's the thing nobody tells you before you fall in love with Europe: ninety days goes fast. Embarrassingly fast. One minute you're in Lisbon watching the light hit the Tagus at golden hour, and the next you're doing math in your head about when you have to leave.
+                  </p>
+                  <p className="text-sm leading-relaxed mb-4" style={{ fontFamily: "'Montserrat', sans-serif", color: "rgba(232,224,208,0.8)", lineHeight: 1.8 }}>
+                    A student visa fixes that. Enroll in a language school — twenty hours a week, which is four mornings — and you can stay legally for a year. The courses are real. The visas are real. And the cost is far lower than most people expect. I've broken down three countries below: Portugal, Spain, and France. Each one has a different visa, different qualifying programs, and a different reason it might be the right fit for you.
+                  </p>
+                  {/* Quick-scan summary chips */}
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { flag: "🇵🇹", label: "Portugal D4", note: "Path to PR · ~$2,260/mo", color: "rgba(94,234,212,0.15)", border: "rgba(94,234,212,0.3)", text: "rgb(94,234,212)" },
+                      { flag: "🇪🇸", label: "Spain Type D", note: "Cheapest school · ~$2,180/mo", color: "rgba(251,146,60,0.12)", border: "rgba(251,146,60,0.3)", text: "rgb(251,146,60)" },
+                      { flag: "🇫🇷", label: "France VLS-TS", note: "Annie is here · ~$3,960/mo Paris", color: "rgba(196,181,253,0.12)", border: "rgba(196,181,253,0.3)", text: "rgb(196,181,253)" },
+                    ].map((chip) => (
+                      <div
+                        key={chip.label}
+                        className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs"
+                        style={{ background: chip.color, border: `1px solid ${chip.border}` }}
+                      >
+                        <span>{chip.flag}</span>
+                        <span className="font-semibold" style={{ color: chip.text, fontFamily: "'Montserrat', sans-serif" }}>{chip.label}</span>
+                        <span style={{ color: "rgba(232,224,208,0.55)", fontFamily: "'Montserrat', sans-serif" }}>·</span>
+                        <span style={{ color: "rgba(232,224,208,0.55)", fontFamily: "'Montserrat', sans-serif" }}>{chip.note}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
