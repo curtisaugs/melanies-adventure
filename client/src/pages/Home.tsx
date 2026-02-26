@@ -6,7 +6,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Plane, Ship, GraduationCap, MapPin, ArrowRight, Star } from "lucide-react";
+import { Plane, Ship, GraduationCap, MapPin, ArrowRight, Star, Sparkles } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -371,6 +371,52 @@ export default function Home() {
               </div>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Build My Trip CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(10,15,30,0) 60%)" }} />
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 glass-card-gold px-4 py-2 rounded-full mb-6">
+              <Sparkles size={14} className="text-gold" />
+              <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold">New Feature</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-light text-ivory mb-4 leading-tight">
+              None of these quite right?<br />
+              <span className="text-gold italic">Build your own.</span>
+            </h2>
+            <p className="font-body text-base text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
+              Meet Margaux — your personal European travel concierge. Answer a few questions about how long you want to go, where you're drawn, what matters most, and your budget. She'll craft a fully costed, day-by-day itinerary you can save and share.
+            </p>
+            <div className="glass-card rounded-2xl p-6 mb-8 max-w-lg mx-auto text-left">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(232,116,138,0.15)" }}>
+                  <Sparkles size={18} style={{ color: "#e8748a" }} />
+                </div>
+                <div>
+                  <p className="font-accent text-xs tracking-widest uppercase mb-2" style={{ color: "#e8748a" }}>Margaux, Your Travel Concierge</p>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                    "Bonjour, Melanie! Curtis asked me to help you design the European adventure of your dreams — or as he put it, your '50th birthday trip.' 😉 I'll ask you a few questions, then build you a fully costed, day-by-day itinerary you can save and share."
+                  </p>
+                </div>
+              </div>
+            </div>
+            <Link href="/build-my-trip">
+              <button className="inline-flex items-center gap-3 bg-gold text-navy font-body font-semibold px-8 py-4 rounded-full hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 text-sm tracking-widest uppercase">
+                <Sparkles size={16} />
+                Start Building with Margaux
+                <ArrowRight size={16} />
+              </button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 

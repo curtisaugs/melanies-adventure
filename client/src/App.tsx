@@ -11,8 +11,10 @@ import Relocation from "./pages/Relocation";
 import GradSchools from "./pages/GradSchools";
 import Flights from "./pages/Flights";
 import RhineCruise from "./pages/RhineCruise";
-
+import TripBuilder from "./pages/TripBuilder";
+import SharedItinerary from "./pages/SharedItinerary";
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -22,6 +24,8 @@ function Router() {
       <Route path={"/grad-schools"} component={GradSchools} />
       <Route path={"/flights"} component={Flights} />
       <Route path={"/rhine-cruise"} component={RhineCruise} />
+      <Route path={"/build-my-trip"} component={TripBuilder} />
+      <Route path={"/trip/:shareId"} component={SharedItinerary} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

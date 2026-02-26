@@ -73,12 +73,14 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Birthday badge */}
-          <div className="hidden lg:flex items-center gap-2 glass-card-gold px-3 py-1.5 rounded-full">
-            <span className="text-gold text-xs font-accent tracking-widest uppercase">
-              March 26, 2026
-            </span>
-          </div>
+          {/* Build My Trip CTA */}
+          <Link href="/build-my-trip">
+            <div className="hidden lg:flex items-center gap-2 cursor-pointer px-4 py-2 rounded-full transition-all hover:opacity-90" style={{ background: "oklch(0.72 0.12 75)", color: "oklch(0.09 0.015 260)" }}>
+              <span className="text-xs font-accent tracking-widest uppercase font-semibold">
+                ✦ Build My Trip
+              </span>
+            </div>
+          </Link>
 
           {/* Mobile menu button */}
           <button

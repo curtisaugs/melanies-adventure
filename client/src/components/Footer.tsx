@@ -14,8 +14,28 @@ export default function Footer() {
             <p className="font-display text-xl font-light text-ivory/80">
               Melanie's European Adventure
             </p>
-            <p className="text-sm text-muted-foreground mt-1 font-body">
-              A 60th Birthday Journey of Celebration & Discovery
+            <p className="text-sm text-muted-foreground mt-1 font-body flex items-center gap-1.5 flex-wrap">
+              A{" "}
+              <span className="relative inline-flex items-center">
+                <span style={{ color: 'rgba(232,224,208,0.35)', textDecoration: 'line-through', textDecorationColor: 'rgba(201,168,76,0.6)', textDecorationThickness: '2px' }}>60th</span>
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '-14px',
+                    left: '50%',
+                    transform: 'translateX(-40%) rotate(-6deg)',
+                    fontFamily: "'Caveat', cursive",
+                    fontSize: '0.95rem',
+                    color: '#e8748a',
+                    whiteSpace: 'nowrap',
+                    lineHeight: 1,
+                    pointerEvents: 'none',
+                  }}
+                >
+                  50th!
+                </span>
+              </span>
+              {" "}Birthday Journey of Celebration & Discovery
             </p>
           </div>
 

@@ -159,13 +159,13 @@ const visas = [
 ];
 
 const costComparison = [
-  { city: "Las Vegas", country: "USA", rent1br: "$1,400", dining: "$50", total: "$4,500", flag: "🇺🇸" },
-  { city: "Lisbon", country: "Portugal", rent1br: "€900", dining: "€25", total: "€2,800", flag: "🇵🇹" },
-  { city: "Porto", country: "Portugal", rent1br: "€700", dining: "€20", total: "€2,200", flag: "🇵🇹" },
-  { city: "Barcelona", country: "Spain", rent1br: "€1,100", dining: "€30", total: "€3,200", flag: "🇪🇸" },
-  { city: "Seville", country: "Spain", rent1br: "€800", dining: "€25", total: "€2,600", flag: "🇪🇸" },
-  { city: "Nice", country: "France", rent1br: "€1,300", dining: "€40", total: "€3,800", flag: "🇫🇷" },
-  { city: "Paris", country: "France", rent1br: "€1,800", dining: "€45", total: "€5,200", flag: "🇫🇷" },
+  { city: "Las Vegas", country: "USA", rent1br: "$1,400", dining: "$50", total: "$4,500", totalUSD: 4500, flag: "🇺🇸" },
+  { city: "Lisbon", country: "Portugal", rent1br: "€900", dining: "€25", total: "~$2,950", totalUSD: 2950, flag: "🇵🇹" },
+  { city: "Porto", country: "Portugal", rent1br: "€700", dining: "€20", total: "~$2,320", totalUSD: 2320, flag: "🇵🇹" },
+  { city: "Barcelona", country: "Spain", rent1br: "€1,100", dining: "€30", total: "~$3,370", totalUSD: 3370, flag: "🇪🇸" },
+  { city: "Seville", country: "Spain", rent1br: "€800", dining: "€25", total: "~$2,740", totalUSD: 2740, flag: "🇪🇸" },
+  { city: "Nice", country: "France", rent1br: "€1,300", dining: "€40", total: "~$4,000", totalUSD: 4000, flag: "🇫🇷" },
+  { city: "Paris", country: "France", rent1br: "€1,800", dining: "€45", total: "~$5,480", totalUSD: 5480, flag: "🇫🇷" },
 ];
 
 export default function Relocation() {
@@ -339,7 +339,7 @@ export default function Relocation() {
                 <tbody>
                   {costComparison.map((row, i) => {
                     const lvTotal = 4500;
-                    const rowTotal = parseFloat(row.total.replace(/[€$,]/g, ""));
+                    const rowTotal = row.totalUSD;
                     const diff = Math.round(((rowTotal - lvTotal) / lvTotal) * 100);
                     const isLV = row.city === "Las Vegas";
                     return (

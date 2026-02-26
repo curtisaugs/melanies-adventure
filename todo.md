@@ -1,0 +1,42 @@
+# Melanie's European Adventure — TODO
+
+## Core Site
+- [x] Home page with hero, countdown, overview cards, Rhine teaser, quick links
+- [x] Itineraries page with 3 packages + comparison table
+- [x] Destinations page with 6 city guides
+- [x] Relocation page with 4 visa pathways + cost of living comparison
+- [x] Graduate Schools page with 5 EMBA programs
+- [x] Flights & Logistics page (LAX departures)
+- [x] Rhine Cruise day-by-day detail page (/rhine-cruise)
+- [x] Navigation with Build My Trip CTA button
+- [x] Footer with 60th→50th strikethrough gag
+
+## Design & Polish
+- [x] Midnight navy + champagne gold theme
+- [x] Cormorant Garamond display font
+- [x] Montserrat body font
+- [x] 60th strikethrough with handwritten 50th (hero badge)
+- [x] 60th strikethrough in footer subtitle
+- [x] Nav bar opacity increased for legibility
+- [x] Cost comparison table fixed (USD-equivalent values)
+- [x] All flights corrected to LAX (Los Angeles)
+
+## AI Trip Builder (Margaux)
+- [x] Full-stack upgrade (db, server, user)
+- [x] saved_itineraries database table
+- [x] tripBuilder tRPC router (generate, save, getByShareId)
+- [x] Margaux AI concierge persona + LLM prompt
+- [x] Multi-step wizard UI (8 questions with clickable chips)
+- [x] AI itinerary generation with day-by-day output
+- [x] Save & shareable link feature
+- [x] SharedItinerary page (/trip/:shareId)
+- [x] Build My Trip section on homepage
+- [x] Vitest tests for trip builder (7 tests passing)
+
+## Future Ideas
+- [ ] "From Curtis" personal letter section on homepage
+- [ ] Paris with Annie dedicated mini-guide section
+- [ ] Iberian Explorer day-by-day detail page
+- [ ] French Art de Vivre day-by-day detail page
+- [ ] Interactive neighborhood deep-dive (Lisbon, Nice, Paris)
+- [ ] Printable PDF summary of all itineraries
