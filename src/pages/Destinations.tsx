@@ -24,7 +24,7 @@ interface City {
 const cities: City[] = [
   {
     id: "lisbon", country: "Portugal", flag: "🇵🇹", name: "Lisbon", tagline: "Sun-drenched hills, azulejo tiles, and Europe's most livable capital",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/QqhUTKULhhpOpCCS.jpg",
     region: "Iberian Peninsula", costIndex: "$$",
     highlights: ["Alfama district & São Jorge Castle", "Belém Tower & Jerónimos Monastery", "LX Factory creative market", "Sintra day trip (UNESCO palaces)", "Tram 28 through historic neighborhoods", "Time Out Market food hall"],
     food: ["Pastéis de nata at Pastéis de Belém", "Bacalhau (salt cod) 1,001 ways", "Bifanas at Cervejaria Ramiro", "Ginjinha cherry liqueur in Rossio", "Wine tasting in Setúbal Peninsula", "Taberna da Rua das Flores for petiscos"],
@@ -42,7 +42,7 @@ const cities: City[] = [
   },
   {
     id: "seville", country: "Spain", flag: "🇪🇸", name: "Seville", tagline: "Flamenco, orange blossoms, and the soul of Andalusia",
-    image: "https://images.unsplash.com/photo-1559564484-a9b4b8f0a0d0?w=800&q=80",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/QbtyLQhSBhLZCALy.jpg",
     region: "Iberian Peninsula", costIndex: "$",
     highlights: ["Real Alcázar (Game of Thrones filming location)", "Seville Cathedral & La Giralda tower", "Barrio de Santa Cruz (Jewish quarter)", "Flamenco show at Casa de la Memoria", "Triana neighborhood tapas crawl", "Plaza de España at golden hour"],
     food: ["Tapas at El Rinconcillo (Spain's oldest bar, 1670)", "Jamón ibérico de bellota at Bodega Santa Cruz", "Pescaíto frito (fried fish) in Triana", "Salmorejo (Córdoba-style gazpacho)", "Manzanilla sherry from Sanlúcar", "Churros con chocolate at Bar El Comercio"],
@@ -60,7 +60,7 @@ const cities: City[] = [
   },
   {
     id: "nice", country: "France", flag: "🇫🇷", name: "Nice", tagline: "The Côte d'Azur's crown jewel — Mediterranean glamour meets Provençal soul",
-    image: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800&q=80",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/AUfcFUtTPMnasGIi.jpg",
     region: "Southern France", costIndex: "$$$",
     highlights: ["Promenade des Anglais at sunrise", "Cours Saleya flower & food market", "Vieux-Nice (Old Town) labyrinth", "Monaco day trip (30 min by train)", "Eze village perched above the sea", "MAMAC contemporary art museum"],
     food: ["Socca (chickpea pancake) at Chez René Socca", "Salade niçoise at La Merenda", "Pissaladière (onion & anchovy tart)", "Bouillabaisse in Antibes", "Rosé from Provence vineyards", "Pan bagnat (Nice's iconic sandwich)"],
@@ -69,7 +69,7 @@ const cities: City[] = [
   },
   {
     id: "paris", country: "France", flag: "🇫🇷", name: "Paris", tagline: "Annie & Thomas are already here — and the city of light never disappoints",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/AUalUDGvKUnmAKsA.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/mnsmwLEpWbXWTGpI.jpg",
     region: "Northern France", costIndex: "$$$",
     highlights: ["Annie & Thomas's neighborhood exploration", "Musée d'Orsay & the Louvre", "Le Marais — galleries, falafel, fashion", "Montmartre & Sacré-Cœur at dawn", "INSEAD & HEC Paris campus visits (30 min by RER)", "Canal Saint-Martin Sunday stroll"],
     food: ["Croissants at Du Pain et des Idées", "Steak frites at Le Relais de l'Entrecôte", "Natural wine at Septime Cave", "Cheese tasting at Fromagerie Laurent Dubois", "Brasserie classics at Bofinger", "Dinner at Annie & Thomas's favorite local"],
@@ -79,7 +79,7 @@ const cities: City[] = [
   // ITALY
   {
     id: "florence", country: "Italy", flag: "🇮🇹", name: "Florence", tagline: "The cradle of the Renaissance — art, architecture, and the world's best bistecca",
-    image: "https://images.unsplash.com/photo-1541370976299-4d24be63e9d3?w=800&q=80",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/XGdwiHIbukkHkQFK.jpg",
     region: "Italy", costIndex: "$$",
     highlights: ["Uffizi Gallery (Botticelli's Birth of Venus)", "Duomo & Brunelleschi's dome climb", "Ponte Vecchio at golden hour", "Oltrarno artisan quarter", "Chianti wine country day trip", "Piazzale Michelangelo panoramic view"],
     food: ["Bistecca alla Fiorentina at Buca Mario", "Lampredotto (tripe sandwich) at Nerbone in Mercato Centrale", "Gelato at Gelateria dei Neri", "Ribollita (Tuscan bread soup) at Trattoria Mario", "Chianti Classico wine tasting in Greve", "Truffle dishes at Buca dell'Orafo"],

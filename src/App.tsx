@@ -18,6 +18,7 @@ function App() {
       <Route path="/grad-schools" component={GradSchools} />
       <Route path="/flights" component={Flights} />
       <Route path="/rhine-cruise" component={RhineCruise} />
+      <Route path="/build-my-trip" component={TripBuilder} />
       <Route path="/trip-builder" component={TripBuilder} />
       <Route>
         <div className="min-h-screen flex items-center justify-center">

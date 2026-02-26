@@ -50,10 +50,42 @@ function Countdown() {
 }
 
 const overviewCards = [
-  { icon: Ship, title: "River Cruises", subtitle: "Rhine & Danube", desc: "Unpack once, drift through castles, vineyards, and medieval towns. Three curated cruise packages from $4,349.", href: "/itineraries", color: "from-blue-900/30 to-blue-800/10" },
-  { icon: MapPin, title: "Iberian Explorer", subtitle: "Spain & Portugal", desc: "Lisbon's azulejos, Porto's port wine, Seville's flamenco, and Madrid's world-class art. 10–14 days of wonder.", href: "/destinations", color: "from-amber-900/30 to-amber-800/10" },
-  { icon: Plane, title: "Southern France", subtitle: "Provence & Riviera", desc: "Lavender fields, the Côte d'Azur, and a reunion with Annie in Paris. The art de vivre at its finest.", href: "/destinations", color: "from-purple-900/30 to-purple-800/10" },
-  { icon: GraduationCap, title: "The Next Chapter", subtitle: "Graduate Schools & Relocation", desc: "INSEAD, HEC Paris, IE Madrid, Lisbon MBA — top executive programs. Plus visa pathways and cost of living guides.", href: "/grad-schools", color: "from-emerald-900/30 to-emerald-800/10" },
+  {
+    icon: Ship,
+    title: "Rhine River Cruise",
+    subtitle: "Basel → Amsterdam",
+    desc: "Unpack once, drift through medieval castles, terraced vineyards, and charming villages. AmaWaterways from $4,349. Your birthday falls on the March 26 departure.",
+    href: "/itineraries",
+    color: "from-blue-900/30 to-blue-800/10",
+    tag: "All-Inclusive Luxury",
+  },
+  {
+    icon: MapPin,
+    title: "Iberian Explorer",
+    subtitle: "Lisbon → Porto → Seville → Madrid",
+    desc: "Azulejo tiles, port wine, flamenco, and the Prado. 10–14 days of self-guided boutique travel through the Iberian Peninsula. From ~$3,500.",
+    href: "/itineraries",
+    color: "from-amber-900/30 to-amber-800/10",
+    tag: "Self-Guided Boutique",
+  },
+  {
+    icon: Plane,
+    title: "French Art de Vivre",
+    subtitle: "Nice → Provence → Lyon → Paris",
+    desc: "The Côte d'Azur, lavender fields, Lyon's bouchons, and a reunion with Annie in Paris. The art de vivre at its finest. From ~$3,200.",
+    href: "/itineraries",
+    color: "from-purple-900/30 to-purple-800/10",
+    tag: "Cultural Immersion",
+  },
+  {
+    icon: GraduationCap,
+    title: "The Next Chapter",
+    subtitle: "Graduate Schools & Relocation",
+    desc: "INSEAD, HEC Paris, IE Madrid, Lisbon MBA — top executive programs. Plus visa pathways, cost of living guides, and PropTech ecosystem maps.",
+    href: "/grad-schools",
+    color: "from-emerald-900/30 to-emerald-800/10",
+    tag: "Deep Research",
+  },
 ];
 
 const highlights = [
@@ -80,8 +112,8 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }}>
             {/* Birthday badge with 60th→50th gag */}
             <div className="inline-flex items-center gap-3 glass-card-gold px-7 py-3 rounded-full mb-8">
-              <Star size={14} className="text-gold fill-gold" style={{ color: "var(--gold)" }} />
-              <span className="font-accent text-sm tracking-[0.2em] uppercase text-gold" style={{ color: "var(--gold)" }}>
+              <Star size={14} style={{ color: "var(--gold)" }} />
+              <span className="font-accent text-sm tracking-[0.2em] uppercase" style={{ color: "var(--gold)" }}>
                 A{" "}
                 <span className="relative inline-block">
                   <span style={{ color: "rgba(180,150,80,0.45)", fontSize: "1em" }}>60th</span>
@@ -133,7 +165,7 @@ export default function Home() {
                 </button>
               </Link>
               <Link href="/destinations">
-                <button className="inline-flex items-center gap-2 glass-card font-body px-6 py-3 rounded-full transition-all duration-300 text-ivory"
+                <button className="inline-flex items-center gap-2 glass-card font-body px-6 py-3 rounded-full transition-all duration-300"
                   style={{ color: "var(--ivory)" }}>
                   Browse Destinations
                 </button>
@@ -186,16 +218,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Margaux — AI Trip Builder (Prominent Feature) */}
-      <section className="py-20" style={{ background: "rgba(255,255,255,0.02)" }}>
+      {/* ── SECTION 1: The Four Pre-Built Packages ── */}
+      <section className="py-8 pb-20" style={{ background: "rgba(255,255,255,0.02)" }}>
         <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} className="text-center mb-12">
+            <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "var(--gold)" }}>
+              Curtis's Curated Selection
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mt-2">
+              Four Ways to <span style={{ color: "var(--gold)", fontStyle: "italic" }}>Celebrate</span>
+            </h2>
+            <p className="font-body text-sm max-w-xl mx-auto mt-4 leading-relaxed" style={{ color: "var(--muted)" }}>
+              Each package has been researched and built with your birthday, your career, and your next chapter in mind. Browse them — and if none of them are quite right, there's one more option below.
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {overviewCards.map((card, i) => (
+              <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <Link href={card.href}>
+                  <div className={`glass-card package-card rounded-2xl p-8 cursor-pointer bg-gradient-to-br ${card.color} h-full`}>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="glass-card-gold p-3 rounded-xl">
+                        <card.icon size={22} style={{ color: "var(--gold)" }} />
+                      </div>
+                      <span className="glass-card-gold px-2.5 py-1 rounded-full font-accent text-[0.6rem] tracking-widest uppercase"
+                        style={{ color: "var(--gold)" }}>{card.tag}</span>
+                    </div>
+                    <h3 className="font-display text-2xl font-light text-ivory mb-1">{card.title}</h3>
+                    <p className="font-accent text-xs tracking-[0.15em] uppercase mb-3" style={{ color: "rgba(180,150,80,0.7)" }}>{card.subtitle}</p>
+                    <p className="font-body text-sm leading-relaxed mb-4" style={{ color: "var(--muted)" }}>{card.desc}</p>
+                    <div className="flex items-center gap-1 mt-auto" style={{ color: "rgba(180,150,80,0.6)" }}>
+                      <span className="font-body text-xs">Explore</span>
+                      <ArrowRight size={12} />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 2: Rhine Teaser (full-bleed hook) ── */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('${RHINE_IMG}')` }} />
+        <div className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, rgba(6,8,20,0.9) 0%, rgba(6,8,20,0.6) 50%, rgba(6,8,20,0.3) 100%)" }} />
+        <div className="relative z-10 container">
+          <div className="max-w-xl">
+            <span className="font-accent text-xs tracking-[0.2em] uppercase block mb-4" style={{ color: "var(--gold)" }}>
+              Featured Package
+            </span>
+            <h2 className="font-display text-5xl md:text-6xl font-light text-ivory mb-4 leading-tight">
+              The Rhine<br />
+              <span style={{ color: "var(--gold)", fontStyle: "italic" }}>River Cruise</span>
+            </h2>
+            <p className="font-body text-base leading-relaxed mb-8" style={{ color: "rgba(240,235,220,0.7)" }}>
+              Drift past medieval castles, terraced vineyards, and charming villages. AmaWaterways' 7-night Enchanting Rhine takes you from Basel to Amsterdam — unpack once, experience everything. Your birthday falls on the March 26 departure date.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-8">
+              {["Basel → Amsterdam", "7 Nights", "All-Inclusive", "From $4,349"].map((tag) => (
+                <span key={tag} className="glass-card-gold px-3 py-1.5 rounded-full font-accent text-xs tracking-widest uppercase"
+                  style={{ color: "var(--gold)" }}>{tag}</span>
+              ))}
+            </div>
+            <Link href="/itineraries">
+              <button className="inline-flex items-center gap-2 font-body font-medium px-6 py-3 rounded-full transition-all duration-300"
+                style={{ background: "var(--gold)", color: "var(--navy)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "var(--gold-light)")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "var(--gold)")}>
+                View All Packages <ArrowRight size={16} />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 3: Margaux — the custom solve ── */}
+      <section className="py-20">
+        <div className="container">
+          {/* Section header — sets up the "none of these fit?" framing */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} className="text-center mb-16">
+            <div className="gold-divider mx-auto mb-8" />
+            <span className="font-accent text-xs tracking-[0.2em] uppercase block mb-4" style={{ color: "rgba(180,150,80,0.6)" }}>
+              None of the above quite right?
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-4">
+              Build Something <span style={{ color: "var(--gold)", fontStyle: "italic" }}>Entirely Yours</span>
+            </h2>
+            <p className="font-body text-base max-w-2xl mx-auto leading-relaxed" style={{ color: "var(--muted)" }}>
+              The pre-built packages cover the most popular routes — but your next chapter might look completely different. That's where Margaux comes in.
+            </p>
+          </motion.div>
+
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.8 }}>
               <div className="inline-flex items-center gap-2 glass-card-gold px-4 py-2 rounded-full mb-6">
                 <Sparkles size={14} style={{ color: "var(--gold)" }} />
                 <span className="font-accent text-xs tracking-widest uppercase" style={{ color: "var(--gold)" }}>
-                  New Feature
+                  AI Travel Concierge
                 </span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-4">
@@ -210,7 +336,7 @@ export default function Home() {
               <p className="font-body text-sm leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
                 Save your itinerary and share it with Curtis, a travel agent, or Annie in Paris with a single link.
               </p>
-              <Link href="/trip-builder">
+              <Link href="/build-my-trip">
                 <button className="inline-flex items-center gap-2 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 text-lg"
                   style={{ background: "var(--gold)", color: "var(--navy)" }}
                   onMouseEnter={(e) => (e.currentTarget.style.background = "var(--gold-light)")}
@@ -252,7 +378,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <Link href="/trip-builder">
+                <Link href="/build-my-trip">
                   <button className="w-full font-body text-sm py-3 rounded-xl transition-all"
                     style={{ background: "rgba(180,150,80,0.15)", color: "var(--gold)", border: "1px solid rgba(180,150,80,0.3)" }}>
                     Start Planning with Margaux →
@@ -264,75 +390,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Overview Cards */}
-      <section className="py-8 pb-20">
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} className="text-center mb-12">
-            <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "var(--gold)" }}>Your Journey</span>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mt-2">Everything in One Place</h2>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {overviewCards.map((card, i) => (
-              <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Link href={card.href}>
-                  <div className={`glass-card package-card rounded-2xl p-8 cursor-pointer bg-gradient-to-br ${card.color}`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="glass-card-gold p-3 rounded-xl">
-                        <card.icon size={22} style={{ color: "var(--gold)" }} />
-                      </div>
-                      <ArrowRight size={18} style={{ color: "rgba(180,150,80,0.4)" }} className="mt-1" />
-                    </div>
-                    <h3 className="font-display text-2xl font-light text-ivory mb-1">{card.title}</h3>
-                    <p className="font-accent text-xs tracking-[0.15em] uppercase mb-3" style={{ color: "rgba(180,150,80,0.7)" }}>{card.subtitle}</p>
-                    <p className="font-body text-sm leading-relaxed" style={{ color: "var(--muted)" }}>{card.desc}</p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Rhine Teaser */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${RHINE_IMG}')` }} />
-        <div className="absolute inset-0"
-          style={{ background: "linear-gradient(to right, rgba(6,8,20,0.9) 0%, rgba(6,8,20,0.6) 50%, rgba(6,8,20,0.3) 100%)" }} />
-        <div className="relative z-10 container">
-          <div className="max-w-xl">
-            <span className="font-accent text-xs tracking-[0.2em] uppercase block mb-4" style={{ color: "var(--gold)" }}>
-              Featured Package
-            </span>
-            <h2 className="font-display text-5xl md:text-6xl font-light text-ivory mb-4 leading-tight">
-              The Rhine<br />
-              <span style={{ color: "var(--gold)", fontStyle: "italic" }}>River Cruise</span>
-            </h2>
-            <p className="font-body text-base leading-relaxed mb-8" style={{ color: "rgba(240,235,220,0.7)" }}>
-              Drift past medieval castles, terraced vineyards, and charming villages. AmaWaterways' 7-night Enchanting Rhine takes you from Basel to Amsterdam — unpack once, experience everything. Your birthday falls on the March 26 departure date.
-            </p>
-            <div className="flex flex-wrap gap-3 mb-8">
-              {["Basel → Amsterdam", "7 Nights", "All-Inclusive", "From $4,349"].map((tag) => (
-                <span key={tag} className="glass-card-gold px-3 py-1.5 rounded-full font-accent text-xs tracking-widest uppercase"
-                  style={{ color: "var(--gold)" }}>{tag}</span>
-              ))}
-            </div>
-            <Link href="/itineraries">
-              <button className="inline-flex items-center gap-2 font-body font-medium px-6 py-3 rounded-full transition-all duration-300"
-                style={{ background: "var(--gold)", color: "var(--navy)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "var(--gold-light)")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "var(--gold)")}>
-                View All Packages <ArrowRight size={16} />
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Quick Links */}
-      <section className="py-20">
+      <section className="py-20" style={{ background: "rgba(255,255,255,0.02)" }}>
         <div className="container">
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/relocation">

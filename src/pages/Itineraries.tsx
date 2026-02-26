@@ -39,7 +39,7 @@ const packages = [
     departure: "Flexible — April/May 2026 recommended",
     color: "from-amber-900/30 to-amber-800/10",
     borderColor: "rgba(220,160,80,0.2)",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/AUalUDGvKUnmAKsA.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/SuJtqqfJKhuEfqWd.jpg",
     highlights: [
       "Fly into Lisbon, out of Madrid — open-jaw ticket strategy",
       "Lisbon: Alfama, Belém Tower, Sintra day trip, NIF registration",
@@ -62,7 +62,7 @@ const packages = [
     departure: "Flexible — April/May 2026 recommended",
     color: "from-purple-900/30 to-purple-800/10",
     borderColor: "rgba(160,100,200,0.2)",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/AUalUDGvKUnmAKsA.png",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/oMZyNBpgjjLicSRc.jpg",
     highlights: [
       "Fly into Nice CDG, end in Paris — reunion with Annie & Thomas",
       "Nice: Promenade des Anglais, Cours Saleya market, Monaco day trip",
