@@ -136,29 +136,39 @@ The itinerary should ALWAYS include a "curtisGiftBreakdown" object that shows:
 - Birthday: March 26, 2026
 
 ## Output Format (MUST be valid JSON)
+
+**CRITICAL: You MUST calculate and fill in REAL dollar amounts in every cost field. Use the benchmarks above. Do the arithmetic. Never output "$X,XXX" or any placeholder — those are examples of the FORMAT only, not values to copy. If you output a placeholder, the cost breakdown will not display.**
+
+Example of CORRECT output for a 10-day Iberian trip:
+- Flights 2 economy tickets LAX-LIS: $2,200
+- Hotels 8 nights Lisbon/Porto/Seville/Madrid mid-range: $1,520
+- Special dinner: $280
+- baseCostForTwo: "$4,000"
+- withUpgrades: "$6,500–$9,000"
+
 {
   "title": "A catchy, personalized title for this itinerary",
   "tagline": "A one-line poetic description",
-  "totalDays": number,
+  "totalDays": 10,
   "curtisGiftBreakdown": {
     "coverageNote": "Warm, slightly cheeky 1–2 sentence description of what Curtis is covering",
-    "baseCostForTwo": "$X,XXX (Curtis's gift covers this)",
+    "baseCostForTwo": "$4,000" /* CALCULATE THIS: flights + hotels + 1 key experience. Use real numbers from benchmarks above. */,
     "breakdown": [
-      { "item": "Round-trip flights LAX → Europe (×2)", "cost": "$X,XXX", "coveredBy": "Curtis 🎁" },
-      { "item": "Hotels (X nights, mid-range)", "cost": "$X,XXX", "coveredBy": "Curtis 🎁" },
-      { "item": "Key experience (cruise/dinner/etc)", "cost": "$XXX", "coveredBy": "Curtis 🎁" }
+      { "item": "Round-trip flights LAX → Lisbon (×2, economy, KLM via AMS)", "cost": "$2,200", "coveredBy": "Curtis 🎁" },
+      { "item": "Hotels (8 nights, mid-range boutique)", "cost": "$1,520", "coveredBy": "Curtis 🎁" },
+      { "item": "Special birthday dinner for two", "cost": "$280", "coveredBy": "Curtis 🎁" }
     ],
     "upgradeOptions": [
-      { "item": "Business class upgrade (×2)", "additionalCost": "+$X,XXX", "margauxVerdict": "Cheeky comment about whether it's worth it" },
-      { "item": "Boutique hotel upgrade", "additionalCost": "+$XXX/night", "margauxVerdict": "Cheeky comment" },
-      { "item": "Michelin-starred dinner instead of bistro", "additionalCost": "+$XXX", "margauxVerdict": "Cheeky comment" }
+      { "item": "Premium Economy upgrade (×2)", "additionalCost": "+$2,200", "margauxVerdict": "Cheeky comment about whether it's worth it" },
+      { "item": "Boutique hotel upgrade (per night)", "additionalCost": "+$120/night", "margauxVerdict": "Cheeky comment" },
+      { "item": "Michelin-starred dinner instead of bistro", "additionalCost": "+$400", "margauxVerdict": "Cheeky comment" }
     ],
     "margauxBudgetNote": "A warm, funny closing note about the budget — acknowledge Curtis's generosity, encourage Melanie to treat herself on the upgrades"
   },
   "estimatedBudget": {
-    "baseForTwo": "$X,XXX (Curtis's gift)",
-    "withUpgrades": "$X,XXX–$X,XXX (if Melanie goes full European royalty)",
-    "notes": "What's included/excluded"
+    "baseForTwo": "$4,000 (Curtis's gift covers this)" /* CALCULATE: flights + hotels + experience */,
+    "withUpgrades": "$6,500–$9,000 (if Melanie goes full European royalty)" /* CALCULATE: base + all upgrades */,
+    "notes": "Flights, mid-range hotels, and one special dinner included. Meals, activities, and shopping are extra."
   },
   "flightSuggestion": {
     "departure": "LAX",
@@ -247,7 +257,7 @@ export const tripBuilderRouter = router({
                 highlights: { type: "array" },
                 margauxNote: { type: "string" },
               },
-              required: ["title", "tagline", "totalDays", "days", "highlights", "margauxNote"],
+              required: ["title", "tagline", "totalDays", "curtisGiftBreakdown", "estimatedBudget", "flightSuggestion", "days", "highlights", "margauxNote"],
             },
           },
         },

@@ -81,3 +81,6 @@
 ## Phase 10 — Cost Accuracy
 - [x] Itineraries: Fix negative numbers in Quick Comparison table (confirmed no negative numbers in static table; issue was in AI-generated output)
 - [x] Margaux: Upgrade AI prompt with real 2026 cost benchmarks and line-by-line calculation instructions
+
+## Phase 11 — Cost Breakdown Fix
+- [x] Trip builder: Fix Curtis Gift Breakdown / cost estimate not rendering in itinerary output
