@@ -250,11 +250,93 @@ export const tripBuilderRouter = router({
                 title: { type: "string" },
                 tagline: { type: "string" },
                 totalDays: { type: "number" },
-                curtisGiftBreakdown: { type: "object" },
-                estimatedBudget: { type: "object" },
-                flightSuggestion: { type: "object" },
-                days: { type: "array" },
-                highlights: { type: "array" },
+                curtisGiftBreakdown: {
+                  type: "object",
+                  properties: {
+                    coverageNote: { type: "string", description: "Warm 1-2 sentence description of what Curtis is covering" },
+                    baseCostForTwo: { type: "string", description: "Total dollar amount Curtis's gift covers, e.g. '$4,000'" },
+                    breakdown: {
+                      type: "array",
+                      items: {
+                        type: "object",
+                        properties: {
+                          item: { type: "string" },
+                          cost: { type: "string", description: "Real dollar amount, e.g. '$2,200'" },
+                          coveredBy: { type: "string" }
+                        },
+                        required: ["item", "cost", "coveredBy"]
+                      }
+                    },
+                    upgradeOptions: {
+                      type: "array",
+                      items: {
+                        type: "object",
+                        properties: {
+                          item: { type: "string" },
+                          additionalCost: { type: "string", description: "Real dollar amount with + prefix, e.g. '+$2,200'" },
+                          margauxVerdict: { type: "string" }
+                        },
+                        required: ["item", "additionalCost", "margauxVerdict"]
+                      }
+                    },
+                    margauxBudgetNote: { type: "string" }
+                  },
+                  required: ["coverageNote", "baseCostForTwo", "breakdown", "upgradeOptions", "margauxBudgetNote"]
+                },
+                estimatedBudget: {
+                  type: "object",
+                  properties: {
+                    baseForTwo: { type: "string", description: "Total base cost for two people, e.g. '$4,000 (Curtis's gift)'" },
+                    withUpgrades: { type: "string", description: "Range if upgrades chosen, e.g. '$6,500-$9,000'" },
+                    notes: { type: "string", description: "What is and isn't included" }
+                  },
+                  required: ["baseForTwo", "withUpgrades", "notes"]
+                },
+                flightSuggestion: {
+                  type: "object",
+                  properties: {
+                    departure: { type: "string" },
+                    flyInto: { type: "string" },
+                    flyOutOf: { type: "string" },
+                    estimatedCost: { type: "string", description: "Real dollar amount, e.g. '$2,200 round-trip per person'" },
+                    airlines: { type: "array", items: { type: "string" } },
+                    tip: { type: "string" }
+                  },
+                  required: ["departure", "flyInto", "flyOutOf", "estimatedCost", "airlines", "tip"]
+                },
+                days: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      day: { type: "number" },
+                      city: { type: "string" },
+                      country: { type: "string" },
+                      flag: { type: "string" },
+                      headline: { type: "string" },
+                      description: { type: "string" },
+                      morning: { type: "string" },
+                      afternoon: { type: "string" },
+                      evening: { type: "string" },
+                      accommodation: {
+                        type: "object",
+                        properties: {
+                          name: { type: "string" },
+                          type: { type: "string" },
+                          estimatedCost: { type: "string", description: "Nightly rate, e.g. '$180/night'" },
+                          curtisNote: { type: "string" }
+                        },
+                        required: ["name", "type", "estimatedCost"]
+                      },
+                      transportFromPrevious: { type: "string" },
+                      distanceWarning: { type: "string" },
+                      reloNote: { type: "string" },
+                      curtisNote: { type: "string" }
+                    },
+                    required: ["day", "city", "country", "flag", "headline", "description", "morning", "afternoon", "evening", "accommodation"]
+                  }
+                },
+                highlights: { type: "array", items: { type: "string" } },
                 margauxNote: { type: "string" },
               },
               required: ["title", "tagline", "totalDays", "curtisGiftBreakdown", "estimatedBudget", "flightSuggestion", "days", "highlights", "margauxNote"],

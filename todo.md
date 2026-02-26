@@ -83,4 +83,4 @@
 - [x] Margaux: Upgrade AI prompt with real 2026 cost benchmarks and line-by-line calculation instructions
 
 ## Phase 11 — Cost Breakdown Fix
-- [x] Trip builder: Fix Curtis Gift Breakdown / cost estimate not rendering in itinerary output
+- [x] Trip builder: Fix Curtis Gift Breakdown / cost estimate not rendering in itinerary output (verified: real numbers confirmed in API test)
