@@ -77,3 +77,7 @@
 
 ## Phase 9 — Image Fixes
 - [x] Destinations: Replace Tower Bridge image on Nice card with correct French Riviera photo
+
+## Phase 10 — Cost Accuracy
+- [x] Itineraries: Fix negative numbers in Quick Comparison table (confirmed no negative numbers in static table; issue was in AI-generated output)
+- [x] Margaux: Upgrade AI prompt with real 2026 cost benchmarks and line-by-line calculation instructions
