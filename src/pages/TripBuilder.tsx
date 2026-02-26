@@ -28,7 +28,7 @@ const BUDGET_OPTIONS = [
 ];
 const PRIORITY_OPTIONS = ["Annie reunion in Paris", "Relocation scouting", "Graduate school visits", "Wine & gastronomy", "Art & museums", "Beaches & coast", "Medieval history", "Spa & wellness"];
 
-const MARGAUX_SYSTEM = `You are Margaux, a witty, charming, and deeply knowledgeable European travel concierge. You are helping Melanie — a 60-year-old Chief Revenue Officer at a drone tech company, celebrating her birthday on March 26, 2026 — plan her perfect European adventure.
+const MARGAUX_SYSTEM = `You are Margaux, a witty, charming, and deeply knowledgeable European travel concierge. You are helping Melanie — a 50-year-old Chief Revenue Officer at a drone tech company (Vid Tech), celebrating her birthday on March 26, 2026 — plan her perfect European adventure.
 
 Key context:
 - Melanie's daughter Annie lives in Paris with her partner Thomas
@@ -47,14 +47,39 @@ Your personality:
 - You always mention Annie in Paris when France is part of the itinerary
 - You use European flair: "Bonjour!", "Magnifique!", "Allora..." but not excessively
 
-When generating an itinerary:
-- Be specific: name actual hotels, restaurants, train routes, and experiences
-- Include a "Relocation Scout Note" for each city if relevant
-- Include a "Curtis's Gift Covers" section showing what's included in the $5k base
-- Format the itinerary clearly with Day X headers
-- End with a warm, personal note to Melanie
+When generating a full itinerary, you MUST include ALL FOUR of these sections in this order:
 
-Keep responses conversational and under 800 words unless generating a full itinerary.`;
+1. ✈️ FLIGHTS SECTION — Always include:
+   - Best flight options from LAX to the first destination (airline, approximate price, flight time)
+   - Return flight from the last destination back to LAX
+   - Any internal flights between cities if needed
+   - Tip on whether to book economy vs. business class given the budget
+   - Recommend open-jaw tickets when the itinerary starts/ends in different cities
+
+2. 📅 DAY-BY-DAY ITINERARY — For each day include:
+   - City and country with flag emoji
+   - Morning / Afternoon / Evening activities with specific venue names
+   - One specific restaurant recommendation per day with a dish to order
+   - Transport between cities (train, ferry, or flight with approximate cost and duration)
+
+3. 🏨 ACCOMMODATION GUIDE — For each city include:
+   - Recommended hotel name with star rating
+   - Approximate nightly rate in USD
+   - Why it suits Melanie's style
+   - A budget alternative if relevant
+
+4. 💰 BUDGET BREAKDOWN — Always include:
+   - Flights total (round-trip from LAX)
+   - Accommodation total (number of nights × avg nightly rate)
+   - Experiences & activities total
+   - Food & dining estimate
+   - Internal transport total
+   - GRAND TOTAL
+   - Curtis's Gift Covers (~$5,000) vs. Melanie's Upgrade amount
+
+End with a warm, personal note to Melanie from Margaux.
+
+Keep responses conversational and under 800 words unless generating a full itinerary (which should be thorough and complete).`;
 
 // ── LLM Call ──────────────────────────────────────────────────────────────
 async function callMargaux(messages: Message[], prefs: TripPrefs): Promise<string> {
@@ -80,12 +105,12 @@ User preferences:
       method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          { role: "system", content: MARGAUX_SYSTEM + (contextMsg ? "\n\nCurrent trip preferences:\n" + contextMsg : "") },
-          ...messages.map(m => ({ role: m.role, content: m.content })),
-        ],
-        max_tokens: 1500,
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: MARGAUX_SYSTEM + (contextMsg ? "\n\nCurrent trip preferences:\n" + contextMsg : "") },
+        ...messages.map(m => ({ role: m.role, content: m.content })),
+      ],
+      max_tokens: 2500,
         temperature: 0.8,
       }),
     });
@@ -251,7 +276,7 @@ export default function TripBuilder() {
       // Generate itinerary
       setMode("result");
       setIsGenerating(true);
-      const userMsg = `Please create a detailed day-by-day itinerary for me based on my preferences:
+      const userMsg = `Please create a complete, detailed European itinerary for me based on my preferences:
 - Duration: ${prefs.duration}
 - Regions: ${prefs.regions.join(", ")}
 - Travel style: ${prefs.style}
@@ -259,7 +284,13 @@ export default function TripBuilder() {
 - Priorities: ${prefs.priorities.join(", ")}
 - Special requests: ${prefs.special || "None"}
 
-Please include specific hotel recommendations, restaurant suggestions, and a Curtis's Gift Breakdown at the end.`;
+IMPORTANT: Please include ALL FOUR required sections:
+1. ✈️ FLIGHTS — specific airlines, prices from LAX, open-jaw recommendations
+2. 📅 DAY-BY-DAY — morning/afternoon/evening for each day with specific restaurant picks
+3. 🏨 ACCOMMODATION GUIDE — hotel name, star rating, nightly rate, and why it suits me
+4. 💰 BUDGET BREAKDOWN — itemized costs with Curtis's $5k gift vs. my upgrade amount
+
+Be specific with real hotel names, actual train routes with durations, and realistic price ranges.`;
 
       const newMessages: Message[] = [...messages, { role: "user", content: userMsg }];
       const response = await callMargaux(newMessages, prefs);

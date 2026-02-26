@@ -49,7 +49,7 @@ const packages = [
     ],
     inclusions: ["Boutique hotels (3–4★)", "High-speed train Seville→Madrid", "Key museum entries", "1 flamenco show", "Douro Valley wine tour"],
     reloNote: "Portugal's D8 Digital Nomad Visa is the easiest EU entry point for US remote workers. Lisbon's PropTech scene is booming. Spain's Non-Lucrative Visa suits CRO-level executives.",
-    detailLink: "/itineraries",
+    detailLink: "/iberian-explorer",
   },
   {
     id: "france",
@@ -72,7 +72,7 @@ const packages = [
     ],
     inclusions: ["Boutique hotels & chambres d'hôtes", "TGV Nice→Lyon→Paris", "Provence driving tour", "Lyon food tour", "Paris museum pass"],
     reloNote: "France's Tech Visa (Passeport Talent) suits senior executives. Paris has the highest concentration of PropTech startups in Europe. INSEAD and HEC Paris are 30 minutes from the city.",
-    detailLink: "/itineraries",
+    detailLink: "/french-art-de-vivre",
   },
 ];
 
@@ -172,18 +172,12 @@ export default function Itineraries() {
                     </div>
 
                     <div className="flex gap-3">
-                      {pkg.detailLink === "/rhine-cruise" ? (
-                        <Link href="/rhine-cruise">
+                      <Link href={pkg.detailLink}>
                           <button className="inline-flex items-center gap-2 font-body text-sm font-medium px-5 py-2.5 rounded-full transition-all"
                             style={{ background: "var(--gold)", color: "var(--navy)" }}>
                             Full Day-by-Day Itinerary <ArrowRight size={14} />
                           </button>
                         </Link>
-                      ) : (
-                        <button className="inline-flex items-center gap-2 glass-card font-body text-sm px-5 py-2.5 rounded-full transition-all text-ivory">
-                          Coming Soon
-                        </button>
-                      )}
                     </div>
                   </div>
                 </div>
