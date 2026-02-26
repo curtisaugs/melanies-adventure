@@ -13,6 +13,7 @@ import Flights from "./pages/Flights";
 import RhineCruise from "./pages/RhineCruise";
 import TripBuilder from "./pages/TripBuilder";
 import SharedItinerary from "./pages/SharedItinerary";
+import ExtendedStay from "./pages/ExtendedStay";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -26,6 +27,7 @@ function Router() {
       <Route path={"/rhine-cruise"} component={RhineCruise} />
       <Route path={"/build-my-trip"} component={TripBuilder} />
       <Route path={"/trip/:shareId"} component={SharedItinerary} />
+      <Route path={"/extended-stay"} component={ExtendedStay} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

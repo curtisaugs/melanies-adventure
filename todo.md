@@ -102,3 +102,13 @@
 
 ## Phase 16 — Margaux Wizard Opening
 - [x] TripBuilder: Rewrite Margaux's first screen with peer voice — direct, warm, no preamble
+
+## Phase 17 — Extended Stay Through Study + 21 Day Mind Body
+- [x] Create new ExtendedStay.tsx page with student visa pathways and low-cost program options
+- [x] Add route /extended-stay to App.tsx navigation
+- [x] Add "Extended Stay" nav link to Navigation component
+- [x] Build three visa pathway cards (Portugal D4, Spain Type D, France VLS-TS) with real costs
+- [x] Build low-cost program cards: Cervantes EI (Spain), CIAL (Portugal), Alliance Française (France)
+- [x] Add "21 Day Mind Body" section with Margaux conversation mode
+- [x] Margaux on this page: asks about Melanie's program concept and suggests European launch venues
+- [x] Add wellness ecosystem section: Algarve retreat hub, Barcelona wellness scene, Paris corporate wellness

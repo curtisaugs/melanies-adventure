@@ -12,6 +12,7 @@ const navItems = [
   { href: "/destinations", label: "Destinations", short: "Places" },
   { href: "/relocation", label: "Relocation", short: "Relo" },
   { href: "/grad-schools", label: "Graduate Schools", short: "Schools" },
+  { href: "/extended-stay", label: "Extended Stay", short: "Stay" },
   { href: "/flights", label: "Flights & Logistics", short: "Flights" },
 ];
 

@@ -386,6 +386,31 @@ export const tripBuilderRouter = router({
     }),
 
   /**
+   * Free-form chat with Margaux (used on Extended Stay page for 21 Day Mind Body conversation)
+   */
+  chatWithMargaux: publicProcedure
+    .input(z.object({
+      message: z.string(),
+      history: z.array(z.object({
+        role: z.enum(["user", "assistant"]),
+        content: z.string(),
+      })),
+      systemPrompt: z.string().optional(),
+    }))
+    .mutation(async ({ input }) => {
+      const systemContent = input.systemPrompt || buildSystemPrompt();
+      const messages: Array<{ role: "system" | "user" | "assistant"; content: string }> = [
+        { role: "system", content: systemContent },
+        ...input.history,
+        { role: "user", content: input.message },
+      ];
+      const response = await invokeLLM({ messages });
+      const reply = (response as { choices: Array<{ message: { content: string } }> })
+        .choices[0]?.message?.content || "I seem to have lost my train of thought. Try again?";
+      return { reply };
+    }),
+
+  /**
    * Load a saved itinerary by its share ID
    */
   getByShareId: publicProcedure
