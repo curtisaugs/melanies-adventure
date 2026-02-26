@@ -150,7 +150,7 @@ const cities = [
     name: "Nice",
     country: "France",
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/118915275/ntCmqXJVzdNYkGPL.jpg",
-    tagline: "The French Riviera capital. glamour, warmth, and Italian soul",
+    tagline: "The French Riviera capital: glamour, warmth, and Italian soul",
     reloScore: 4,
     costOfLiving: "€€€",
     climate: "Mild, 14°C avg in March",
