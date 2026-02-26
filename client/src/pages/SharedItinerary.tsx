@@ -3,7 +3,7 @@
  * Accessed via /trip/:shareId
  */
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Link, useParams } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -20,6 +20,7 @@ import {
   ChevronUp,
   Copy,
   Check,
+  Download,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 
@@ -215,6 +216,10 @@ export default function SharedItinerary() {
 
   const itinerary = data.itinerary as FullItinerary;
 
+  const handlePrint = useCallback(() => {
+    window.print();
+  }, []);
+
   return (
     <div className="min-h-screen" style={{ background: NAVY, color: IVORY }}>
       {/* Nav */}
@@ -225,11 +230,35 @@ export default function SharedItinerary() {
             Melanie's European Adventure
           </span>
         </Link>
-        <button onClick={handleCopy} className="flex items-center gap-2 text-xs px-4 py-2 rounded-full transition-all" style={{ border: "1px solid rgba(201,168,76,0.3)", color: GOLD, fontFamily: FONT_BODY }}>
-          {copied ? <Check size={12} /> : <Copy size={12} />}
-          {copied ? "Copied!" : "Share Link"}
-        </button>
+        <div className="flex items-center gap-2 no-print">
+          <button
+            onClick={handlePrint}
+            className="flex items-center gap-2 text-xs px-4 py-2 rounded-full transition-all hover:bg-amber-900/20"
+            style={{ border: "1px solid rgba(201,168,76,0.3)", color: GOLD, fontFamily: FONT_BODY }}
+            title="Download as PDF"
+          >
+            <Download size={12} />
+            Download PDF
+          </button>
+          <button onClick={handleCopy} className="flex items-center gap-2 text-xs px-4 py-2 rounded-full transition-all" style={{ border: "1px solid rgba(201,168,76,0.3)", color: GOLD, fontFamily: FONT_BODY }}>
+            {copied ? <Check size={12} /> : <Copy size={12} />}
+            {copied ? "Copied!" : "Share Link"}
+          </button>
+        </div>
       </nav>
+
+      {/* Print-only header — hidden on screen, shown in print */}
+      <div className="print-only" style={{ display: "none" }}>
+        <div className="print-header">
+          <span className="print-title">Melanie's European Adventure</span>
+          <span className="print-date">Crafted by Margaux &bull; {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        </div>
+      </div>
+
+      {/* Print-only footer watermark */}
+      <div className="print-footer" style={{ display: "none" }}>
+        Melanie's European Adventure &bull; Crafted with love by Margaux
+      </div>
 
       <div className="max-w-4xl mx-auto px-6 pt-28 pb-20">
         {/* Header */}
@@ -307,7 +336,7 @@ export default function SharedItinerary() {
 
         {/* Curtis's Gift Breakdown */}
         {itinerary.curtisGiftBreakdown && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl p-6 mb-6" style={{ background: "rgba(232,116,138,0.04)", border: "1px solid rgba(232,116,138,0.2)" }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl p-6 mb-6 curtis-gift-section" style={{ background: "rgba(232,116,138,0.04)", border: "1px solid rgba(232,116,138,0.2)" }}>
             <div className="flex items-center gap-2 mb-4">
               <span style={{ fontSize: "1.2rem" }}>🎁</span>
               <p className="text-xs tracking-widest uppercase" style={{ color: "#e8748a", fontFamily: FONT_BODY }}>Curtis's Birthday Gift</p>
@@ -395,8 +424,8 @@ export default function SharedItinerary() {
           </motion.div>
         )}
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* CTAs — hidden in print */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center no-print">
           <Link href="/build-my-trip">
             <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold tracking-widest uppercase" style={{ background: GOLD, color: NAVY, fontFamily: FONT_BODY }}>
               <Sparkles size={14} />

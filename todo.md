@@ -84,3 +84,7 @@
 
 ## Phase 11 — Cost Breakdown Fix
 - [x] Trip builder: Fix Curtis Gift Breakdown / cost estimate not rendering in itinerary output (verified: real numbers confirmed in API test)
+
+## Phase 12 — PDF Download
+- [x] SharedItinerary: Add print CSS for beautiful travel document output
+- [x] SharedItinerary: Add Download as PDF button that triggers window.print()

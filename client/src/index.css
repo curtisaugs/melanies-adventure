@@ -346,3 +346,225 @@
     background: oklch(0.72 0.12 75 / 0.7);
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PRINT / PDF STYLES
+   Applied when user triggers window.print() from the SharedItinerary page.
+   Goal: clean, elegant travel document — white background, dark ink, gold accents.
+   ───────────────────────────────────────────────────────────────────────────── */
+@media print {
+  /* Page setup */
+  @page {
+    size: A4 portrait;
+    margin: 18mm 16mm 18mm 16mm;
+  }
+
+  /* Reset dark theme to white paper */
+  html, body, #root {
+    background: #ffffff !important;
+    color: #1a1a2e !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Hide everything except the shared itinerary content */
+  nav,
+  header,
+  footer,
+  .no-print,
+  [data-no-print],
+  button:not([data-print-keep]),
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Show print-only elements */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Prevent orphaned headings and broken cards */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Each day card stays together */
+  .day-card, [data-day-card] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 12pt;
+  }
+
+  /* Curtis Gift Breakdown stays on one page if possible */
+  .curtis-gift-section, [data-curtis-gift] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ── Print header (shown only in print) ── */
+  .print-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2pt solid #C9A84C;
+    padding-bottom: 8pt;
+    margin-bottom: 16pt;
+  }
+
+  .print-header .print-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    font-weight: 600;
+    color: #C9A84C;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .print-header .print-date {
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* ── Typography ── */
+  h1 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 22pt !important;
+    font-weight: 300 !important;
+    color: #0D1B2A !important;
+    line-height: 1.2 !important;
+    margin-bottom: 4pt !important;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 14pt !important;
+    font-weight: 400 !important;
+    color: #0D1B2A !important;
+    margin-top: 14pt !important;
+    margin-bottom: 4pt !important;
+  }
+
+  h3 {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: #C9A84C !important;
+    margin-bottom: 3pt !important;
+  }
+
+  p, li {
+    font-size: 9.5pt !important;
+    color: #2a2a3e !important;
+  }
+
+  /* ── Cards become simple bordered boxes ── */
+  .glass-card,
+  [class*="glass"],
+  [class*="card"],
+  .rounded-2xl,
+  .rounded-xl {
+    background: #ffffff !important;
+    border: 0.75pt solid #e0d5c5 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border-radius: 4pt !important;
+    padding: 8pt 10pt !important;
+    color: #1a1a2e !important;
+  }
+
+  /* ── Gold accent lines ── */
+  .gold-divider {
+    background: #C9A84C !important;
+    height: 1pt !important;
+    width: 40pt !important;
+    margin: 8pt 0 !important;
+  }
+
+  /* ── Day number badge ── */
+  .day-badge {
+    background: #C9A84C !important;
+    color: #ffffff !important;
+    font-family: 'Cinzel', serif !important;
+    font-size: 7pt !important;
+    padding: 2pt 6pt !important;
+    border-radius: 2pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  /* ── Cost table ── */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 9pt !important;
+  }
+
+  th {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 7.5pt !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: #888 !important;
+    border-bottom: 0.75pt solid #e0d5c5 !important;
+    padding: 4pt 6pt !important;
+    text-align: left !important;
+  }
+
+  td {
+    padding: 4pt 6pt !important;
+    border-bottom: 0.5pt solid #f0ebe0 !important;
+    color: #2a2a3e !important;
+    vertical-align: top !important;
+  }
+
+  /* ── Highlight the total row ── */
+  .cost-total-row td {
+    font-weight: 700 !important;
+    color: #0D1B2A !important;
+    border-top: 1pt solid #C9A84C !important;
+    border-bottom: none !important;
+    font-size: 10pt !important;
+  }
+
+  /* ── Margaux note ── */
+  .margaux-note {
+    font-style: italic !important;
+    color: #555 !important;
+    border-left: 2pt solid #C9A84C !important;
+    padding-left: 8pt !important;
+    margin: 10pt 0 !important;
+    font-size: 9pt !important;
+  }
+
+  /* ── Links ── */
+  a {
+    color: #0D1B2A !important;
+    text-decoration: none !important;
+  }
+
+  /* ── Footer watermark ── */
+  .print-footer {
+    display: block !important;
+    position: fixed;
+    bottom: 8mm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 7pt;
+    color: #bbb;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* ── Ensure text is visible on white ── */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
