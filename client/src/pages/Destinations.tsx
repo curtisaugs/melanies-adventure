@@ -51,7 +51,7 @@ const cities = [
     name: "Porto",
     country: "Portugal",
     image: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80",
-    tagline: "Gritty, gorgeous, and utterly authentic. Portugal's second city",
+    tagline: "Gritty, gorgeous, and utterly authentic: Portugal's second city",
     reloScore: 4,
     costOfLiving: "€",
     climate: "Mild, 14°C avg in March",

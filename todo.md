@@ -92,3 +92,6 @@
 ## Phase 13 — Print Preview Test
 - [x] Generate itinerary and test print layout for page break issues
 - [x] Fix any awkward breaks in day cards, cost table, or Margaux note (hooks error fixed, accordion expands on print, print CSS updated)
+
+## Phase 14 — Punctuation Polish
+- [x] Destinations: Fix Porto tagline punctuation for consistency with Nice
