@@ -124,3 +124,13 @@
 - [x] Add "Big Sur RV" nav link to Navigation component
 - [ ] Add "Local Adventure" card to homepage overview section (optional enhancement)
 - [x] Write vitest tests for new page (27 tests passing)
+
+## Phase 19 — Bring Big Sur to the Forefront
+- [x] Move "Big Sur RV" to first position in nav with pulsing teal dot, rename site logo to "Adventure"
+- [x] Redesign homepage hero to lead with Big Sur (new subhead: "The Dogs. The Coast. This Weekend.")
+- [x] Add Big Sur feature card as primary section below hero
+- [x] Collapse European options into a secondary "Future Adventures" section on homepage
+- [x] Update countdown border to teal to match Big Sur theme
+- [x] Clean up nav: 3 items only (Big Sur RV, Europe dropdown, Talk to Margaux CTA)
+- [x] Europe dropdown labeled "Future Adventures" with all 6 sub-links preserved
+- [x] Updated Margaux section copy to reflect Big Sur is the current plan
