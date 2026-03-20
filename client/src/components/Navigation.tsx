@@ -13,6 +13,7 @@ const navItems = [
   { href: "/relocation", label: "Relocation", short: "Relo" },
   { href: "/grad-schools", label: "Graduate Schools", short: "Schools" },
   { href: "/extended-stay", label: "Extended Stay", short: "Stay" },
+  { href: "/rv-adventure", label: "Big Sur RV", short: "RV Trip" },
   { href: "/flights", label: "Flights & Logistics", short: "Flights" },
 ];
 

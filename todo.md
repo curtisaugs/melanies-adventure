@@ -112,3 +112,15 @@
 - [x] Add "21 Day Mind Body" section with Margaux conversation mode
 - [x] Margaux on this page: asks about Melanie's program concept and suggests European launch venues
 - [x] Add wellness ecosystem section: Algarve retreat hub, Barcelona wellness scene, Paris corporate wellness
+
+## Phase 18 — Local Adventure: Big Sur RV Birthday Weekend
+- [x] Create new RVAdventure.tsx page with Margaux intro, route, campsites, and two weekend options
+- [x] Add route/stop cards: Malibu, Cambria Farmers Market, Carmel, Garrapata Calla Lily Valley, Bixby Bridge, Pfeiffer Beach, McWay Falls
+- [x] Add campsite comparison: Fernwood Resort vs Big Sur Campground & Cabins
+- [x] Add RV rental guidance section (Outdoorsy recommendation)
+- [x] Add weekend option toggle: March 27-29 vs April 3-5
+- [x] Add Curtis-only cost breakdown section (styled as "behind the curtain")
+- [x] Add /rv-adventure route to App.tsx
+- [x] Add "Big Sur RV" nav link to Navigation component
+- [ ] Add "Local Adventure" card to homepage overview section (optional enhancement)
+- [x] Write vitest tests for new page (27 tests passing)
