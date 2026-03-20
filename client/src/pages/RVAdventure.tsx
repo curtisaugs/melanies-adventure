@@ -48,7 +48,7 @@ const routeStops = [
       "Coffee and breakfast before the long drive",
       "Fuel stop and RV systems check",
     ],
-    dogNote: "Zuma Beach allows dogs on leash. Great first run for Maury and Kota before the highway.",
+    dogNote: "Zuma Beach allows dogs on leash. Great first run for PennyLu and Kota before the highway.",
     duration: "45 min stop",
   },
   {
@@ -104,7 +104,7 @@ const routeStops = [
       "Carmel Farmers Market: Saturdays 9am–Noon (March 28 = last day of winter market!)",
       "Dinner at Forge in the Forest or PortaBella — both have dog-friendly patios",
     ],
-    dogNote: "Carmel Beach is one of the few beaches in California where dogs can run off-leash. Maury and Kota will lose their minds in the best way.",
+    dogNote: "Carmel Beach is one of the few beaches in California where dogs can run off-leash. PennyLu and Kota will lose their minds in the best way.",
     duration: "Half day / overnight option",
     marketNote: "Weekend 1 only (March 28): The Carmel Winter Farmers Market runs every Saturday 9am–Noon through March 28 — the last day of the season.",
   },
@@ -300,7 +300,7 @@ const costItems = [
   { category: "RV Rental", item: "Class C, 26-28ft, pet-friendly (Outdoorsy)", nights: "3 days", unitCost: "$200/night", total: "$600" },
   { category: "RV Rental", item: "Pet fee (flat, 2 dogs)", nights: "—", unitCost: "—", total: "$100" },
   { category: "Campsite", item: "Fernwood Resort (base rate, 2 people)", nights: "2 nights", unitCost: "~$110/night", total: "$220" },
-  { category: "Campsite", item: "Pet fee (Maury + Kota)", nights: "2 nights", unitCost: "$10/night", total: "$20" },
+  { category: "Campsite", item: "Pet fee (PennyLu + Kota)", nights: "2 nights", unitCost: "$10/night", total: "$20" },
   { category: "Campsite", item: "Extra persons (Annie + Mokin)", nights: "2 nights", unitCost: "$10/night", total: "$20" },
   { category: "Gas", item: "LA → Big Sur → LA (~600 miles, ~10mpg, ~$4.50/gal)", nights: "—", unitCost: "—", total: "$270" },
   { category: "Activities", item: "Pfeiffer Beach parking (cash)", nights: "—", unitCost: "—", total: "$15" },
@@ -384,7 +384,7 @@ function StopCard({ stop, index }: { stop: typeof routeStops[0]; index: number }
           >
             <Dog size={12} />
             {expanded ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
-            Maury & Kota note
+            PennyLu & Kota note
           </button>
 
           <AnimatePresence>
@@ -574,7 +574,7 @@ export default function RVAdventure() {
                 <div className="flex-1">
                   <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "#e8748a", fontFamily: "'Montserrat', sans-serif" }}>Margaux</p>
                   <p className="text-sm leading-relaxed mb-3" style={{ fontFamily: "'Montserrat', sans-serif", color: "rgba(232,224,208,0.8)", lineHeight: 1.8 }}>
-                    Europe will still be there. The Rhine isn't going anywhere. INSEAD will still be accepting applications in October. But March 26 is <em>this</em> week, and Big Sur is three hours up the coast, and Maury and Kota have been waiting their entire lives for a beach where they can actually run.
+                    Europe will still be there. The Rhine isn't going anywhere. INSEAD will still be accepting applications in October. But March 26 is <em>this</em> week, and Big Sur is three hours up the coast, and PennyLu and Kota have been waiting their entire lives for a beach where they can actually run.
                   </p>
                   <p className="text-sm leading-relaxed mb-4" style={{ fontFamily: "'Montserrat', sans-serif", color: "rgba(232,224,208,0.8)", lineHeight: 1.8 }}>
                     Curtis found a first-class Class C — kitchen, queen bed, the whole thing. You pack everything and the kitchen sink (you will), Annie and Mokin come, the dogs ride shotgun in spirit, and you drive up Highway 1 with the windows down. Cambria has a farmers market on Friday afternoons. Carmel is the most dog-friendly town in America. Pfeiffer Beach has purple sand. I'm not making any of this up.
@@ -583,7 +583,7 @@ export default function RVAdventure() {
                   <div className="flex flex-wrap gap-2">
                     {[
                       { icon: "🚐", label: "Class C RV", note: "~$200/night · pet-friendly", color: "rgba(94,234,212,0.12)", border: "rgba(94,234,212,0.3)", text: "rgb(94,234,212)" },
-                      { icon: "🐕", label: "Maury + Kota", note: "Doberman + Aussie · all welcome", color: "rgba(232,116,138,0.10)", border: "rgba(232,116,138,0.3)", text: "rgb(232,116,138)" },
+                      { icon: "🐕", label: "PennyLu + Kota", note: "Doberman + Aussie · all welcome", color: "rgba(232,116,138,0.10)", border: "rgba(232,116,138,0.3)", text: "rgb(232,116,138)" },
                       { icon: "🌊", label: "Big Sur", note: "Fernwood Resort · redwoods + river", color: "rgba(196,181,253,0.10)", border: "rgba(196,181,253,0.3)", text: "rgb(196,181,253)" },
                       { icon: "📅", label: "Two Options", note: "March 27–29 or April 3–5", color: "rgba(201,168,76,0.10)", border: "rgba(201,168,76,0.3)", text: "rgb(201,168,76)" },
                     ].map((chip) => (
@@ -776,7 +776,7 @@ export default function RVAdventure() {
               <span className="italic" style={{ color: "oklch(0.75 0.12 185)" }}>Purple Sand</span>
             </h2>
             <p className="font-body text-base leading-relaxed mb-6" style={{ color: "rgba(232,224,208,0.70)" }}>
-              Manganese garnet washes down from the cliffs and tints the sand violet at the water's edge. The keyhole rock arch frames the sunset perfectly. Dogs are allowed on leash. Maury and Kota will lose their minds.
+              Manganese garnet washes down from the cliffs and tints the sand violet at the water's edge. The keyhole rock arch frames the sunset perfectly. Dogs are allowed on leash. PennyLu and Kota will lose their minds.
             </p>
             <div className="flex flex-wrap gap-2">
               {["Dogs on leash", "Cash parking · $12", "Sunset views", "No reservations needed"].map((tag) => (

@@ -199,7 +199,7 @@ export default function Home() {
                 The Dogs. The Coast. This Weekend.
               </p>
               <p className="font-body text-sm md:text-base text-ivory/50 max-w-xl mx-auto mb-10 leading-relaxed">
-                Europe is still the dream. But March 26 is right now, and Big Sur is three hours up Highway 1, and Maury and Kota have been waiting their entire lives for a beach like Pfeiffer.
+                Europe is still the dream. But March 26 is right now, and Big Sur is three hours up Highway 1, and PennyLu and Kota have been waiting their entire lives for a beach like Pfeiffer.
               </p>
 
               {/* Countdown */}
@@ -288,7 +288,7 @@ export default function Home() {
                   Big Sur <span className="italic" style={{ color: TEAL }}>&amp; the Dogs</span>
                 </h2>
                 <p className="font-body text-base text-ivory/60 leading-relaxed mb-6">
-                  A first-class Class C RV, Maury and Kota riding shotgun in spirit, Annie and Mokin along for the adventure. Cambria's farmers market on Friday. The last Carmel winter market on Saturday. Pfeiffer Beach's purple sand. Fernwood Resort under the redwoods.
+                  A first-class Class C RV, PennyLu and Kota riding shotgun in spirit, Annie and Mokin along for the adventure. Cambria's farmers market on Friday. The last Carmel winter market on Saturday. Pfeiffer Beach's purple sand. Fernwood Resort under the redwoods.
                 </p>
 
                 {/* Quick stats */}
@@ -296,7 +296,7 @@ export default function Home() {
                   {[
                     { icon: Calendar, label: "March 27–29", sub: "or April 3–5" },
                     { icon: Truck, label: "Class C RV", sub: "~$200/night" },
-                    { icon: Dog, label: "Maury + Kota", sub: "Doberman + Aussie" },
+                    { icon: Dog, label: "PennyLu + Kota", sub: "Doberman + Aussie" },
                     { icon: Waves, label: "Fernwood Resort", sub: "Redwoods + river" },
                   ].map(({ icon: Icon, label, sub }) => (
                     <div
@@ -350,7 +350,7 @@ export default function Home() {
                       style={{ background: "rgba(232,116,138,0.07)", border: "1px solid rgba(232,116,138,0.12)" }}
                     >
                       <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
-                        Europe will still be there. The Rhine isn't going anywhere. But March 26 is <em>this week</em>, and Big Sur is three hours up the coast, and Maury and Kota have been waiting their entire lives for a beach where they can actually run.
+                        Europe will still be there. The Rhine isn't going anywhere. But March 26 is <em>this week</em>, and Big Sur is three hours up the coast, and PennyLu and Kota have been waiting their entire lives for a beach where they can actually run.
                       </p>
                     </div>
                   </div>
