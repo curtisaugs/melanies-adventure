@@ -4,7 +4,7 @@
   Margaux-styled hero, route stops, campsite options, two weekend options, and a Curtis-only cost breakdown.
 */
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Sparkles,
@@ -26,9 +26,11 @@ import {
   Clock,
   ExternalLink,
   Lock,
+  Send,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { trpc } from "@/lib/trpc";
 
 // ─── Route Stops ────────────────────────────────────────────────────────────────
 
@@ -963,7 +965,153 @@ export default function RVAdventure() {
         </div>
       </section>
 
+      {/* Margaux Chat Section */}
+      <section className="py-20" style={{ background: "rgba(10,15,30,0.95)" }}>
+        <div className="container max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "#4ecdc4" }}>Ask Margaux</span>
+            <h2 className="font-display text-4xl font-light mt-2" style={{ color: "#e8e0d0" }}>Questions About the Trip?</h2>
+            <p className="font-body text-sm mt-3" style={{ color: "rgba(232,224,208,0.5)" }}>She knows this coast. Ask her anything.</p>
+          </motion.div>
+          <MargauxChatEmbed />
+        </div>
+      </section>
+
       <Footer />
+    </div>
+  );
+}
+
+// ─── Margaux Chat Embed ───────────────────────────────────────────────────────────────────
+
+interface ChatMsg { role: "user" | "assistant"; content: string; }
+
+function MargauxChatEmbed() {
+  const [messages, setMessages] = useState<ChatMsg[]>([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const bottomRef = useRef<HTMLDivElement>(null);
+  const chatMutation = trpc.tripBuilder.chatWithMargaux.useMutation();
+
+  const ROSE = "#e8748a";
+  const TEAL = "#4ecdc4";
+  const NAVY = "#0a0f1e";
+  const IVORY = "#e8e0d0";
+  const GOLD = "#c9a84c";
+  const FONT_BODY = "'Montserrat', sans-serif";
+
+  const suggested = [
+    "What should we do first when we arrive?",
+    "Best time for Pfeiffer Beach?",
+    "Dog tips for PennyLu and Kota?",
+    "Dinner in Carmel — Forge or PortaBella?",
+    "March 27 or April 3 weekend?",
+  ];
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
+
+  const send = async (text: string) => {
+    if (!text.trim() || loading) return;
+    const userMsg: ChatMsg = { role: "user", content: text };
+    const newHistory = [...messages, userMsg];
+    setMessages(newHistory);
+    setInput("");
+    setLoading(true);
+    try {
+      const result = await chatMutation.mutateAsync({ message: text, history: messages });
+      setMessages([...newHistory, { role: "assistant", content: result.reply }]);
+    } catch {
+      setMessages([...newHistory, { role: "assistant", content: "Lost signal on Highway 1. Try again?" }]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="rounded-2xl overflow-hidden" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(201,168,76,0.12)" }}>
+      {/* Margaux header */}
+      <div className="flex items-center gap-3 px-5 py-4" style={{ borderBottom: "1px solid rgba(232,116,138,0.12)", background: "rgba(232,116,138,0.04)" }}>
+        <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(232,116,138,0.15)" }}>
+          <Sparkles size={15} style={{ color: ROSE }} />
+        </div>
+        <div>
+          <p className="text-xs tracking-widest uppercase" style={{ color: ROSE, fontFamily: FONT_BODY }}>Margaux</p>
+          <p className="text-xs" style={{ color: "rgba(232,224,208,0.4)", fontFamily: FONT_BODY }}>Ask me anything about Big Sur</p>
+        </div>
+      </div>
+
+      {/* Messages area */}
+      <div className="px-5 py-5 space-y-4 min-h-[200px] max-h-[400px] overflow-y-auto">
+        {messages.length === 0 && (
+          <div>
+            <p className="text-xs mb-3" style={{ color: "rgba(232,224,208,0.35)", fontFamily: FONT_BODY }}>Quick questions</p>
+            <div className="flex flex-wrap gap-2">
+              {suggested.map((q) => (
+                <button key={q} onClick={() => send(q)}
+                  className="text-xs px-3 py-1.5 rounded-full transition-all"
+                  style={{ background: "rgba(78,205,196,0.06)", border: "1px solid rgba(78,205,196,0.2)", color: TEAL, fontFamily: FONT_BODY }}
+                >{q}</button>
+              ))}
+            </div>
+          </div>
+        )}
+        {messages.map((msg, i) => (
+          <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+            {msg.role === "assistant" && (
+              <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mr-2 mt-1" style={{ background: "rgba(232,116,138,0.15)" }}>
+                <Sparkles size={11} style={{ color: ROSE }} />
+              </div>
+            )}
+            <div className="max-w-[80%] rounded-xl px-3 py-2 text-sm"
+              style={msg.role === "user"
+                ? { background: "rgba(78,205,196,0.1)", border: "1px solid rgba(78,205,196,0.2)", color: IVORY, fontFamily: FONT_BODY, lineHeight: 1.6 }
+                : { background: "rgba(232,116,138,0.06)", border: "1px solid rgba(232,116,138,0.1)", color: "rgba(232,224,208,0.85)", fontFamily: FONT_BODY, lineHeight: 1.6 }
+              }
+            >{msg.content}</div>
+          </div>
+        ))}
+        {loading && (
+          <div className="flex justify-start">
+            <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mr-2 mt-1" style={{ background: "rgba(232,116,138,0.15)" }}>
+              <Sparkles size={11} style={{ color: ROSE }} />
+            </div>
+            <div className="rounded-xl px-3 py-2" style={{ background: "rgba(232,116,138,0.06)", border: "1px solid rgba(232,116,138,0.1)" }}>
+              <div className="flex gap-1">
+                {[0,1,2].map((i) => (
+                  <motion.div key={i} animate={{ opacity: [0.3,1,0.3] }} transition={{ duration: 1, repeat: Infinity, delay: i * 0.25 }}
+                    className="w-1.5 h-1.5 rounded-full" style={{ background: ROSE }} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+        <div ref={bottomRef} />
+      </div>
+
+      {/* Input */}
+      <div className="flex gap-2 px-4 py-3" style={{ borderTop: "1px solid rgba(201,168,76,0.1)" }}>
+        <input
+          type="text" value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && send(input)}
+          placeholder="Ask Margaux…"
+          className="flex-1 rounded-full px-4 py-2 text-sm outline-none"
+          style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(201,168,76,0.15)", color: IVORY, fontFamily: FONT_BODY }}
+        />
+        <button onClick={() => send(input)} disabled={!input.trim() || loading}
+          className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 transition-all"
+          style={{ background: input.trim() && !loading ? TEAL : "rgba(78,205,196,0.12)", color: input.trim() && !loading ? NAVY : "rgba(78,205,196,0.3)" }}
+        >
+          <Send size={14} />
+        </button>
+      </div>
     </div>
   );
 }

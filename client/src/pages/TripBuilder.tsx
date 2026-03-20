@@ -7,7 +7,7 @@
  * Persona: Margaux — warm, witty, slightly cheeky travel concierge
  */
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "wouter";
 import {
@@ -34,6 +34,8 @@ import {
   GraduationCap,
   Home,
   Camera,
+  Send,
+  Globe,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import type { TripPreferences } from "../../../server/tripBuilder";
@@ -382,8 +384,189 @@ function DayCard({ day, index }: { day: GeneratedItinerary["days"][0]; index: nu
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
+// ─── Big Sur Chat Component ───────────────────────────────────────────────────
+
+interface ChatMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
+function BigSurChat({ onSwitchToEurope }: { onSwitchToEurope: () => void }) {
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const bottomRef = useRef<HTMLDivElement>(null);
+  const chatMutation = trpc.tripBuilder.chatWithMargaux.useMutation();
+
+  const ROSE = "#e8748a";
+  const TEAL = "#4ecdc4";
+
+  const suggestedQuestions = [
+    "What should we do first when we arrive?",
+    "Best time to hit Pfeiffer Beach?",
+    "What to pack for PennyLu and Kota?",
+    "Dinner recommendation in Carmel?",
+    "What's the Calla Lily Valley trail like?",
+    "Should we do the March 27 or April 3 weekend?",
+  ];
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
+
+  const sendMessage = async (text: string) => {
+    if (!text.trim() || loading) return;
+    const userMsg: ChatMessage = { role: "user", content: text };
+    const newHistory = [...messages, userMsg];
+    setMessages(newHistory);
+    setInput("");
+    setLoading(true);
+    try {
+      const result = await chatMutation.mutateAsync({
+        message: text,
+        history: messages,
+        systemPrompt: undefined, // will use Big Sur prompt via server default override below
+      });
+      setMessages([...newHistory, { role: "assistant", content: result.reply }]);
+    } catch {
+      setMessages([...newHistory, { role: "assistant", content: "Lost signal somewhere on Highway 1. Try again?" }]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col" style={{ background: NAVY, color: IVORY }}>
+      {/* Nav */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4" style={NAV}>
+        <Link href="/">
+          <span className="flex items-center gap-2 cursor-pointer text-sm" style={{ color: TEAL, fontFamily: FONT_BODY }}>
+            <ArrowLeft size={16} />
+            Melanie's Adventure
+          </span>
+        </Link>
+        <button
+          onClick={onSwitchToEurope}
+          className="flex items-center gap-2 text-xs px-4 py-1.5 rounded-full transition-all"
+          style={{ border: `1px solid rgba(201,168,76,0.3)`, color: GOLD, fontFamily: FONT_BODY }}
+        >
+          <Globe size={12} />
+          Plan Europe Instead
+        </button>
+      </nav>
+
+      <div className="flex-1 max-w-2xl mx-auto w-full px-6 pt-28 pb-36">
+        {/* Margaux Intro */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl p-6 mb-6" style={{ background: "rgba(232,116,138,0.05)", border: "1px solid rgba(232,116,138,0.15)" }}>
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(232,116,138,0.15)" }}>
+              <Sparkles size={18} style={{ color: ROSE }} />
+            </div>
+            <div>
+              <p className="text-xs tracking-widest uppercase mb-2" style={{ color: ROSE, fontFamily: FONT_BODY }}>Margaux</p>
+              <p className="text-sm" style={{ fontFamily: FONT_BODY, color: "rgba(232,224,208,0.75)", lineHeight: 1.7 }}>
+                Alright. Curtis told me the plan changed — and honestly? Big Sur for a 50th birthday weekend with PennyLu, Kota, Annie, and Mokin is not a consolation prize. That's a great trip. Ask me anything about the route, the stops, what to pack, where to eat in Carmel, or whether to go this weekend or next.
+              </p>
+              <p className="text-xs mt-2" style={{ fontFamily: FONT_BODY, color: "rgba(232,116,138,0.5)" }}>
+                (Europe's still on the table — just ask.)
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Suggested Questions */}
+        {messages.length === 0 && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mb-6">
+            <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "rgba(232,224,208,0.3)", fontFamily: FONT_BODY }}>Quick questions</p>
+            <div className="flex flex-wrap gap-2">
+              {suggestedQuestions.map((q) => (
+                <button
+                  key={q}
+                  onClick={() => sendMessage(q)}
+                  className="text-xs px-3 py-1.5 rounded-full transition-all hover:border-teal-400/50"
+                  style={{ background: "rgba(78,205,196,0.06)", border: "1px solid rgba(78,205,196,0.2)", color: TEAL, fontFamily: FONT_BODY }}
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Messages */}
+        <div className="space-y-4">
+          {messages.map((msg, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+            >
+              {msg.role === "assistant" && (
+                <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-1" style={{ background: "rgba(232,116,138,0.15)" }}>
+                  <Sparkles size={13} style={{ color: ROSE }} />
+                </div>
+              )}
+              <div
+                className="max-w-[80%] rounded-2xl px-4 py-3 text-sm"
+                style={msg.role === "user"
+                  ? { background: "rgba(78,205,196,0.12)", border: "1px solid rgba(78,205,196,0.25)", color: IVORY, fontFamily: FONT_BODY, lineHeight: 1.7 }
+                  : { background: "rgba(232,116,138,0.06)", border: "1px solid rgba(232,116,138,0.12)", color: "rgba(232,224,208,0.85)", fontFamily: FONT_BODY, lineHeight: 1.7 }
+                }
+              >
+                {msg.content}
+              </div>
+            </motion.div>
+          ))}
+          {loading && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
+              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-1" style={{ background: "rgba(232,116,138,0.15)" }}>
+                <Sparkles size={13} style={{ color: ROSE }} />
+              </div>
+              <div className="rounded-2xl px-4 py-3" style={{ background: "rgba(232,116,138,0.06)", border: "1px solid rgba(232,116,138,0.12)" }}>
+                <div className="flex gap-1.5">
+                  {[0, 1, 2].map((i) => (
+                    <motion.div key={i} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1, repeat: Infinity, delay: i * 0.25 }} className="w-1.5 h-1.5 rounded-full" style={{ background: ROSE }} />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+          <div ref={bottomRef} />
+        </div>
+      </div>
+
+      {/* Input Bar */}
+      <div className="fixed bottom-0 left-0 right-0 px-6 py-4" style={{ background: "rgba(10,15,30,0.95)", borderTop: "1px solid rgba(201,168,76,0.1)" }}>
+        <div className="max-w-2xl mx-auto flex gap-3">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && sendMessage(input)}
+            placeholder="Ask Margaux about the trip…"
+            className="flex-1 rounded-full px-5 py-3 text-sm outline-none"
+            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(201,168,76,0.2)", color: IVORY, fontFamily: FONT_BODY }}
+          />
+          <button
+            onClick={() => sendMessage(input)}
+            disabled={!input.trim() || loading}
+            className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 transition-all"
+            style={{ background: input.trim() && !loading ? TEAL : "rgba(78,205,196,0.15)", color: input.trim() && !loading ? NAVY : "rgba(78,205,196,0.4)" }}
+          >
+            <Send size={16} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main Component ───────────────────────────────────────────────────────────
+
 export default function TripBuilder() {
   const [, navigate] = useLocation();
+  const [mode, setMode] = useState<"bigsur" | "europe">("bigsur");
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Partial<TripPreferences>>({
     regions: [],
@@ -397,6 +580,11 @@ export default function TripBuilder() {
 
   const generateMutation = trpc.tripBuilder.generate.useMutation();
   const saveMutation = trpc.tripBuilder.save.useMutation();
+
+  // Default to Big Sur chat mode
+  if (mode === "bigsur") {
+    return <BigSurChat onSwitchToEurope={() => setMode("europe")} />;
+  }
 
   const step = steps[currentStep];
   const totalSteps = steps.length;

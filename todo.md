@@ -134,3 +134,9 @@
 - [x] Clean up nav: 3 items only (Big Sur RV, Europe dropdown, Talk to Margaux CTA)
 - [x] Europe dropdown labeled "Future Adventures" with all 6 sub-links preserved
 - [x] Updated Margaux section copy to reflect Big Sur is the current plan
+
+## Phase 20 — Margaux Big Sur Update
+- [ ] Update chatWithMargaux system prompt from Europe focus to Big Sur RV focus
+- [ ] Update TripBuilder page welcome screen, suggested questions, and context for Big Sur
+- [ ] Add embedded Margaux conversation window to RV Adventure page
+- [ ] Keep Europe context available as a secondary topic Margaux can discuss
