@@ -127,7 +127,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/118915275/AUalUDGvKUnmAKsA.png')`,
+            backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/bigsur-hero-highway-8bE9w93WbGwcQ2SSvW4TQN.webp')`,
           }}
         />
         <div className="absolute inset-0 hero-overlay" />
