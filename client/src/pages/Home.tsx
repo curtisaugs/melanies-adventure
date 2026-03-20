@@ -512,7 +512,7 @@ export default function Home() {
       </section>
 
       {/* ── FUTURE ADVENTURES — Europe ── */}
-      <section className="py-20 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+      <section className="pt-16 pb-8 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
