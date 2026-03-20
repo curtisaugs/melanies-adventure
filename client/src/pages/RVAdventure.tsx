@@ -5,6 +5,7 @@
 */
 
 import { useState, useRef, useEffect } from "react";
+import { Streamdown } from 'streamdown';
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Sparkles,
@@ -1074,7 +1075,13 @@ function MargauxChatEmbed() {
                 ? { background: "rgba(78,205,196,0.1)", border: "1px solid rgba(78,205,196,0.2)", color: IVORY, fontFamily: FONT_BODY, lineHeight: 1.6 }
                 : { background: "rgba(232,116,138,0.06)", border: "1px solid rgba(232,116,138,0.1)", color: "rgba(232,224,208,0.85)", fontFamily: FONT_BODY, lineHeight: 1.6 }
               }
-            >{msg.content}</div>
+            >
+              {msg.role === "assistant" ? (
+                <div className="[&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_li]:leading-relaxed [&_strong]:font-semibold [&_strong]:text-rose-200 [&_p]:mb-2 [&_p:last-child]:mb-0">
+                  <Streamdown>{msg.content}</Streamdown>
+                </div>
+              ) : msg.content}
+            </div>
           </div>
         ))}
         {loading && (
