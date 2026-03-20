@@ -507,8 +507,14 @@ export default function RVAdventure() {
 
       {/* Hero — Margaux Overview */}
       <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, oklch(0.12 0.04 240 / 0.8) 0%, oklch(0.10 0.02 240) 60%, oklch(0.13 0.05 145 / 0.4) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 80% 30%, oklch(0.72 0.14 145 / 0.05) 0%, transparent 60%)" }} />
+        {/* Full-bleed Big Sur hero image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/bigsur-hero-highway-8bE9w93WbGwcQ2SSvW4TQN.webp')` }}
+        />
+        {/* Dark overlay matching European pages */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(8,10,20,0.85) 0%, rgba(8,10,20,0.65) 50%, rgba(8,10,20,0.45) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,10,20,0.7) 0%, transparent 50%)" }} />
 
         <div className="relative container">
           <div className="max-w-4xl">
@@ -754,6 +760,33 @@ export default function RVAdventure() {
         </div>
       </section>
 
+      {/* Pfeiffer Beach Full-Bleed Teaser */}
+      <section className="relative py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/bigsur-pfeiffer-beach-M7hbZyYk7ei4TKfjTsV3N5.webp')` }}
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(8,10,20,0.80) 0%, rgba(8,10,20,0.50) 60%, rgba(8,10,20,0.30) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,10,20,0.6) 0%, transparent 60%)" }} />
+        <div className="relative container">
+          <div className="max-w-xl">
+            <span className="font-accent text-xs tracking-[0.2em] uppercase block mb-3" style={{ color: "oklch(0.75 0.12 185)" }}>Highlight Stop</span>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-4 leading-tight">
+              Pfeiffer Beach<br />
+              <span className="italic" style={{ color: "oklch(0.75 0.12 185)" }}>Purple Sand</span>
+            </h2>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: "rgba(232,224,208,0.70)" }}>
+              Manganese garnet washes down from the cliffs and tints the sand violet at the water's edge. The keyhole rock arch frames the sunset perfectly. Dogs are allowed on leash. Maury and Kota will lose their minds.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["Dogs on leash", "Cash parking · $12", "Sunset views", "No reservations needed"].map((tag) => (
+                <span key={tag} className="font-accent text-xs tracking-widest uppercase px-3 py-1.5 rounded-full" style={{ background: "rgba(94,234,212,0.10)", border: "1px solid rgba(94,234,212,0.25)", color: "oklch(0.75 0.12 185)" }}>{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Campsites */}
       <section className="py-12">
         <div className="container">
@@ -787,9 +820,42 @@ export default function RVAdventure() {
         </div>
       </section>
 
+      {/* McWay Falls Full-Bleed Teaser */}
+      <section className="relative py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/bigsur-mcway-falls-F7aD5xHjknGXaJEnNhLUTs.webp')` }}
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(8,10,20,0.80) 0%, rgba(8,10,20,0.50) 60%, rgba(8,10,20,0.30) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,10,20,0.6) 0%, transparent 60%)" }} />
+        <div className="relative container">
+          <div className="max-w-xl ml-auto text-right">
+            <span className="font-accent text-xs tracking-[0.2em] uppercase block mb-3" style={{ color: "oklch(0.72 0.12 75)" }}>Must-See</span>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-4 leading-tight">
+              McWay Falls<br />
+              <span className="italic" style={{ color: "oklch(0.72 0.12 75)" }}>The Untouchable Cove</span>
+            </h2>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: "rgba(232,224,208,0.70)" }}>
+              An 80-foot waterfall drops directly onto a beach no one can reach. You watch it from the cliff trail above. Turquoise water, golden sand, the Pacific stretching to the horizon. It's the most photographed view in Big Sur for a reason.
+            </p>
+            <div className="flex flex-wrap gap-2 justify-end">
+              {["Julia Pfeiffer Burns SP", "Free with park pass", "10-min cliff walk", "Dogs on leash on trail"].map((tag) => (
+                <span key={tag} className="font-accent text-xs tracking-widest uppercase px-3 py-1.5 rounded-full" style={{ background: "rgba(201,168,76,0.10)", border: "1px solid rgba(201,168,76,0.25)", color: "oklch(0.72 0.12 75)" }}>{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Curtis-Only Cost Breakdown */}
-      <section className="py-12">
-        <div className="container">
+      <section className="relative py-12 overflow-hidden">
+        {/* Subtle redwoods background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/bigsur-redwoods-2kia7bjQqt7HdMFjFwtMx8.webp')` }}
+        />
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,20,0.7)" }} />
+        <div className="relative container">
           <div className="max-w-4xl mx-auto">
             <button
               onClick={() => setShowCostBreakdown(!showCostBreakdown)}
