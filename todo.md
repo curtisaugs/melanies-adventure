@@ -140,3 +140,14 @@
 - [ ] Update TripBuilder page welcome screen, suggested questions, and context for Big Sur
 - [ ] Add embedded Margaux conversation window to RV Adventure page
 - [ ] Keep Europe context available as a secondary topic Margaux can discuss
+
+## Phase 22 — Airbnb Weekend Getaway Modality
+- [x] Visit the 3 Airbnb listings Curtis shared and capture key details
+- [x] Research dog-friendly Airbnb options: Big Bear, Lake Arrowhead, Big Sur, Santa Barbara
+- [x] Create new AirbnbGetaway.tsx page with Margaux intro, 4 destination cards, curated listings
+- [x] Add /airbnb-getaway route to App.tsx
+- [x] Add "Cabin Airbnb" nav item alongside Big Sur RV (desktop + mobile)
+- [x] Each listing card: name, location, price/night, dog-friendly notes, fenced yard indicator, direct Airbnb link
+- [x] Add destination comparison section (drive time from LA, vibe, dog-friendliness)
+- [x] Add Airbnb Cabin feature card to homepage (Mountain Cabin Weekend section)
+- [x] Write vitest tests for new page (11 tests passing)

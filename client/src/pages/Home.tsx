@@ -384,6 +384,129 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── AIRBNB CABIN FEATURE CARD ── */}
+      <section className="py-8 pb-20">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Section label */}
+            <div className="flex items-center gap-3 mb-8">
+              <span
+                className="w-2 h-2 rounded-full animate-pulse"
+                style={{ background: "oklch(0.72 0.14 145)" }}
+              />
+              <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "oklch(0.72 0.14 145)" }}>
+                Also This Weekend — Airbnb Option
+              </span>
+            </div>
+
+            {/* Airbnb Feature card */}
+            <div
+              className="rounded-3xl p-8 md:p-10 grid md:grid-cols-2 gap-10 items-center"
+              style={{
+                background: "linear-gradient(135deg, rgba(52,211,153,0.07) 0%, rgba(8,12,28,0.6) 100%)",
+                border: "1px solid rgba(52,211,153,0.2)",
+              }}
+            >
+              {/* Left: copy */}
+              <div>
+                <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-3 leading-tight">
+                  Mountain <span className="italic" style={{ color: "oklch(0.72 0.14 145)" }}>Cabin Weekend</span>
+                </h2>
+                <p className="font-body text-base text-ivory/60 leading-relaxed mb-6">
+                  Camping fell through — so Curtis found something better. Four dog-friendly Airbnb cabins with fully fenced yards across Big Bear, Lake Arrowhead, and Carmel. PennyLu and Kota can run free. You get a hot tub and a fireplace.
+                </p>
+
+                {/* Quick stats */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {[
+                    { icon: Calendar, label: "April 3–5", sub: "Weekend getaway" },
+                    { icon: Dog, label: "Fenced Yards", sub: "All 4 listings" },
+                    { icon: MapPin, label: "4 Options", sub: "Big Bear · Arrowhead · Carmel" },
+                    { icon: Star, label: "Top Pick: 4.94★", sub: "A-Frame, Lake Arrowhead" },
+                  ].map(({ icon: Icon, label, sub }) => (
+                    <div
+                      key={label}
+                      className="flex items-start gap-3 rounded-xl p-3"
+                      style={{ background: "rgba(52,211,153,0.08)", border: "1px solid rgba(52,211,153,0.2)" }}
+                    >
+                      <Icon size={16} style={{ color: "oklch(0.72 0.14 145)", flexShrink: 0, marginTop: 2 }} />
+                      <div>
+                        <p className="font-body text-sm font-medium text-ivory">{label}</p>
+                        <p className="font-body text-xs text-ivory/40">{sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/airbnb-getaway">
+                  <button
+                    className="inline-flex items-center gap-2 font-body font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg"
+                    style={{
+                      background: "linear-gradient(135deg, oklch(0.72 0.14 145), oklch(0.65 0.16 160))",
+                      color: "oklch(0.09 0.015 260)",
+                      boxShadow: "0 4px 20px rgba(52,211,153,0.25)",
+                    }}
+                  >
+                    Browse the Cabins
+                    <ArrowRight size={16} />
+                  </button>
+                </Link>
+              </div>
+
+              {/* Right: listing preview */}
+              <div
+                className="rounded-2xl p-6"
+                style={{
+                  background: "rgba(8,12,28,0.5)",
+                  border: "1px solid rgba(52,211,153,0.15)",
+                }}
+              >
+                <p className="font-accent text-[0.6rem] tracking-[0.2em] uppercase mb-4" style={{ color: "oklch(0.72 0.14 145)" }}>
+                  Featured Listings
+                </p>
+                {[
+                  { name: "A-Frame of Mind", location: "Lake Arrowhead", rating: "4.94★", reviews: "248 reviews", tag: "Top Pick", tagColor: "rgba(52,211,153,0.15)", tagBorder: "rgba(52,211,153,0.3)", tagText: "oklch(0.72 0.14 145)" },
+                  { name: "Tanager Cabin", location: "Big Bear Lake", rating: "4.55★", reviews: "Hot Tub + Fenced", tag: "Hot Tub", tagColor: "rgba(251,191,36,0.12)", tagBorder: "rgba(251,191,36,0.3)", tagText: "oklch(0.78 0.14 60)" },
+                  { name: "Carmel Oasis", location: "Carmel-by-the-Sea", rating: "4.98★", reviews: "52 reviews", tag: "Luxury", tagColor: "rgba(167,139,250,0.12)", tagBorder: "rgba(167,139,250,0.3)", tagText: "oklch(0.72 0.12 285)" },
+                ].map((l) => (
+                  <div
+                    key={l.name}
+                    className="flex items-center justify-between py-3 border-b"
+                    style={{ borderColor: "rgba(255,255,255,0.06)" }}
+                  >
+                    <div>
+                      <p className="font-body text-sm font-medium text-ivory">{l.name}</p>
+                      <p className="font-body text-xs text-ivory/40">{l.location} · {l.rating} · {l.reviews}</p>
+                    </div>
+                    <span
+                      className="font-accent text-[0.55rem] tracking-widest uppercase px-2 py-0.5 rounded-full shrink-0"
+                      style={{ background: l.tagColor, border: `1px solid ${l.tagBorder}`, color: l.tagText }}
+                    >
+                      {l.tag}
+                    </span>
+                  </div>
+                ))}
+                <div className="pt-4">
+                  <Link href="/airbnb-getaway">
+                    <button
+                      className="w-full font-body text-xs tracking-widest uppercase py-2 rounded-xl transition-all"
+                      style={{ color: "oklch(0.72 0.14 145)", background: "rgba(52,211,153,0.08)" }}
+                    >
+                      See all 4 listings →
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── MARGAUX SECTION ── */}
       <section className="py-16 relative overflow-hidden">
         <div

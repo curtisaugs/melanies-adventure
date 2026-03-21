@@ -100,6 +100,25 @@ export default function Navigation() {
               </span>
             </Link>
 
+            {/* Airbnb Cabin — second local option */}
+            <Link href="/airbnb-getaway">
+              <span
+                className="nav-link transition-all duration-300 flex items-center gap-1.5"
+                style={{
+                  color: location === "/airbnb-getaway"
+                    ? "oklch(0.72 0.14 145)"
+                    : "oklch(0.72 0.14 145 / 0.85)",
+                  fontWeight: 500,
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full animate-pulse"
+                  style={{ background: "oklch(0.72 0.14 145)", flexShrink: 0 }}
+                />
+                Cabin Airbnb
+              </span>
+            </Link>
+
             {/* Europe dropdown */}
             <div className="relative" ref={europeRef}>
               <button
@@ -201,6 +220,25 @@ export default function Navigation() {
                 </span>
                 <span className="font-accent text-[0.6rem] tracking-widest uppercase ml-auto" style={{ color: "oklch(0.75 0.12 185 / 0.6)" }}>
                   Now
+                </span>
+              </div>
+            </Link>
+
+            {/* Cabin Airbnb — new option */}
+            <Link href="/airbnb-getaway">
+              <div className="flex items-center gap-3 py-4 border-b border-white/8">
+                <span
+                  className="w-2 h-2 rounded-full animate-pulse"
+                  style={{ background: "oklch(0.72 0.14 145)" }}
+                />
+                <span
+                  className="font-display text-3xl font-light"
+                  style={{ color: "oklch(0.72 0.14 145)" }}
+                >
+                  Cabin Airbnb
+                </span>
+                <span className="font-accent text-[0.6rem] tracking-widest uppercase ml-auto" style={{ color: "oklch(0.72 0.14 145 / 0.6)" }}>
+                  April 3–5
                 </span>
               </div>
             </Link>
