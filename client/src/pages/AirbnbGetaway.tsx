@@ -1159,6 +1159,23 @@ export default function AirbnbGetaway() {
         </div>
       </section>
 
+      {/* Margaux Chat Section */}
+      <section className="py-20" style={{ background: "rgba(10,15,30,0.95)" }}>
+        <div className="container max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "oklch(0.72 0.14 145)" }}>Ask Margaux</span>
+            <h2 className="font-display text-4xl font-light mt-2" style={{ color: "#e8e0d0" }}>Ask Margaux About the Trip</h2>
+            <p className="font-body text-sm mt-3" style={{ color: "rgba(232,224,208,0.5)" }}>She knows the Alpen Lodge inside and out. Ask about packing, hikes for the dogs, what to cook, where to eat, or how to spend each day.</p>
+          </motion.div>
+          <MargauxChatEmbed />
+        </div>
+      </section>
+
       {/* Other Options — Accordion */}
       <section className="py-10" style={{ background: "rgba(8,10,20,0.7)" }}>
         <div className="container">
@@ -1452,23 +1469,6 @@ export default function AirbnbGetaway() {
         </div>
       </section>
 
-      {/* Margaux Chat Section */}
-      <section className="py-20" style={{ background: "rgba(10,15,30,0.95)" }}>
-        <div className="container max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "oklch(0.72 0.14 145)" }}>Ask Margaux</span>
-            <h2 className="font-display text-4xl font-light mt-2" style={{ color: "#e8e0d0" }}>Ask Margaux About the Trip</h2>
-            <p className="font-body text-sm mt-3" style={{ color: "rgba(232,224,208,0.5)" }}>She knows the Alpen Lodge inside and out. Ask about packing, hikes for the dogs, what to cook, where to eat, or how to spend each day.</p>
-          </motion.div>
-          <MargauxChatEmbed />
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
@@ -1485,7 +1485,12 @@ function MargauxChatEmbed() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const chatMutation = trpc.tripBuilder.chatWithMargaux.useMutation();
 
+  const isFirstRender = useRef(true);
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 

@@ -204,3 +204,8 @@
 - [x] Add all Lake Arrowhead adventure context: hikes, restaurants, shops, groceries, activities
 - [x] Update Margaux section header: "Ask Margaux About the Trip"
 - [x] Update section subtext, input placeholder, and empty state prompt
+
+## Phase 32 — Page Layout Fixes
+- [x] Fix auto-scroll-to-bottom bug (isFirstRender guard on useEffect)
+- [x] A-Frame of Mind already in listings array — confirmed it shows in accordion with all 4 listings
+- [x] Moved Margaux chat section to appear right after the treasure map and before Other Options accordion
