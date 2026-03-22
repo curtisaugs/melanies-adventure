@@ -550,7 +550,7 @@ export default function AirbnbGetaway() {
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/airbnb-cabin-hero-diXqJi7m4UQdKy3TBWNS2H.webp')` }}
+          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/lake-arrowhead-sunset-fiery_9537f5b9.jpg')` }}
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(8,10,20,0.88) 0%, rgba(8,10,20,0.65) 55%, rgba(8,10,20,0.45) 100%)" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,10,20,0.75) 0%, transparent 50%)" }} />
@@ -894,7 +894,7 @@ export default function AirbnbGetaway() {
       <section className="relative py-28 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/airbnb-cabin-hero-diXqJi7m4UQdKy3TBWNS2H.webp')` }}
+          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/lake-arrowhead-sunset-fiery_9537f5b9.jpg')` }}
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(8,10,20,0.85) 0%, rgba(8,10,20,0.55) 60%, rgba(8,10,20,0.30) 100%)" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,10,20,0.6) 0%, transparent 60%)" }} />

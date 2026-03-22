@@ -176,3 +176,8 @@
 - [x] Upload 4 real Alpen Lodge photos to CDN
 - [x] Swap homepage hero background to deck/lake view photo (alpen-deck-lake)
 - [x] Add 4-photo gallery grid to Cabin Airbnb page with hover captions and "Hero View" badge
+
+## Phase 28 — Lake Arrowhead Hero Images
+- [x] Search for picturesque real Lake Arrowhead photos (lake, mountains, village, sunset)
+- [x] Upload 3 photos to CDN: fiery sunset, pink sunset, lakefront cabins
+- [x] Swap Cabin Airbnb page hero background (both hero + full-bleed teaser) to real fiery sunset photo
