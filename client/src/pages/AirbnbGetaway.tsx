@@ -32,7 +32,36 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 
-// ─── Airbnb Listings ─────────────────────────────────────────────────────────────
+// // ─── Confirmed Booking ──────────────────────────────────────────────────
+const CONFIRMED_BOOKING = {
+  propertyId: "5089227",
+  reservationId: "56518539",
+  propertyName: "Alpen Lodge",
+  listingTitle: "Gorgeous+Cozy Lakeview Home, 3 Decks, AC, EV Chgr",
+  location: "Lake Arrowhead, CA",
+  locationDetail: "Blue Jay / Lake Arrowhead area · 2 hrs from LA",
+  checkIn: "March 27, 2026",
+  checkOut: "March 30, 2026",
+  nights: 3,
+  guests: "3 adults, 1 pet",
+  vrboUrl: "https://www.vrbo.com/5089227",
+  photoUrl: "https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/alpen-lodge-main_5ffa1840.webp",
+  highlights: [
+    "5 bedrooms + children's bunks · 3.5 baths · sleeps 12",
+    "3 lakeview decks with BBQ & firepit",
+    "3 fireplaces throughout the home",
+    "Gourmet kitchen + bonus room",
+    "Pool table & ping pong table",
+    "Lake rights — free guest access",
+    "AC + EV charger",
+    "Dog-friendly (2 dog limit, $100 flat fee)",
+    "4 min to Blue Jay Village, 9 min to Lake Arrowhead Village",
+  ],
+  petPolicy: "2 dogs welcome · $100 flat pet fee",
+  platform: "VRBO",
+};
+
+// ─── Airbnb Listings ──────────────────────────────────────────────────
 
 const listings = [
   {
@@ -562,8 +591,67 @@ export default function AirbnbGetaway() {
               className="font-display font-light italic mb-10"
               style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)", color: "rgba(232,224,208,0.5)" }}
             >
-              Dog-friendly cabins with fenced yards — April 3–5, 2026
+              Dog-friendly cabins with fenced yards — Lake Arrowhead, March 27–30
             </motion.p>
+
+            {/* ✓ CONFIRMED BOOKING BANNER */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="rounded-2xl p-5 mb-8 flex flex-col sm:flex-row gap-5 items-start"
+              style={{ background: "rgba(52,211,153,0.07)", border: "2px solid rgba(52,211,153,0.35)" }}
+            >
+              {/* Property photo */}
+              <div className="w-full sm:w-40 h-28 rounded-xl overflow-hidden flex-shrink-0">
+                <img
+                  src={CONFIRMED_BOOKING.photoUrl}
+                  alt={CONFIRMED_BOOKING.propertyName}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle2 size={15} style={{ color: "oklch(0.72 0.14 145)" }} />
+                  <span className="font-accent text-xs tracking-[0.2em] uppercase font-bold" style={{ color: "oklch(0.72 0.14 145)" }}>
+                    Confirmed Booking — VRBO
+                  </span>
+                  <span className="font-accent text-[0.6rem] tracking-widest uppercase px-2 py-0.5 rounded-full" style={{ background: "rgba(52,211,153,0.15)", color: "oklch(0.72 0.14 145)" }}>
+                    Res #{CONFIRMED_BOOKING.reservationId}
+                  </span>
+                </div>
+                <h3 className="font-display text-xl font-light mb-1" style={{ color: "#e8e0d0" }}>
+                  {CONFIRMED_BOOKING.propertyName}
+                  <span className="font-body text-sm font-normal ml-2" style={{ color: "rgba(232,224,208,0.5)" }}>— {CONFIRMED_BOOKING.location}</span>
+                </h3>
+                <p className="font-body text-xs mb-3" style={{ color: "rgba(232,224,208,0.55)" }}>
+                  {CONFIRMED_BOOKING.listingTitle}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { label: "Check-in", value: CONFIRMED_BOOKING.checkIn },
+                    { label: "Check-out", value: CONFIRMED_BOOKING.checkOut },
+                    { label: "Nights", value: `${CONFIRMED_BOOKING.nights} nights` },
+                    { label: "Guests", value: CONFIRMED_BOOKING.guests },
+                  ].map((item) => (
+                    <div key={item.label} className="text-xs" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                      <span style={{ color: "rgba(232,224,208,0.4)" }}>{item.label}: </span>
+                      <span className="font-semibold" style={{ color: "rgba(232,224,208,0.9)" }}>{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <a
+                href={CONFIRMED_BOOKING.vrboUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold transition-all hover:opacity-80"
+                style={{ background: "rgba(52,211,153,0.15)", border: "1px solid rgba(52,211,153,0.4)", color: "oklch(0.72 0.14 145)", fontFamily: "'Montserrat', sans-serif" }}
+              >
+                <ExternalLink size={12} />
+                View on VRBO
+              </a>
+            </motion.div>
 
             {/* Margaux overview card */}
             <motion.div
@@ -583,17 +671,17 @@ export default function AirbnbGetaway() {
                 <div className="flex-1">
                   <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "#e8748a", fontFamily: "'Montserrat', sans-serif" }}>Margaux</p>
                   <p className="text-sm leading-relaxed mb-3" style={{ fontFamily: "'Montserrat', sans-serif", color: "rgba(232,224,208,0.8)", lineHeight: 1.8 }}>
-                    Camping fell through — which honestly, good. April in the mountains means unpredictable weather, and PennyLu and Kota deserve a proper fenced yard, not a tent and a prayer. These four Airbnb options are all confirmed dog-friendly with fully fenced yards, all available for April 3–5, and all within striking distance of the same beautiful California landscape.
+                    You booked it. The Alpen Lodge in Lake Arrowhead — March 27–30, 3 nights, 3 adults and one very lucky dog. Five bedrooms, three lakeview decks, a firepit, pool table, and lake rights. Camping fell through, and honestly? This is a significant upgrade.
                   </p>
                   <p className="text-sm leading-relaxed mb-4" style={{ fontFamily: "'Montserrat', sans-serif", color: "rgba(232,224,208,0.8)", lineHeight: 1.8 }}>
-                    My pick is the A-Frame of Mind in Lake Arrowhead — 4.94 stars, 248 reviews, a wall of glass windows with lake views, and a fully fenced yard where the dogs can run. Two hours from LA. You're home by Sunday evening without the Sunday dread.
+                    The other listings below are still here for reference — or for next time. But the Alpen Lodge is confirmed, paid, and waiting. Two hours from LA, lake views from every deck, and PennyLu gets a proper yard. This is going to be a great birthday weekend.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {[
-                      { icon: "🏡", label: "4 Options", note: "Big Bear · Lake Arrowhead · Carmel", color: "rgba(52,211,153,0.12)", border: "rgba(52,211,153,0.3)", text: "rgb(52,211,153)" },
-                      { icon: "🐕", label: "PennyLu + Kota", note: "Fenced yards at every option", color: "rgba(232,116,138,0.10)", border: "rgba(232,116,138,0.3)", text: "rgb(232,116,138)" },
-                      { icon: "📅", label: "April 3–5", note: "2 nights · weekend getaway", color: "rgba(201,168,76,0.10)", border: "rgba(201,168,76,0.3)", text: "rgb(201,168,76)" },
-                      { icon: "✅", label: "Available Now", note: "All listings open for April 3–5", color: "rgba(94,180,234,0.12)", border: "rgba(94,180,234,0.3)", text: "rgb(94,180,234)" },
+                      { icon: "✅", label: "Alpen Lodge — BOOKED", note: "Lake Arrowhead, CA", color: "rgba(52,211,153,0.12)", border: "rgba(52,211,153,0.3)", text: "rgb(52,211,153)" },
+                      { icon: "🐕", label: "PennyLu + Kota", note: "Dog-friendly · $100 flat pet fee", color: "rgba(232,116,138,0.10)", border: "rgba(232,116,138,0.3)", text: "rgb(232,116,138)" },
+                      { icon: "📅", label: "Mar 27–30", note: "3 nights · 3 adults", color: "rgba(201,168,76,0.10)", border: "rgba(201,168,76,0.3)", text: "rgb(201,168,76)" },
+                      { icon: "🏠", label: "5 BR · 3 Decks", note: "Lake views · BBQ · Firepit", color: "rgba(94,180,234,0.12)", border: "rgba(94,180,234,0.3)", text: "rgb(94,180,234)" },
                     ].map((chip) => (
                       <div
                         key={chip.label}
@@ -621,8 +709,8 @@ export default function AirbnbGetaway() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <Home size={16} className="text-gold" />
-              <h2 className="font-display text-2xl font-light text-ivory">Choose Your Cabin</h2>
-              <span className="font-body text-sm text-muted-foreground italic">Click to expand details</span>
+              <h2 className="font-display text-2xl font-light text-ivory">Other Options</h2>
+              <span className="font-body text-sm text-muted-foreground italic">For reference or future trips</span>
             </div>
 
             {/* Availability note */}
@@ -633,10 +721,10 @@ export default function AirbnbGetaway() {
               <CalendarDays size={14} style={{ color: "oklch(0.72 0.14 145)" }} className="mt-0.5 shrink-0" />
               <div>
                 <p className="font-accent text-xs tracking-widest uppercase mb-1" style={{ color: "oklch(0.72 0.14 145)" }}>
-                  Availability — April 3–5, 2026
+                  Alpen Lodge is Confirmed — Other Listings for Reference
                 </p>
                 <p className="font-body text-xs text-ivory/60 leading-relaxed">
-                  The A-Frame of Mind (Lake Arrowhead), Tanager Cabin, and Private Big Bear Cottage are all confirmed available for April 3–5. The Carmel Oasis should be verified directly — check availability on Airbnb before booking. All listings require a 2-night minimum.
+                  You've booked the Alpen Lodge (VRBO #5089227) for March 27–30. The listings below are kept for reference — great options for a future trip or if plans change. All are dog-friendly with fenced yards.
                 </p>
               </div>
             </div>

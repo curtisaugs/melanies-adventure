@@ -151,3 +151,10 @@
 - [x] Add destination comparison section (drive time from LA, vibe, dog-friendliness)
 - [x] Add Airbnb Cabin feature card to homepage (Mountain Cabin Weekend section)
 - [x] Write vitest tests for new page (11 tests passing)
+
+## Phase 23 — Confirmed VRBO Booking
+- [x] Add confirmed booking banner/section to Airbnb Getaway page (Alpen Lodge, Lake Arrowhead)
+- [x] Add confirmed booking highlight to homepage Mountain Cabin Weekend card
+- [x] Mark Alpen Lodge as "CONFIRMED" with reservation details (Res ID: 56518539, Mar 27-30, 3 nights, 3 adults + 1 pet)
+- [x] Update Margaux text and availability note to reflect confirmed status
+- [x] Update homepage stats to show Mar 27-30 dates and Alpen Lodge highlights

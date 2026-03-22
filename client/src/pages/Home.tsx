@@ -400,7 +400,7 @@ export default function Home() {
                 style={{ background: "oklch(0.72 0.14 145)" }}
               />
               <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "oklch(0.72 0.14 145)" }}>
-                Also This Weekend — Airbnb Option
+                ✓ Confirmed Booking — VRBO
               </span>
             </div>
 
@@ -418,16 +418,16 @@ export default function Home() {
                   Mountain <span className="italic" style={{ color: "oklch(0.72 0.14 145)" }}>Cabin Weekend</span>
                 </h2>
                 <p className="font-body text-base text-ivory/60 leading-relaxed mb-6">
-                  Camping fell through — so Curtis found something better. Four dog-friendly Airbnb cabins with fully fenced yards across Big Bear, Lake Arrowhead, and Carmel. PennyLu and Kota can run free. You get a hot tub and a fireplace.
+                  Booked and confirmed. The Alpen Lodge in Lake Arrowhead — 5 bedrooms, 3 lakeview decks, BBQ, firepit, pool table, and lake rights. March 27–30, 3 nights. PennyLu gets a proper yard. You get a fireplace and a view.
                 </p>
 
                 {/* Quick stats */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   {[
-                    { icon: Calendar, label: "April 3–5", sub: "Weekend getaway" },
-                    { icon: Dog, label: "Fenced Yards", sub: "All 4 listings" },
-                    { icon: MapPin, label: "4 Options", sub: "Big Bear · Arrowhead · Carmel" },
-                    { icon: Star, label: "Top Pick: 4.94★", sub: "A-Frame, Lake Arrowhead" },
+                    { icon: Calendar, label: "Mar 27–30", sub: "3 nights · 3 adults" },
+                    { icon: Dog, label: "Dog-Friendly", sub: "2 dogs · $100 flat fee" },
+                    { icon: MapPin, label: "Lake Arrowhead", sub: "2 hrs from LA" },
+                    { icon: Star, label: "5 BR · 3 Decks", sub: "Lake views · BBQ · Firepit" },
                   ].map(({ icon: Icon, label, sub }) => (
                     <div
                       key={label}
@@ -452,7 +452,7 @@ export default function Home() {
                       boxShadow: "0 4px 20px rgba(52,211,153,0.25)",
                     }}
                   >
-                    Browse the Cabins
+                    View Booking Details
                     <ArrowRight size={16} />
                   </button>
                 </Link>
@@ -467,12 +467,12 @@ export default function Home() {
                 }}
               >
                 <p className="font-accent text-[0.6rem] tracking-[0.2em] uppercase mb-4" style={{ color: "oklch(0.72 0.14 145)" }}>
-                  Featured Listings
+                  Alpen Lodge Highlights
                 </p>
                 {[
-                  { name: "A-Frame of Mind", location: "Lake Arrowhead", rating: "4.94★", reviews: "248 reviews", tag: "Top Pick", tagColor: "rgba(52,211,153,0.15)", tagBorder: "rgba(52,211,153,0.3)", tagText: "oklch(0.72 0.14 145)" },
-                  { name: "Tanager Cabin", location: "Big Bear Lake", rating: "4.55★", reviews: "Hot Tub + Fenced", tag: "Hot Tub", tagColor: "rgba(251,191,36,0.12)", tagBorder: "rgba(251,191,36,0.3)", tagText: "oklch(0.78 0.14 60)" },
-                  { name: "Carmel Oasis", location: "Carmel-by-the-Sea", rating: "4.98★", reviews: "52 reviews", tag: "Luxury", tagColor: "rgba(167,139,250,0.12)", tagBorder: "rgba(167,139,250,0.3)", tagText: "oklch(0.72 0.12 285)" },
+                  { name: "3 Lakeview Decks", location: "BBQ & Firepit", rating: "✔", reviews: "Lake rights included", tag: "Outdoor", tagColor: "rgba(52,211,153,0.15)", tagBorder: "rgba(52,211,153,0.3)", tagText: "oklch(0.72 0.14 145)" },
+                  { name: "Pool & Ping Pong", location: "Gourmet Kitchen", rating: "✔", reviews: "Bonus room + 3 fireplaces", tag: "Indoor", tagColor: "rgba(251,191,36,0.12)", tagBorder: "rgba(251,191,36,0.3)", tagText: "oklch(0.78 0.14 60)" },
+                  { name: "Dog-Friendly", location: "2 dogs · $100 flat fee", rating: "✔", reviews: "Fenced yard", tag: "Pets OK", tagColor: "rgba(232,116,138,0.12)", tagBorder: "rgba(232,116,138,0.3)", tagText: "oklch(0.72 0.14 15)" },
                 ].map((l) => (
                   <div
                     key={l.name}
