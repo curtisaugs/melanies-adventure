@@ -196,3 +196,11 @@
 - [x] Collapse "Other Options" listings + comparison table into an accordion (collapsed by default)
 - [x] Fix marker click listener (gmp-click for AdvancedMarkerElement)
 - [x] Remove conflicting map styles (mapId present, styles controlled via cloud console)
+
+## Phase 31 — Margaux Context Update (Confirmed Alpen Lodge)
+- [x] Update MargauxChatEmbed system prompt to focus on confirmed March 27-30 Alpen Lodge booking
+- [x] Remove references to April 3-5 and speculative cabin search
+- [x] Add full Alpen Lodge details: 5BR, 3 decks, BBQ, firepit, pool table, fenced yard, lake rights, VRBO #5089227
+- [x] Add all Lake Arrowhead adventure context: hikes, restaurants, shops, groceries, activities
+- [x] Update Margaux section header: "Ask Margaux About the Trip"
+- [x] Update section subtext, input placeholder, and empty state prompt

@@ -1462,8 +1462,8 @@ export default function AirbnbGetaway() {
             className="text-center mb-10"
           >
             <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "oklch(0.72 0.14 145)" }}>Ask Margaux</span>
-            <h2 className="font-display text-4xl font-light mt-2" style={{ color: "#e8e0d0" }}>Questions About the Cabins?</h2>
-            <p className="font-body text-sm mt-3" style={{ color: "rgba(232,224,208,0.5)" }}>She knows the mountains. Ask her anything about Big Bear, Lake Arrowhead, or Carmel.</p>
+            <h2 className="font-display text-4xl font-light mt-2" style={{ color: "#e8e0d0" }}>Ask Margaux About the Trip</h2>
+            <p className="font-body text-sm mt-3" style={{ color: "rgba(232,224,208,0.5)" }}>She knows the Alpen Lodge inside and out. Ask about packing, hikes for the dogs, what to cook, where to eat, or how to spend each day.</p>
           </motion.div>
           <MargauxChatEmbed />
         </div>
@@ -1501,7 +1501,20 @@ function MargauxChatEmbed() {
       const res = await chatMutation.mutateAsync({
         message: text,
         history,
-        systemPrompt: "You are Margaux, a sophisticated and witty travel advisor helping plan a dog-friendly weekend cabin getaway in the California mountains (Big Bear, Lake Arrowhead, or Carmel). You know the listings: A-Frame of Mind in Lake Arrowhead (4.94★, fenced yard, lake views, $250-350/night), Tanager Cabin in Big Bear (hot tub, fenced, $200-250/night), Private Big Bear Cottage (no pet fee, 4.9★, $150-180/night), and Carmel Oasis near Big Sur (4.98★, luxury, $350-450/night). The trip is April 3-5, 2026. The dogs are PennyLu (Doberman) and Kota (Aussie). Be helpful, warm, and occasionally witty.",
+        systemPrompt: `You are Margaux, a warm, witty, and knowledgeable travel advisor who helped plan this trip. The booking is CONFIRMED: the Alpen Lodge in Lake Arrowhead, California (VRBO Property #5089227, Reservation #56518539). The trip is March 27-30, 2026 — 3 nights, 3 adults, 1 pet.
+
+About the Alpen Lodge: A gorgeous 5-bedroom, 3-bathroom lakeview home with 3 private decks, 3 fireplaces, a fully fenced yard, BBQ grill, firepit, pool table, ping pong table, AC, EV charger, and lake rights. Sleeps 10. Dog-friendly (2 dog max, $100 flat fee already paid). Located at Lake Arrowhead, CA — about 2 hours from Los Angeles via I-10 to Hwy 138 or Hwy 18.
+
+The guests: Melanie (celebrating her 50th birthday on March 26!), Curtis (her partner who planned and gifted this trip), and Annie. The dogs are PennyLu (Doberman) and Kota (Aussie).
+
+Local adventure highlights you know well:
+- Dog-friendly hikes: Will Abell Loop (easy, 2.5mi), Heaps Peak Arboretum (paved, dog-friendly), Heart Rock Trail (3mi, waterfall), Castle Rock Trail (2mi, panoramic views), Deep Creek Hot Springs (advanced, 8mi RT), MacKay Bark Park (off-leash dog park)
+- Restaurants: Jetties (waterfront, dog-friendly patio), Lakefront Taproom (craft beer, lake views), Belgian Waffle Works (Village classic), Lake Arrowhead Brewing Co, Papagayos (Mexican, patio), Saddleback Inn (upscale)
+- Shopping: The Village at Lake Arrowhead, Dorothy's of Lake Arrowhead (gifts), Pendleton (outdoor/apparel), Alexandra's Emporium (antiques), Big on Bears (local art), Mountain Arts Gallery
+- Groceries: Stater Bros Blue Jay (6am-11pm, closest), Jensen's Foods Blue Jay (specialty/deli), Cedar Glen Fine Foods (artisan), Grocery Outlet Rim of the World
+- Activities: Lake Arrowhead Village, Lake Gregory Regional Park, Queen Arrowhead boat tour, Lake Arrowhead Historical Museum, WildHaven Ranch (wolf sanctuary), stargazing from the 3 decks
+
+You know this trip is a birthday gift from Curtis to Melanie. Be warm, celebratory, and practical. Help with packing lists, day-by-day itinerary ideas, restaurant recommendations, hike suggestions for the dogs, grocery lists, driving directions, or anything else about the trip. Be witty but never over the top.`,
       });
       setMessages([...next, { role: "assistant", content: res.reply }]);
     } catch {
@@ -1522,7 +1535,7 @@ function MargauxChatEmbed() {
           <div className="text-center py-8">
             <Sparkles size={24} style={{ color: "oklch(0.72 0.14 145)" }} className="mx-auto mb-3" />
             <p className="font-body text-sm text-ivory/40 italic">
-              Ask about the best cabin for your group, dog-friendly hikes nearby, or what to pack for a mountain weekend.
+              Ask about packing for the Alpen Lodge, hikes for PennyLu and Kota, the best restaurants in the Village, what to stock the kitchen with, or how to plan each day of the trip.
             </p>
           </div>
         )}
@@ -1568,7 +1581,7 @@ function MargauxChatEmbed() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && send()}
-          placeholder="Ask Margaux about the cabins..."
+          placeholder="Ask about packing, hikes, restaurants, day plans..."
           className="flex-1 bg-transparent font-body text-sm text-ivory/80 placeholder:text-ivory/25 outline-none"
         />
         <button
