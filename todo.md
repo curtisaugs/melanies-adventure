@@ -188,3 +188,11 @@
 - [x] Research gift shops, bookstores, and local village shopping (6 shops + 4 books/coffee)
 - [x] Research grocery stores near the Alpen Lodge (4 options with hours/addresses)
 - [x] Build interactive checklist section on Cabin Airbnb page with 5 categories, icons, and external links
+
+## Phase 30 — Treasure Map + Accordion Other Options
+- [x] Add interactive Google Map section with pins for Alpen Lodge (home base) + all adventure highlights
+- [x] Category-colored pins: gold (home base), teal (hikes), rose (restaurants), amber (shops), blue (groceries)
+- [x] Info windows on pin click (name, category, short description)
+- [x] Collapse "Other Options" listings + comparison table into an accordion (collapsed by default)
+- [x] Fix marker click listener (gmp-click for AdvancedMarkerElement)
+- [x] Remove conflicting map styles (mapId present, styles controlled via cloud console)

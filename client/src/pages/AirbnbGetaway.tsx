@@ -37,6 +37,7 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
+import { MapView } from "@/components/Map";
 
 // // ─── Confirmed Booking ──────────────────────────────────────────────────
 const CONFIRMED_BOOKING = {
@@ -544,6 +545,8 @@ function ListingCard({ listing, isSelected, onSelect }: {
 export default function AirbnbGetaway() {
   const [selectedListing, setSelectedListing] = useState<string>("arrowhead-aframe");
   const [showCostBreakdown, setShowCostBreakdown] = useState(false);
+  const [showOtherOptions, setShowOtherOptions] = useState(false);
+  const mapRef = useRef<google.maps.Map | null>(null);
 
   const activeListing = listings.find((l) => l.id === selectedListing)!;
   const activeCost = costBreakdowns[selectedListing as keyof typeof costBreakdowns];
@@ -1056,119 +1059,240 @@ export default function AirbnbGetaway() {
         </div>
       </section>
 
-      {/* Listings Grid */}
-      <section className="py-12">
+      {/* Treasure Map */}
+      <section className="py-16" style={{ background: "rgba(6,8,18,0.8)" }}>
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <Home size={16} className="text-gold" />
-              <h2 className="font-display text-2xl font-light text-ivory">Other Options</h2>
-              <span className="font-body text-sm text-muted-foreground italic">For reference or future trips</span>
-            </div>
-
-            {/* Availability note */}
-            <div
-              className="rounded-xl p-4 mb-6 flex items-start gap-3"
-              style={{ background: "rgba(52,211,153,0.06)", border: "1px solid rgba(52,211,153,0.2)" }}
-            >
-              <CalendarDays size={14} style={{ color: "oklch(0.72 0.14 145)" }} className="mt-0.5 shrink-0" />
-              <div>
-                <p className="font-accent text-xs tracking-widest uppercase mb-1" style={{ color: "oklch(0.72 0.14 145)" }}>
-                  Alpen Lodge is Confirmed — Other Listings for Reference
-                </p>
-                <p className="font-body text-xs text-ivory/60 leading-relaxed">
-                  You've booked the Alpen Lodge (VRBO #5089227) for March 27–30. The listings below are kept for reference — great options for a future trip or if plans change. All are dog-friendly with fenced yards.
-                </p>
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 mb-3">
+                <MapPin size={15} style={{ color: "oklch(0.72 0.12 75)" }} />
+                <span className="font-accent text-xs tracking-[0.2em] uppercase text-gold">Home Base: Alpen Lodge</span>
               </div>
+              <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-2">
+                Your <span className="text-gold italic">Adventure Map</span>
+              </h2>
+              <p className="font-body text-sm text-ivory/55 max-w-lg mx-auto">
+                All the highlights from the guide, pinned relative to your cabin. Click any marker to explore.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
-              {listings.map((listing) => (
-                <ListingCard
-                  key={listing.id}
-                  listing={listing}
-                  isSelected={selectedListing === listing.id}
-                  onSelect={() => setSelectedListing(listing.id)}
-                />
+            {/* Map Container */}
+            <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(201,168,76,0.2)" }}>
+              <MapView
+                className="w-full h-[520px]"
+                initialCenter={{ lat: 34.2439, lng: -117.1889 }}
+                initialZoom={13}
+                onMapReady={(map) => {
+                  mapRef.current = map;
+
+                  const infoWindow = new window.google.maps.InfoWindow();
+
+                  const pins = [
+                    // Home base
+                    { lat: 34.2439, lng: -117.1889, label: "🏡 Alpen Lodge", desc: "Your home base · VRBO #5089227 · 3 decks, lake views, fenced yard", color: "#c9a84c", category: "Home Base" },
+                    // Hikes
+                    { lat: 34.2510, lng: -117.1840, label: "🥾 Will Abell Trail", desc: "1.9-mile wooded loop · Easy · Dog-friendly", color: "#34d399", category: "Hike" },
+                    { lat: 34.2280, lng: -117.2100, label: "🌲 Heaps Peak Arboretum", desc: "1-mile interpretive trail · Sequoias · Easy", color: "#34d399", category: "Hike" },
+                    { lat: 34.2350, lng: -117.1600, label: "🏔️ Castle Rock Trail", desc: "2.2-mile panoramic views of the lake · Moderate", color: "#34d399", category: "Hike" },
+                    { lat: 34.2650, lng: -117.1750, label: "🐾 MacKay Bark Park", desc: "Off-leash dog park in Blue Jay · Free", color: "#34d399", category: "Dog Park" },
+                    // Restaurants
+                    { lat: 34.2470, lng: -117.1920, label: "🍽️ Jetties Waterfront", desc: "Lakeside dining · Dog-friendly deck · Great cocktails", color: "#c9a84c", category: "Restaurant" },
+                    { lat: 34.2460, lng: -117.1870, label: "🍺 Lake Arrowhead Brewing Co.", desc: "Craft beer · Fire pits · Dog bowls on patio", color: "#c9a84c", category: "Restaurant" },
+                    { lat: 34.2480, lng: -117.1910, label: "🧇 Belgian Waffle Works", desc: "Famous waffles · Leashed dogs welcome outdoors", color: "#c9a84c", category: "Restaurant" },
+                    // Village & Shopping
+                    { lat: 34.2455, lng: -117.1895, label: "🛍️ Lake Arrowhead Village", desc: "50+ waterfront shops & restaurants · Dog-friendly paths", color: "#a78bfa", category: "Village" },
+                    { lat: 34.2620, lng: -117.1780, label: "📚 The Next Chapter Bookstore", desc: "Beloved indie bookshop · 5-star rated", color: "#a78bfa", category: "Shop" },
+                    // Groceries
+                    { lat: 34.2580, lng: -117.1830, label: "🛒 Stater Bros.", desc: "28100 CA-189 · Open 6am–11pm daily", color: "#60a5fa", category: "Grocery" },
+                    { lat: 34.2640, lng: -117.1760, label: "🛒 Jensen's Foods", desc: "Blue Jay · Local grocery · Open 6am–9pm", color: "#60a5fa", category: "Grocery" },
+                  ];
+
+                  pins.forEach((pin) => {
+                    const markerEl = document.createElement("div");
+                    markerEl.style.cssText = `
+                      background: ${pin.color};
+                      border: 2px solid rgba(255,255,255,0.3);
+                      border-radius: 50%;
+                      width: ${pin.category === "Home Base" ? "20px" : "13px"};
+                      height: ${pin.category === "Home Base" ? "20px" : "13px"};
+                      box-shadow: 0 0 ${pin.category === "Home Base" ? "12px" : "6px"} ${pin.color}80;
+                      cursor: pointer;
+                    `;
+
+                    const marker = new window.google.maps.marker.AdvancedMarkerElement({
+                      map,
+                      position: { lat: pin.lat, lng: pin.lng },
+                      title: pin.label,
+                      content: markerEl,
+                    });
+
+                    marker.addListener("gmp-click", () => {
+                      infoWindow.setContent(`
+                        <div style="font-family: sans-serif; padding: 4px 2px; max-width: 220px;">
+                          <div style="font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px;">${pin.label}</div>
+                          <div style="font-size: 11px; color: #555; line-height: 1.5;">${pin.desc}</div>
+                          <div style="font-size: 10px; color: ${pin.color}; margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">${pin.category}</div>
+                        </div>
+                      `);
+                      infoWindow.open(map, marker);
+                    });
+                  });
+                }}
+              />
+            </div>
+
+            {/* Map Legend */}
+            <div className="flex flex-wrap gap-4 mt-4 justify-center">
+              {[
+                { color: "#c9a84c", label: "Home Base & Restaurants" },
+                { color: "#34d399", label: "Hikes & Dog Parks" },
+                { color: "#a78bfa", label: "Village & Shopping" },
+                { color: "#60a5fa", label: "Groceries" },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full" style={{ background: item.color, boxShadow: `0 0 6px ${item.color}80` }} />
+                  <span className="font-body text-xs text-ivory/50">{item.label}</span>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="py-8">
+      {/* Other Options — Accordion */}
+      <section className="py-10" style={{ background: "rgba(8,10,20,0.7)" }}>
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-6">
-              <Star size={16} className="text-gold" />
-              <h2 className="font-display text-2xl font-light text-ivory">Side-by-Side Comparison</h2>
-            </div>
-
-            <div
-              className="glass-card rounded-2xl overflow-hidden border"
-              style={{ borderColor: "rgba(201,168,76,0.2)" }}
+            {/* Accordion Header */}
+            <button
+              onClick={() => setShowOtherOptions(!showOtherOptions)}
+              className="w-full flex items-center justify-between gap-4 p-5 rounded-2xl transition-all duration-200 hover:bg-white/4"
+              style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b" style={{ borderColor: "rgba(255,255,255,0.08)", background: "rgba(201,168,76,0.05)" }}>
-                      <th className="px-5 py-3 text-left font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Listing</th>
-                      <th className="px-4 py-3 text-left font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Location</th>
-                      <th className="px-4 py-3 text-center font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Rating</th>
-                      <th className="px-4 py-3 text-center font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Size</th>
-                      <th className="px-4 py-3 text-center font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Fenced</th>
-                      <th className="px-4 py-3 text-center font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Dogs</th>
-                      <th className="px-4 py-3 text-right font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Est. Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {listings.map((l, i) => (
-                      <tr
-                        key={l.id}
-                        className={`border-b cursor-pointer transition-colors hover:bg-white/3 ${selectedListing === l.id ? "bg-white/5" : ""}`}
-                        style={{ borderColor: "rgba(255,255,255,0.05)" }}
-                        onClick={() => setSelectedListing(l.id)}
-                      >
-                        <td className="px-5 py-3">
-                          <p className="font-body text-xs font-medium text-ivory/80">{l.name}</p>
-                          {l.recommended && (
-                            <span className="font-accent text-[0.55rem] tracking-widest uppercase" style={{ color: l.accentColor }}>
-                              {l.recommendedLabel}
-                            </span>
-                          )}
-                        </td>
-                        <td className="px-4 py-3">
-                          <p className="font-body text-xs text-ivory/60">{l.location}</p>
-                          <p className="font-body text-[0.65rem] text-ivory/35">{l.locationDetail}</p>
-                        </td>
-                        <td className="px-4 py-3 text-center">
-                          <div className="flex items-center justify-center gap-1">
-                            <Star size={10} className="text-gold fill-gold" />
-                            <span className="font-body text-xs text-ivory/80">{l.rating}</span>
-                          </div>
-                          <p className="font-body text-[0.6rem] text-ivory/35">{l.reviewCount} reviews</p>
-                        </td>
-                        <td className="px-4 py-3 text-center">
-                          <p className="font-body text-xs text-ivory/60">{l.bedrooms}</p>
-                          <p className="font-body text-[0.6rem] text-ivory/35">{l.capacity}</p>
-                        </td>
-                        <td className="px-4 py-3 text-center">
-                          <span className="text-emerald-400 text-sm">✓</span>
-                        </td>
-                        <td className="px-4 py-3 text-center">
-                          <span className="text-emerald-400 text-sm">✓</span>
-                        </td>
-                        <td className="px-4 py-3 text-right">
-                          <p className="font-body text-xs font-medium text-ivory/80">{l.estimatedTotal}</p>
-                          <p className="font-body text-[0.6rem] text-ivory/35">2 nights</p>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg" style={{ background: "rgba(201,168,76,0.1)" }}>
+                  <Home size={15} className="text-gold" />
+                </div>
+                <div className="text-left">
+                  <p className="font-display text-lg font-light text-ivory">Other Cabin Options</p>
+                  <p className="font-body text-xs text-ivory/45 italic">4 dog-friendly alternatives · For reference or future trips</p>
+                </div>
               </div>
-            </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <span className="font-accent text-[0.6rem] tracking-widest uppercase px-2.5 py-1 rounded-full" style={{ background: "rgba(201,168,76,0.1)", color: "#c9a84c" }}>
+                  {showOtherOptions ? "Collapse" : "Expand"}
+                </span>
+                {showOtherOptions
+                  ? <ChevronUp size={16} className="text-gold" />
+                  : <ChevronDown size={16} className="text-gold" />}
+              </div>
+            </button>
+
+            {/* Accordion Content */}
+            <AnimatePresence>
+              {showOtherOptions && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-6">
+                    {/* Note */}
+                    <div
+                      className="rounded-xl p-4 mb-6 flex items-start gap-3"
+                      style={{ background: "rgba(52,211,153,0.06)", border: "1px solid rgba(52,211,153,0.2)" }}
+                    >
+                      <CalendarDays size={14} style={{ color: "oklch(0.72 0.14 145)" }} className="mt-0.5 shrink-0" />
+                      <p className="font-body text-xs text-ivory/60 leading-relaxed">
+                        You've booked the Alpen Lodge (VRBO #5089227) for March 27–30. These listings are kept for reference — great options for a future trip or if plans change. All are dog-friendly with fenced yards.
+                      </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-5 mb-8">
+                      {listings.map((listing) => (
+                        <ListingCard
+                          key={listing.id}
+                          listing={listing}
+                          isSelected={selectedListing === listing.id}
+                          onSelect={() => setSelectedListing(listing.id)}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Comparison Table */}
+                    <div
+                      className="glass-card rounded-2xl overflow-hidden border"
+                      style={{ borderColor: "rgba(201,168,76,0.2)" }}
+                    >
+                      <div className="px-5 py-3 border-b flex items-center gap-2" style={{ borderColor: "rgba(201,168,76,0.15)", background: "rgba(201,168,76,0.04)" }}>
+                        <Star size={13} className="text-gold" />
+                        <p className="font-accent text-xs tracking-widest uppercase text-gold/70">Side-by-Side Comparison</p>
+                      </div>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead>
+                            <tr className="border-b" style={{ borderColor: "rgba(255,255,255,0.08)", background: "rgba(201,168,76,0.05)" }}>
+                              <th className="px-5 py-3 text-left font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Listing</th>
+                              <th className="px-4 py-3 text-left font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Location</th>
+                              <th className="px-4 py-3 text-center font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Rating</th>
+                              <th className="px-4 py-3 text-center font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Size</th>
+                              <th className="px-4 py-3 text-center font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Fenced</th>
+                              <th className="px-4 py-3 text-center font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Dogs</th>
+                              <th className="px-4 py-3 text-right font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Est. Total</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {listings.map((l, i) => (
+                              <tr
+                                key={l.id}
+                                className={`border-b cursor-pointer transition-colors hover:bg-white/3 ${selectedListing === l.id ? "bg-white/5" : ""}`}
+                                style={{ borderColor: "rgba(255,255,255,0.05)" }}
+                                onClick={() => setSelectedListing(l.id)}
+                              >
+                                <td className="px-5 py-3">
+                                  <p className="font-body text-xs font-medium text-ivory/80">{l.name}</p>
+                                  {l.recommended && (
+                                    <span className="font-accent text-[0.55rem] tracking-widest uppercase" style={{ color: l.accentColor }}>
+                                      {l.recommendedLabel}
+                                    </span>
+                                  )}
+                                </td>
+                                <td className="px-4 py-3">
+                                  <p className="font-body text-xs text-ivory/60">{l.location}</p>
+                                  <p className="font-body text-[0.65rem] text-ivory/35">{l.locationDetail}</p>
+                                </td>
+                                <td className="px-4 py-3 text-center">
+                                  <div className="flex items-center justify-center gap-1">
+                                    <Star size={10} className="text-gold fill-gold" />
+                                    <span className="font-body text-xs text-ivory/80">{l.rating}</span>
+                                  </div>
+                                  <p className="font-body text-[0.6rem] text-ivory/35">{l.reviewCount} reviews</p>
+                                </td>
+                                <td className="px-4 py-3 text-center">
+                                  <p className="font-body text-xs text-ivory/60">{l.bedrooms}</p>
+                                  <p className="font-body text-[0.6rem] text-ivory/35">{l.capacity}</p>
+                                </td>
+                                <td className="px-4 py-3 text-center">
+                                  <span className="text-emerald-400 text-sm">✓</span>
+                                </td>
+                                <td className="px-4 py-3 text-center">
+                                  <span className="text-emerald-400 text-sm">✓</span>
+                                </td>
+                                <td className="px-4 py-3 text-right">
+                                  <p className="font-body text-xs font-medium text-ivory/80">{l.estimatedTotal}</p>
+                                  <p className="font-body text-[0.6rem] text-ivory/35">2 nights</p>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>
