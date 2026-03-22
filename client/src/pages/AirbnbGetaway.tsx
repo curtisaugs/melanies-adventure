@@ -27,6 +27,12 @@ import {
   TreePine,
   Mountain,
   CheckCircle2,
+  UtensilsCrossed,
+  ShoppingBag,
+  BookOpen,
+  ShoppingCart,
+  Coffee,
+  Footprints,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -769,6 +775,283 @@ export default function AirbnbGetaway() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Adventure Guide */}
+      <section className="py-16" style={{ background: "rgba(8,10,20,0.6)" }}>
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Footprints size={16} style={{ color: "oklch(0.72 0.14 145)" }} />
+                <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "oklch(0.72 0.14 145)" }}>Lake Arrowhead</span>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-3">
+                Your Local <span className="text-gold italic">Adventure Guide</span>
+              </h2>
+              <p className="font-body text-sm text-ivory/60 max-w-xl mx-auto">
+                Dog-friendly hikes, lakeside eats, village shops, and everything you need for a perfect long weekend with PennyLu and Kota.
+              </p>
+            </div>
+
+            {/* Adventure Categories Grid */}
+            <div className="space-y-8">
+
+              {/* Hikes */}
+              <div
+                className="rounded-2xl p-6"
+                style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="p-2 rounded-lg" style={{ background: "rgba(52,211,153,0.12)" }}>
+                    <TreePine size={18} style={{ color: "oklch(0.72 0.14 145)" }} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-light text-ivory">Dog-Friendly Hikes</h3>
+                    <p className="font-body text-xs text-ivory/50">Leashes required · Bag stations at most trailheads</p>
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { name: "Will Abell Memorial Trail", desc: "1.9-mile wooded loop near the lake — easy and shaded", tag: "Easy · 1.9 mi", url: "https://www.alltrails.com/trail/us/california/will-abell-memorial-trail" },
+                    { name: "Heaps Peak Arboretum", desc: "Gentle 1-mile interpretive trail through a 30-acre arboretum with sequoias", tag: "Easy · 1 mi", url: "https://hparboretum.com/visit/" },
+                    { name: "Heart Rock Trail (Seeley Creek)", desc: "1-mile each way to a heart-shaped waterfall pool in Crestline", tag: "Easy · 2 mi RT", url: "https://www.alltrails.com/trail/us/california/heart-rock" },
+                    { name: "Castle Rock Trail", desc: "2.2-mile out-and-back with panoramic views of the lake", tag: "Moderate · 2.2 mi", url: "https://www.alltrails.com/trail/us/california/castle-rock-trail" },
+                    { name: "Deep Creek Hot Springs Trail", desc: "Longer 8-mile hike to natural hot springs — bring water", tag: "Strenuous · 8 mi", url: "https://www.alltrails.com/trail/us/california/deep-creek-hot-springs-trail" },
+                    { name: "MacKay Bark Park", desc: "Off-leash dog park in Blue Jay — great for a morning run", tag: "Off-leash · Free", url: "https://www.bringfido.com/attraction/trails/city/lake_arrowhead_ca_us/" },
+                  ].map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start gap-3 p-3 rounded-xl transition-all duration-200 hover:bg-white/5"
+                    >
+                      <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-ivory/20 group-hover:text-emerald-400 transition-colors" />
+                      <div>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-body text-sm text-ivory group-hover:text-ivory/90">{item.name}</span>
+                          <span className="font-accent text-[0.6rem] tracking-widest uppercase px-1.5 py-0.5 rounded-full" style={{ background: "rgba(52,211,153,0.12)", color: "oklch(0.72 0.14 145)" }}>{item.tag}</span>
+                        </div>
+                        <p className="font-body text-xs text-ivory/50 mt-0.5 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Restaurants & Cafes */}
+              <div
+                className="rounded-2xl p-6"
+                style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="p-2 rounded-lg" style={{ background: "rgba(212,175,55,0.12)" }}>
+                    <UtensilsCrossed size={18} className="text-gold" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-light text-ivory">Dog-Friendly Restaurants & Cafés</h3>
+                    <p className="font-body text-xs text-ivory/50">Patio seating · Water bowls often provided · Leashes required</p>
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { name: "Jetties Waterfront Kitchen + Drink", desc: "Relaxed lakeside hangout with a dog-friendly deck and great cocktails", tag: "Lakefront", url: "https://www.jettiesla.com/" },
+                    { name: "The Lakefront Taproom Bar & Kitchen", desc: "Scenic lake views, craft beer, and a welcoming dog-friendly patio", tag: "Patio · Bar", url: "https://www.lftaproom.com/" },
+                    { name: "Belgian Waffle Works", desc: "Famous Belgian waffles with great views — leashed dogs welcome outdoors", tag: "Breakfast", url: "https://www.yelp.com/biz/belgian-waffle-works-lake-arrowhead" },
+                    { name: "Lake Arrowhead Brewing Company", desc: "Craft beer, fire pits, dog bowls on the patio — a local favorite", tag: "Brewery · Patio", url: "https://www.yelp.com/biz/lake-arrowhead-brewing-company-lake-arrowhead" },
+                    { name: "Papagayos Mexican Restaurant", desc: "Tasty tacos and margaritas with a patio perfect for leashed pups", tag: "Mexican · Patio", url: "https://www.yelp.com/biz/papagayos-lake-arrowhead" },
+                    { name: "Saddleback Inn", desc: "Historic mountain charm with pet-welcoming patio dining", tag: "Historic · Brunch", url: "https://www.yelp.com/biz/saddleback-inn-lake-arrowhead" },
+                  ].map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start gap-3 p-3 rounded-xl transition-all duration-200 hover:bg-white/5"
+                    >
+                      <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-ivory/20 group-hover:text-gold transition-colors" />
+                      <div>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-body text-sm text-ivory group-hover:text-ivory/90">{item.name}</span>
+                          <span className="font-accent text-[0.6rem] tracking-widest uppercase px-1.5 py-0.5 rounded-full" style={{ background: "rgba(212,175,55,0.1)", color: "oklch(0.72 0.12 75)" }}>{item.tag}</span>
+                        </div>
+                        <p className="font-body text-xs text-ivory/50 mt-0.5 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Shopping & Village */}
+              <div className="grid sm:grid-cols-2 gap-6">
+
+                {/* Village Shopping & Gifts */}
+                <div
+                  className="rounded-2xl p-6"
+                  style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+                >
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="p-2 rounded-lg" style={{ background: "rgba(139,92,246,0.12)" }}>
+                      <ShoppingBag size={18} style={{ color: "oklch(0.72 0.15 290)" }} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg font-light text-ivory">Village Shopping & Gifts</h3>
+                      <p className="font-body text-xs text-ivory/50">Lake Arrowhead Village · Dog-friendly paths</p>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      { name: "Dorothy's at The Lake", desc: "Charming home décor & gift shop in the Village", url: "https://www.thelakearrowheadvillage.com/dorothys-at-the-lake-gift-shop" },
+                      { name: "Pendleton Woolen Mills", desc: "Classic blankets, flannels, and mountain apparel", url: "https://www.thelakearrowheadvillage.com/shopping-2" },
+                      { name: "Alexandra's Emporium", desc: "Eclectic gifts, art, and local finds", url: "https://www.thelakearrowheadvillage.com/books-gifts" },
+                      { name: "Big on Bears", desc: "Whimsical bear-themed gifts and collectibles", url: "https://www.thelakearrowheadvillage.com/books-gifts" },
+                      { name: "Mountain Arts Gallery", desc: "Local art, photography, and mountain-inspired pieces", url: "https://www.thelakearrowheadvillage.com/books-gifts" },
+                      { name: "Mr. G's for Toys", desc: "Fun toy shop — great if kids are along for the trip", url: "https://www.thelakearrowheadvillage.com/books-gifts" },
+                    ].map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-start gap-2 p-2 rounded-lg transition-all duration-200 hover:bg-white/5"
+                      >
+                        <CheckCircle2 size={12} className="mt-0.5 shrink-0 text-ivory/20 group-hover:text-purple-400 transition-colors" />
+                        <div>
+                          <span className="font-body text-sm text-ivory group-hover:text-ivory/90 block">{item.name}</span>
+                          <span className="font-body text-xs text-ivory/45">{item.desc}</span>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bookstores & Coffee */}
+                <div className="space-y-6">
+                  <div
+                    className="rounded-2xl p-6"
+                    style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 rounded-lg" style={{ background: "rgba(251,146,60,0.12)" }}>
+                        <BookOpen size={18} style={{ color: "oklch(0.72 0.15 55)" }} />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-lg font-light text-ivory">Books & Coffee</h3>
+                        <p className="font-body text-xs text-ivory/50">Cozy mountain reads</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      {[
+                        { name: "The Next Chapter Bookstore", desc: "Beloved local indie bookshop — 5-star rated", url: "https://www.yelp.com/biz/the-next-chapter-bookstore-lake-arrowhead" },
+                        { name: "Jurassic Fossils", desc: "Unique science & nature shop in the Village", url: "https://www.thelakearrowheadvillage.com/books-gifts" },
+                        { name: "Spade and Spatula", desc: "Cozy café with great coffee and dog-friendly patio", url: "https://www.yelp.com/biz/spade-and-spatula-lake-arrowhead" },
+                        { name: "Lake Arrowhead Pizza", desc: "Laid-back family pizzeria with outdoor seating", url: "https://www.yelp.com/search?find_desc=Lake+Arrowhead+Pizza&find_loc=Lake+Arrowhead%2C+CA" },
+                      ].map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-start gap-2 p-2 rounded-lg transition-all duration-200 hover:bg-white/5"
+                        >
+                          <CheckCircle2 size={12} className="mt-0.5 shrink-0 text-ivory/20 group-hover:text-orange-400 transition-colors" />
+                          <div>
+                            <span className="font-body text-sm text-ivory group-hover:text-ivory/90 block">{item.name}</span>
+                            <span className="font-body text-xs text-ivory/45">{item.desc}</span>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Groceries */}
+                  <div
+                    className="rounded-2xl p-6"
+                    style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 rounded-lg" style={{ background: "rgba(52,211,153,0.12)" }}>
+                        <ShoppingCart size={18} style={{ color: "oklch(0.72 0.14 145)" }} />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-lg font-light text-ivory">Groceries & Supplies</h3>
+                        <p className="font-body text-xs text-ivory/50">Stock up before or after arrival</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      {[
+                        { name: "Stater Bros. Markets", desc: "28100 CA-189, Lake Arrowhead · Open 6am–11pm daily", url: "https://www.staterbros.com/stores/92/" },
+                        { name: "Jensen's Foods (Blue Jay)", desc: "27264 Hwy 189, Blue Jay · Local grocery, open 6am–9pm", url: "https://palmdesert.jensensfoods.com/locations/blue-jay/" },
+                        { name: "Cedar Glen Fine Foods", desc: "Specialty local market with artisan goods", url: "https://www.yelp.com/search?find_desc=Cedar+Glen+Fine+Foods&find_loc=Lake+Arrowhead%2C+CA" },
+                        { name: "Grocery Outlet (Crestline)", desc: "Budget-friendly options 15 min down the mountain", url: "https://www.groceryoutlet.com/" },
+                      ].map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-start gap-2 p-2 rounded-lg transition-all duration-200 hover:bg-white/5"
+                        >
+                          <CheckCircle2 size={12} className="mt-0.5 shrink-0 text-ivory/20 group-hover:text-emerald-400 transition-colors" />
+                          <div>
+                            <span className="font-body text-sm text-ivory group-hover:text-ivory/90 block">{item.name}</span>
+                            <span className="font-body text-xs text-ivory/45">{item.desc}</span>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Activities & Extras */}
+              <div
+                className="rounded-2xl p-6"
+                style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="p-2 rounded-lg" style={{ background: "rgba(59,130,246,0.12)" }}>
+                    <Waves size={18} style={{ color: "oklch(0.65 0.15 240)" }} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-light text-ivory">Activities & Extras</h3>
+                    <p className="font-body text-xs text-ivory/50">Beyond the cabin</p>
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { name: "Lake Arrowhead Village", desc: "50+ waterfront shops, restaurants, and boutiques — leashed dogs welcome on all paths", tag: "Free · Dog-friendly", url: "https://www.thelakearrowheadvillage.com/" },
+                    { name: "Lake Gregory Regional Park", desc: "15 min away — dog-friendly paths and water access, great for a morning walk", tag: "15 min away", url: "https://www.sbcounty.gov/parks/" },
+                    { name: "Lake Arrowhead Queen Tour Boat", desc: "Scenic 50-min narrated lake tour — check pet policy before booking", tag: "Boat Tour", url: "https://www.thelakearrowheadvillage.com/activities" },
+                    { name: "Mountain History Museum", desc: "Small local museum in the Village — interesting for a rainy afternoon", tag: "Indoor", url: "https://www.thelakearrowheadvillage.com/activities" },
+                    { name: "WildHaven Ranch", desc: "Wildlife sanctuary nearby — educational and family-friendly", tag: "Nature", url: "https://www.thelakearrowheadvillage.com/activities" },
+                    { name: "Stargazing from the Decks", desc: "At 5,000 ft elevation, the night sky is spectacular — bring a blanket and s'mores", tag: "At the cabin", url: "#" },
+                  ].map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start gap-3 p-3 rounded-xl transition-all duration-200 hover:bg-white/5"
+                    >
+                      <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-ivory/20 group-hover:text-blue-400 transition-colors" />
+                      <div>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-body text-sm text-ivory group-hover:text-ivory/90">{item.name}</span>
+                          <span className="font-accent text-[0.6rem] tracking-widest uppercase px-1.5 py-0.5 rounded-full" style={{ background: "rgba(59,130,246,0.1)", color: "oklch(0.65 0.15 240)" }}>{item.tag}</span>
+                        </div>
+                        <p className="font-body text-xs text-ivory/50 mt-0.5 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+            </div>{/* end space-y-8 */}
           </div>
         </div>
       </section>

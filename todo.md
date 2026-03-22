@@ -181,3 +181,10 @@
 - [x] Search for picturesque real Lake Arrowhead photos (lake, mountains, village, sunset)
 - [x] Upload 3 photos to CDN: fiery sunset, pink sunset, lakefront cabins
 - [x] Swap Cabin Airbnb page hero background (both hero + full-bleed teaser) to real fiery sunset photo
+
+## Phase 29 — Local Adventure Guide (Lake Arrowhead)
+- [x] Research dog-friendly hikes near Lake Arrowhead (6 hikes curated)
+- [x] Research dog-friendly restaurants in Lake Arrowhead Village and Blue Jay (6 restaurants)
+- [x] Research gift shops, bookstores, and local village shopping (6 shops + 4 books/coffee)
+- [x] Research grocery stores near the Alpen Lodge (4 options with hours/addresses)
+- [x] Build interactive checklist section on Cabin Airbnb page with 5 categories, icons, and external links
