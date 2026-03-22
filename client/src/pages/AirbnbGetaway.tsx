@@ -1314,43 +1314,6 @@ export default function AirbnbGetaway() {
         </div>
       </section>
 
-      {/* Full-bleed A-Frame teaser */}
-      <section className="relative py-28 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/lake-arrowhead-sunset-fiery_9537f5b9.jpg')` }}
-        />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(8,10,20,0.85) 0%, rgba(8,10,20,0.55) 60%, rgba(8,10,20,0.30) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,10,20,0.6) 0%, transparent 60%)" }} />
-        <div className="relative container">
-          <div className="max-w-xl">
-            <span className="font-accent text-xs tracking-[0.2em] uppercase block mb-3" style={{ color: "oklch(0.72 0.14 145)" }}>Top Pick</span>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-4 leading-tight">
-              A-Frame of Mind<br />
-              <span className="italic" style={{ color: "oklch(0.72 0.14 145)" }}>Lake Arrowhead</span>
-            </h2>
-            <p className="font-body text-base leading-relaxed mb-6" style={{ color: "rgba(232,224,208,0.70)" }}>
-              A 3-story A-frame with a wall of glass windows, sweeping lake and forest views, a fully fenced yard for the dogs, and 248 five-star reviews. Two hours from LA. The kind of place that makes you forget you ever considered camping.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {["4.94★ · 248 Reviews", "Fully Fenced Yard", "Lake Access", "2 hrs from LA", "Dogs Welcome"].map((tag) => (
-                <span key={tag} className="font-accent text-xs tracking-widest uppercase px-3 py-1.5 rounded-full" style={{ background: "rgba(52,211,153,0.10)", border: "1px solid rgba(52,211,153,0.25)", color: "oklch(0.72 0.14 145)" }}>{tag}</span>
-              ))}
-            </div>
-            <a
-              href="https://www.airbnb.com/rooms/52514634"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200 hover:opacity-90"
-              style={{ background: "oklch(0.72 0.14 145)", color: "#0a0f1e" }}
-            >
-              View on Airbnb
-              <ExternalLink size={14} />
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Curtis-Only Cost Breakdown */}
       <section className="relative py-12 overflow-hidden">
         <div className="absolute inset-0" style={{ background: "rgba(8,10,20,0.85)" }} />

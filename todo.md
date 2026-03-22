@@ -209,3 +209,6 @@
 - [x] Fix auto-scroll-to-bottom bug (isFirstRender guard on useEffect)
 - [x] A-Frame of Mind already in listings array — confirmed it shows in accordion with all 4 listings
 - [x] Moved Margaux chat section to appear right after the treasure map and before Other Options accordion
+
+## Phase 33 — Remove Standalone A-Frame Teaser
+- [x] Remove the full-bleed "A-Frame of Mind" teaser section that appears below the Other Options accordion
