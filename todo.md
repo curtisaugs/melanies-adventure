@@ -164,3 +164,10 @@
 - [x] Change "Plan the Big Sur Trip" CTA to "View Our Booking" linking to /airbnb-getaway
 - [x] Update hero body copy to reflect the confirmed Alpen Lodge trip
 - [x] Keep countdown to March 26 birthday, updated surrounding context
+
+## Phase 26 — Homepage Reorder: Confirmed Booking First
+- [x] Move Alpen Lodge confirmed booking section to appear first after the hero
+- [x] Move Big Sur RV section below as a "Next Adventure" / future trip idea
+- [x] Update section labels: "✓ This Weekend — Confirmed" for Alpen Lodge, "Next Up — Big Sur RV Trip" for Big Sur
+- [x] Update Margaux quote in Big Sur section to reflect it's a future plan, not this weekend
+- [x] Update Margaux section body copy to reflect Alpen Lodge is this weekend, Big Sur is next

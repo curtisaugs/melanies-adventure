@@ -254,6 +254,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── AIRBNB CABIN FEATURE CARD (CONFIRMED — SHOWN FIRST) ── */}
       {/* ── BIG SUR FEATURE CARD ── */}
       <section className="py-20">
         <div className="container">
@@ -266,147 +267,17 @@ export default function Home() {
             {/* Section label */}
             <div className="flex items-center gap-3 mb-8">
               <span
-                className="w-2 h-2 rounded-full animate-pulse"
-                style={{ background: TEAL }}
-              />
-              <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: TEAL }}>
-                This Weekend's Adventure
-              </span>
-            </div>
-
-            {/* Feature card */}
-            <div
-              className="rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center"
-              style={{
-                background: "linear-gradient(135deg, rgba(100,210,200,0.07) 0%, rgba(8,12,28,0.6) 100%)",
-                border: `1px solid ${TEAL_BORDER}`,
-              }}
-            >
-              {/* Left: copy */}
-              <div>
-                <h2 className="font-display text-5xl md:text-6xl font-light text-ivory mb-3 leading-tight">
-                  Big Sur <span className="italic" style={{ color: TEAL }}>&amp; the Dogs</span>
-                </h2>
-                <p className="font-body text-base text-ivory/60 leading-relaxed mb-6">
-                  A first-class Class C RV, PennyLu and Kota riding shotgun in spirit, Annie and Mokin along for the adventure. Cambria's farmers market on Friday. The last Carmel winter market on Saturday. Pfeiffer Beach's purple sand. Fernwood Resort under the redwoods.
-                </p>
-
-                {/* Quick stats */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {[
-                    { icon: Calendar, label: "March 27–29", sub: "or April 3–5" },
-                    { icon: Truck, label: "Class C RV", sub: "~$200/night" },
-                    { icon: Dog, label: "PennyLu + Kota", sub: "Doberman + Aussie" },
-                    { icon: Waves, label: "Fernwood Resort", sub: "Redwoods + river" },
-                  ].map(({ icon: Icon, label, sub }) => (
-                    <div
-                      key={label}
-                      className="flex items-start gap-3 rounded-xl p-3"
-                      style={{ background: TEAL_BG, border: `1px solid ${TEAL_BORDER}` }}
-                    >
-                      <Icon size={16} style={{ color: TEAL, flexShrink: 0, marginTop: 2 }} />
-                      <div>
-                        <p className="font-body text-sm font-medium text-ivory">{label}</p>
-                        <p className="font-body text-xs text-ivory/40">{sub}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <Link href="/rv-adventure">
-                  <button
-                    className="inline-flex items-center gap-2 font-body font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg"
-                    style={{
-                      background: `linear-gradient(135deg, ${TEAL}, oklch(0.65 0.14 200))`,
-                      color: "oklch(0.09 0.015 260)",
-                      boxShadow: `0 4px 20px ${TEAL.replace(')', ' / 0.3)')}`,
-                    }}
-                  >
-                    See the Full Plan
-                    <ArrowRight size={16} />
-                  </button>
-                </Link>
-              </div>
-
-              {/* Right: Margaux quote card */}
-              <div
-                className="rounded-2xl p-6"
-                style={{
-                  background: "rgba(8,12,28,0.5)",
-                  border: "1px solid rgba(232,116,138,0.15)",
-                }}
-              >
-                <div className="flex items-start gap-3 mb-4">
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: "rgba(232,116,138,0.15)" }}
-                  >
-                    <Sparkles size={16} style={{ color: "#e8748a" }} />
-                  </div>
-                  <div>
-                    <p className="font-accent text-xs tracking-widest uppercase mb-1" style={{ color: "#e8748a" }}>Margaux</p>
-                    <div
-                      className="rounded-2xl rounded-tl-none p-4"
-                      style={{ background: "rgba(232,116,138,0.07)", border: "1px solid rgba(232,116,138,0.12)" }}
-                    >
-                      <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
-                        Europe will still be there. The Rhine isn't going anywhere. But March 26 is <em>this week</em>, and Big Sur is three hours up the coast, and PennyLu and Kota have been waiting their entire lives for a beach where they can actually run.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="flex items-start gap-3"
-                >
-                  <div className="w-9 flex-shrink-0" />
-                  <div
-                    className="rounded-2xl rounded-tl-none p-4 flex-1"
-                    style={{ background: "rgba(232,116,138,0.07)", border: "1px solid rgba(232,116,138,0.12)" }}
-                  >
-                    <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
-                      Curtis has the whole thing planned. Two weekends to choose from, a campsite under the redwoods, and the Carmel farmers market on Saturday. <span style={{ color: "#e8748a" }}>This is the birthday that's actually happening.</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4 mt-4 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                  <Link href="/rv-adventure">
-                    <button
-                      className="w-full font-body text-xs tracking-widest uppercase py-2 rounded-xl transition-all"
-                      style={{ color: TEAL, background: TEAL_BG }}
-                    >
-                      See the full plan →
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── AIRBNB CABIN FEATURE CARD ── */}
-      <section className="py-8 pb-20">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* Section label */}
-            <div className="flex items-center gap-3 mb-8">
-              <span
-                className="w-2 h-2 rounded-full animate-pulse"
+                className="w-2 h-2 rounded-full"
                 style={{ background: "oklch(0.72 0.14 145)" }}
               />
               <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "oklch(0.72 0.14 145)" }}>
-                ✓ Confirmed Booking — VRBO
+                ✓ This Weekend — Confirmed
               </span>
             </div>
 
-            {/* Airbnb Feature card */}
+            {/* Feature card — Alpen Lodge confirmed booking */}
             <div
-              className="rounded-3xl p-8 md:p-10 grid md:grid-cols-2 gap-10 items-center"
+              className="rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center"
               style={{
                 background: "linear-gradient(135deg, rgba(52,211,153,0.07) 0%, rgba(8,12,28,0.6) 100%)",
                 border: "1px solid rgba(52,211,153,0.2)",
@@ -414,19 +285,19 @@ export default function Home() {
             >
               {/* Left: copy */}
               <div>
-                <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-3 leading-tight">
-                  Mountain <span className="italic" style={{ color: "oklch(0.72 0.14 145)" }}>Cabin Weekend</span>
+                <h2 className="font-display text-5xl md:text-6xl font-light text-ivory mb-3 leading-tight">
+                  Alpen Lodge <span className="italic" style={{ color: "oklch(0.72 0.14 145)" }}>&amp; the Lake</span>
                 </h2>
                 <p className="font-body text-base text-ivory/60 leading-relaxed mb-6">
-                  Booked and confirmed. The Alpen Lodge in Lake Arrowhead — 5 bedrooms, 3 lakeview decks, BBQ, firepit, pool table, and lake rights. March 27–30, 3 nights. PennyLu gets a proper yard. You get a fireplace and a view.
+                  Booked and confirmed. Five bedrooms, three lakeview decks, a firepit, BBQ, pool table, and lake rights. PennyLu gets a proper fenced yard. You get a fireplace and mountain views. March 27–30, three nights, two hours from LA.
                 </p>
 
                 {/* Quick stats */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   {[
                     { icon: Calendar, label: "Mar 27–30", sub: "3 nights · 3 adults" },
-                    { icon: Dog, label: "Dog-Friendly", sub: "2 dogs · $100 flat fee" },
                     { icon: MapPin, label: "Lake Arrowhead", sub: "2 hrs from LA" },
+                    { icon: Dog, label: "Dog-Friendly", sub: "2 dogs · $100 flat fee" },
                     { icon: Star, label: "5 BR · 3 Decks", sub: "Lake views · BBQ · Firepit" },
                   ].map(({ icon: Icon, label, sub }) => (
                     <div
@@ -458,7 +329,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Right: listing preview */}
+              {/* Right: Alpen Lodge highlights */}
               <div
                 className="rounded-2xl p-6"
                 style={{
@@ -470,9 +341,9 @@ export default function Home() {
                   Alpen Lodge Highlights
                 </p>
                 {[
-                  { name: "3 Lakeview Decks", location: "BBQ & Firepit", rating: "✔", reviews: "Lake rights included", tag: "Outdoor", tagColor: "rgba(52,211,153,0.15)", tagBorder: "rgba(52,211,153,0.3)", tagText: "oklch(0.72 0.14 145)" },
-                  { name: "Pool & Ping Pong", location: "Gourmet Kitchen", rating: "✔", reviews: "Bonus room + 3 fireplaces", tag: "Indoor", tagColor: "rgba(251,191,36,0.12)", tagBorder: "rgba(251,191,36,0.3)", tagText: "oklch(0.78 0.14 60)" },
-                  { name: "Dog-Friendly", location: "2 dogs · $100 flat fee", rating: "✔", reviews: "Fenced yard", tag: "Pets OK", tagColor: "rgba(232,116,138,0.12)", tagBorder: "rgba(232,116,138,0.3)", tagText: "oklch(0.72 0.14 15)" },
+                  { name: "3 Lakeview Decks", location: "BBQ & Firepit", tag: "Outdoor", tagColor: "rgba(52,211,153,0.15)", tagBorder: "rgba(52,211,153,0.3)", tagText: "oklch(0.72 0.14 145)" },
+                  { name: "Pool & Ping Pong", location: "Gourmet Kitchen · 3 Fireplaces", tag: "Indoor", tagColor: "rgba(251,191,36,0.12)", tagBorder: "rgba(251,191,36,0.3)", tagText: "oklch(0.78 0.14 60)" },
+                  { name: "Dog-Friendly", location: "Fenced yard · 2 dogs · $100 flat fee", tag: "Pets OK", tagColor: "rgba(232,116,138,0.12)", tagBorder: "rgba(232,116,138,0.3)", tagText: "oklch(0.72 0.14 15)" },
                 ].map((l) => (
                   <div
                     key={l.name}
@@ -481,7 +352,7 @@ export default function Home() {
                   >
                     <div>
                       <p className="font-body text-sm font-medium text-ivory">{l.name}</p>
-                      <p className="font-body text-xs text-ivory/40">{l.location} · {l.rating} · {l.reviews}</p>
+                      <p className="font-body text-xs text-ivory/40">{l.location}</p>
                     </div>
                     <span
                       className="font-accent text-[0.55rem] tracking-widest uppercase px-2 py-0.5 rounded-full shrink-0"
@@ -492,12 +363,142 @@ export default function Home() {
                   </div>
                 ))}
                 <div className="pt-4">
+                  <p className="font-body text-xs text-ivory/30 mb-1">Reservation #56518539 · VRBO</p>
                   <Link href="/airbnb-getaway">
                     <button
                       className="w-full font-body text-xs tracking-widest uppercase py-2 rounded-xl transition-all"
                       style={{ color: "oklch(0.72 0.14 145)", background: "rgba(52,211,153,0.08)" }}
                     >
-                      See all 4 listings →
+                      View full booking details →
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── BIG SUR FEATURE CARD — FUTURE TRIP ── */}
+      <section className="py-8 pb-20">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Section label */}
+            <div className="flex items-center gap-3 mb-8">
+              <span
+                className="w-2 h-2 rounded-full"
+                style={{ background: TEAL }}
+              />
+              <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: TEAL }}>
+                Next Up — Big Sur RV Trip
+              </span>
+            </div>
+
+            {/* Big Sur RV Feature card — future trip */}
+            <div
+              className="rounded-3xl p-8 md:p-10 grid md:grid-cols-2 gap-10 items-center"
+              style={{
+                background: `linear-gradient(135deg, rgba(100,210,200,0.05) 0%, rgba(8,12,28,0.5) 100%)`,
+                border: `1px solid ${TEAL_BORDER}`,
+                opacity: 0.9,
+              }}
+            >
+              {/* Left: copy */}
+              <div>
+                <h2 className="font-display text-4xl md:text-5xl font-light text-ivory mb-3 leading-tight">
+                  Big Sur <span className="italic" style={{ color: TEAL }}>&amp; the Dogs</span>
+                </h2>
+                <p className="font-body text-base text-ivory/60 leading-relaxed mb-6">
+                  A first-class Class C RV, PennyLu and Kota riding shotgun, Annie and Mokin along for the adventure. Cambria's farmers market. Pfeiffer Beach's purple sand. Fernwood Resort under the redwoods. The coast is calling — just not this weekend.
+                </p>
+
+                {/* Quick stats */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {[
+                    { icon: Calendar, label: "April 3–5", sub: "Next available weekend" },
+                    { icon: Truck, label: "Class C RV", sub: "~$200/night" },
+                    { icon: Dog, label: "PennyLu + Kota", sub: "Doberman + Aussie" },
+                    { icon: Waves, label: "Fernwood Resort", sub: "Redwoods + river" },
+                  ].map(({ icon: Icon, label, sub }) => (
+                    <div
+                      key={label}
+                      className="flex items-start gap-3 rounded-xl p-3"
+                      style={{ background: TEAL_BG, border: `1px solid ${TEAL_BORDER}` }}
+                    >
+                      <Icon size={16} style={{ color: TEAL, flexShrink: 0, marginTop: 2 }} />
+                      <div>
+                        <p className="font-body text-sm font-medium text-ivory">{label}</p>
+                        <p className="font-body text-xs text-ivory/40">{sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/rv-adventure">
+                  <button
+                    className="inline-flex items-center gap-2 font-body font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg"
+                    style={{
+                      background: TEAL_BG,
+                      border: `1px solid ${TEAL_BORDER}`,
+                      color: TEAL,
+                    }}
+                  >
+                    See the Full Plan
+                    <ArrowRight size={16} />
+                  </button>
+                </Link>
+              </div>
+
+              {/* Right: Margaux quote — updated to future framing */}
+              <div
+                className="rounded-2xl p-6"
+                style={{
+                  background: "rgba(8,12,28,0.5)",
+                  border: "1px solid rgba(232,116,138,0.15)",
+                }}
+              >
+                <div className="flex items-start gap-3 mb-4">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ background: "rgba(232,116,138,0.15)" }}
+                  >
+                    <Sparkles size={16} style={{ color: "#e8748a" }} />
+                  </div>
+                  <div>
+                    <p className="font-accent text-xs tracking-widest uppercase mb-1" style={{ color: "#e8748a" }}>Margaux</p>
+                    <div
+                      className="rounded-2xl rounded-tl-none p-4"
+                      style={{ background: "rgba(232,116,138,0.07)", border: "1px solid rgba(232,116,138,0.12)" }}
+                    >
+                      <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
+                        The Alpen Lodge is this weekend — and it's going to be perfect. But Big Sur isn't going anywhere. Pfeiffer Beach, the redwoods, Carmel in spring. That's a whole other adventure worth planning.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-9 flex-shrink-0" />
+                  <div
+                    className="rounded-2xl rounded-tl-none p-4 flex-1"
+                    style={{ background: "rgba(232,116,138,0.07)", border: "1px solid rgba(232,116,138,0.12)" }}
+                  >
+                    <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(232,224,208,0.85)" }}>
+                      April 3–5 is wide open. <span style={{ color: "#e8748a" }}>Let's make it happen.</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="pt-4 mt-4 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                  <Link href="/rv-adventure">
+                    <button
+                      className="w-full font-body text-xs tracking-widest uppercase py-2 rounded-xl transition-all"
+                      style={{ color: TEAL, background: TEAL_BG }}
+                    >
+                      See the full plan →
                     </button>
                   </Link>
                 </div>
@@ -537,7 +538,7 @@ export default function Home() {
                 Curtis thought we'd get along. He was right. I already know you're the kind of person who has very strong opinions about what you <em>don't</em> want, even if the rest is still deliciously open.
               </p>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
-                Big Sur is the plan for this weekend. But when you're ready to think about Europe, I'm here to build you something that actually fits. Day by day, budget and all.
+                The Alpen Lodge is this weekend — and Big Sur is next. When you're ready to think about Europe after that, I'm here to build you something that actually fits. Day by day, budget and all.
               </p>
               <p
                 className="font-body text-sm leading-relaxed mb-6"
