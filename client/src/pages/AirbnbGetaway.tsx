@@ -306,19 +306,20 @@ const listings = [
 const costBreakdowns = {
   "arrowhead-aframe": {
     items: [
-      { category: "Lodging", item: "A-Frame of Mind, Lake Arrowhead — 2 nights @ ~$300/night", total: "$600" },
-      { category: "Lodging", item: "Airbnb service fee (est. 14%)", total: "$84" },
-      { category: "Lodging", item: "Cleaning fee (est.)", total: "$75" },
-      { category: "Lodging", item: "Pet fee (est.)", total: "$50" },
-      { category: "Transport", item: "Gas — LA to Lake Arrowhead, round trip (~200 miles @ $4.50/gal, 28mpg)", total: "$32" },
-      { category: "Food", item: "Groceries for 4 adults, 2 nights (dinners + breakfasts)", total: "$120" },
-      { category: "Food", item: "Dining out — 1 dinner, 1 lunch at Lake Arrowhead Village", total: "$100" },
-      { category: "Activities", item: "Sky Park at Santa's Village (optional, 10% discount with listing)", total: "$60" },
-      { category: "Misc", item: "Dog supplies, snacks, incidentals", total: "$40" },
+      { category: "Lodging", item: "Alpen Lodge, Lake Arrowhead — 3 nights (VRBO #5089227)", total: "(see VRBO receipt)" },
+      { category: "Lodging", item: "Cleaning fee (included in VRBO booking)", total: "incl." },
+      { category: "Lodging", item: "Pet fee — 1 dog flat fee", total: "$100" },
+      { category: "Protection", item: "Trip Cancellation Protection", total: "$136.64" },
+      { category: "Protection", item: "Accidental Damage Protection", total: "$89.00" },
+      { category: "Transport", item: "Gas — LA to Lake Arrowhead, round trip (~200 miles @ $4.50/gal, 28mpg)", total: "~$32" },
+      { category: "Food", item: "Groceries for 3 adults, 3 nights (dinners + breakfasts)", total: "~$150" },
+      { category: "Food", item: "Dining out — 1 dinner, 1 lunch at Lake Arrowhead Village", total: "~$120" },
+      { category: "Activities", item: "Sky Park at Santa's Village, hikes, incidentals", total: "~$80" },
+      { category: "Misc", item: "Dog supplies, snacks, firewood", total: "~$50" },
     ],
-    total: "~$1,161",
-    buffer: "Well under the $2,500 target — $1,339 buffer",
-    notes: "Closest to LA of all options — only 2 hours. Best architecture and lake views. Highest rating with 248 reviews gives strong confidence.",
+    total: "VRBO + ~$758 est.",
+    buffer: "Res #56518539 · Mar 27–30 · 3 adults + 1 pet · Confirmed ✓",
+    notes: "The Alpen Lodge is booked and confirmed. Trip Cancellation ($136.64) and Accidental Damage ($89.00) protection are included in the VRBO receipt. Pet fee is a flat $100 for the stay. All other costs are estimates based on 3 nights.",
   },
   "bigbear-tanager": {
     items: [
@@ -1376,7 +1377,7 @@ export default function AirbnbGetaway() {
                       <div className="flex items-center gap-2">
                         <DollarSign size={14} style={{ color: "#c9a84c" }} />
                         <p className="font-accent text-xs tracking-widest uppercase" style={{ color: "#c9a84c" }}>
-                          {activeListing.name} — Full Cost Breakdown (2 Nights, April 3–5)
+                          {activeListing.id === "arrowhead-aframe" ? "Alpen Lodge — Confirmed Booking (3 Nights, Mar 27–30)" : `${activeListing.name} — Cost Estimate (2 Nights)`}
                         </p>
                       </div>
                     </div>

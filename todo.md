@@ -212,3 +212,9 @@
 
 ## Phase 33 — Remove Standalone A-Frame Teaser
 - [x] Remove the full-bleed "A-Frame of Mind" teaser section that appears below the Other Options accordion
+
+## Phase 34 — Cost Breakdown Update
+- [x] Update Cost Breakdown with real confirmed Alpen Lodge VRBO costs (pet fee $100, trip cancellation $136.64, damage protection $89.00)
+- [x] Update dates from April 3-5 to March 27-30 (3 nights)
+- [x] Update header to show "Alpen Lodge — Confirmed Booking (3 Nights, Mar 27-30)" for the confirmed listing
+- [x] Update total to "VRBO + ~$758 est." with Res #56518539 confirmation note
