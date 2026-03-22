@@ -158,3 +158,9 @@
 - [x] Mark Alpen Lodge as "CONFIRMED" with reservation details (Res ID: 56518539, Mar 27-30, 3 nights, 3 adults + 1 pet)
 - [x] Update Margaux text and availability note to reflect confirmed status
 - [x] Update homepage stats to show Mar 27-30 dates and Alpen Lodge highlights
+
+## Phase 24 — Homepage Hero: Confirmed Booking Lead
+- [x] Update hero subtitle from Big Sur/RV framing to Alpen Lodge confirmed booking
+- [x] Change "Plan the Big Sur Trip" CTA to "View Our Booking" linking to /airbnb-getaway
+- [x] Update hero body copy to reflect the confirmed Alpen Lodge trip
+- [x] Keep countdown to March 26 birthday, updated surrounding context

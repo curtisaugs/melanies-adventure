@@ -194,12 +194,12 @@ export default function Home() {
                 Welcome, <span className="text-gold italic">Melanie</span>
               </h1>
 
-              {/* Updated subhead — Big Sur is the plan */}
+              {/* Updated subhead — Alpen Lodge is confirmed */}
               <p className="font-display text-xl md:text-2xl font-light italic mb-2" style={{ color: TEAL }}>
-                The Dogs. The Coast. This Weekend.
+                The Cabin. The Lake. This Weekend.
               </p>
               <p className="font-body text-sm md:text-base text-ivory/50 max-w-xl mx-auto mb-10 leading-relaxed">
-                Europe is still the dream. But March 26 is right now, and Big Sur is three hours up Highway 1, and PennyLu and Kota have been waiting their entire lives for a beach like Pfeiffer.
+                Europe is still the dream. But March 27 is right now — and the Alpen Lodge in Lake Arrowhead is booked. Three lakeview decks, a firepit, pool table, and a fenced yard for PennyLu and Kota. Two hours from LA.
               </p>
 
               {/* Countdown */}
@@ -213,9 +213,9 @@ export default function Home() {
                 <Countdown />
               </div>
 
-              {/* Primary CTA: Big Sur */}
+              {/* Primary CTA: Confirmed Alpen Lodge booking */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/rv-adventure">
+                <Link href="/airbnb-getaway">
                   <button
                     className="inline-flex items-center gap-2 font-body font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg"
                     style={{
@@ -224,8 +224,8 @@ export default function Home() {
                       boxShadow: `0 4px 24px ${TEAL.replace(')', ' / 0.35)')}`,
                     }}
                   >
-                    <Truck size={16} />
-                    Plan the Big Sur Trip
+                    <Waves size={16} />
+                    View Our Booking
                     <ArrowRight size={16} />
                   </button>
                 </Link>
