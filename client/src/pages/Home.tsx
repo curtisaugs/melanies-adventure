@@ -123,11 +123,11 @@ export default function Home() {
 
       {/* ── HERO — Birthday Week, Big Sur leads ── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background: Lake Arrowhead aerial */}
+        {/* Background: Alpen Lodge deck with lake view — real property photo */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/lake-arrowhead-aerial-hero_71d539b4.jpg')`,
+            backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/alpen-deck-lake_58d9f956.png')`,
           }}
         />
         <div className="absolute inset-0 hero-overlay" />

@@ -171,3 +171,8 @@
 - [x] Update section labels: "✓ This Weekend — Confirmed" for Alpen Lodge, "Next Up — Big Sur RV Trip" for Big Sur
 - [x] Update Margaux quote in Big Sur section to reflect it's a future plan, not this weekend
 - [x] Update Margaux section body copy to reflect Alpen Lodge is this weekend, Big Sur is next
+
+## Phase 27 — Real Alpen Lodge Photos
+- [x] Upload 4 real Alpen Lodge photos to CDN
+- [x] Swap homepage hero background to deck/lake view photo (alpen-deck-lake)
+- [x] Add 4-photo gallery grid to Cabin Airbnb page with hover captions and "Hero View" badge

@@ -703,6 +703,76 @@ export default function AirbnbGetaway() {
         </div>
       </section>
 
+      {/* ── ALPEN LODGE PHOTO GALLERY ── */}
+      <section className="py-8">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-2 h-2 rounded-full" style={{ background: "oklch(0.72 0.14 145)" }} />
+              <span className="font-accent text-xs tracking-[0.2em] uppercase" style={{ color: "oklch(0.72 0.14 145)" }}>
+                Alpen Lodge — Your Home This Weekend
+              </span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                {
+                  url: "https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/alpen-deck-lake_58d9f956.png",
+                  alt: "Alpen Lodge deck with umbrella and lake view",
+                  caption: "Deck · Lake View",
+                  featured: true,
+                },
+                {
+                  url: "https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/alpen-covered-deck_fc47d01b.png",
+                  alt: "Alpen Lodge covered deck with mountain and lake view",
+                  caption: "Covered Deck · Mountains",
+                  featured: false,
+                },
+                {
+                  url: "https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/alpen-dining-view2_f90e7f90.png",
+                  alt: "Alpen Lodge dining room with lake view through windows",
+                  caption: "Dining Room · Lake View",
+                  featured: false,
+                },
+                {
+                  url: "https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/alpen-dining-view1_4aa9ffd7.png",
+                  alt: "Alpen Lodge dining room with forest view and deck",
+                  caption: "Open Kitchen · Forest View",
+                  featured: false,
+                },
+              ].map((photo) => (
+                <motion.div
+                  key={photo.url}
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="relative rounded-xl overflow-hidden group cursor-pointer"
+                  style={{ aspectRatio: "4/3" }}
+                >
+                  <img
+                    src={photo.url}
+                    alt={photo.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="font-accent text-[0.6rem] tracking-widest uppercase text-white/90">{photo.caption}</p>
+                  </div>
+                  {photo.featured && (
+                    <div
+                      className="absolute top-2 left-2 px-2 py-0.5 rounded-full font-accent text-[0.55rem] tracking-widest uppercase"
+                      style={{ background: "rgba(52,211,153,0.85)", color: "oklch(0.09 0.015 260)" }}
+                    >
+                      Hero View
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Listings Grid */}
       <section className="py-12">
         <div className="container">
