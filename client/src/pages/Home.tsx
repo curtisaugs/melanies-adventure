@@ -123,11 +123,11 @@ export default function Home() {
 
       {/* ── HERO — Birthday Week, Big Sur leads ── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background: Big Sur coast */}
+        {/* Background: Lake Arrowhead aerial */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/bigsur-hero-highway-8bE9w93WbGwcQ2SSvW4TQN.webp')`,
+            backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/lake-arrowhead-aerial-hero_71d539b4.jpg')`,
           }}
         />
         <div className="absolute inset-0 hero-overlay" />
