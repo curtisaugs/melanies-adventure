@@ -140,7 +140,7 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div
-              className="rounded-3xl px-8 py-10 md:px-14 md:py-14 max-w-3xl mx-auto"
+              className="rounded-3xl px-5 py-8 sm:px-8 sm:py-10 md:px-14 md:py-14 max-w-3xl mx-auto"
               style={{
                 background: "rgba(8, 12, 28, 0.58)",
                 backdropFilter: "blur(20px)",
@@ -190,7 +190,7 @@ export default function Home() {
                 <Star size={14} style={{ color: "oklch(0.78 0.16 355)", fill: "oklch(0.78 0.16 355)" }} />
               </div>
 
-              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-ivory mb-4 leading-none">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light text-ivory mb-4 leading-none">
                 Welcome, <span className="text-gold italic">Melanie</span>
               </h1>
 
@@ -214,7 +214,7 @@ export default function Home() {
               </div>
 
               {/* Primary CTA: Confirmed Alpen Lodge booking */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Link href="/airbnb-getaway">
                   <button
                     className="inline-flex items-center gap-2 font-body font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg"
@@ -277,7 +277,7 @@ export default function Home() {
 
             {/* Feature card — Alpen Lodge confirmed booking */}
             <div
-              className="rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center"
+              className="rounded-3xl p-6 sm:p-8 md:p-12 grid md:grid-cols-2 gap-8 md:gap-10 items-center"
               style={{
                 background: "linear-gradient(135deg, rgba(52,211,153,0.07) 0%, rgba(8,12,28,0.6) 100%)",
                 border: "1px solid rgba(52,211,153,0.2)",
@@ -401,7 +401,7 @@ export default function Home() {
 
             {/* Big Sur RV Feature card — future trip */}
             <div
-              className="rounded-3xl p-8 md:p-10 grid md:grid-cols-2 gap-10 items-center"
+              className="rounded-3xl p-6 sm:p-8 md:p-10 grid md:grid-cols-2 gap-8 md:gap-10 items-center"
               style={{
                 background: `linear-gradient(135deg, rgba(100,210,200,0.05) 0%, rgba(8,12,28,0.5) 100%)`,
                 border: `1px solid ${TEAL_BORDER}`,

@@ -218,3 +218,8 @@
 - [x] Update dates from April 3-5 to March 27-30 (3 nights)
 - [x] Update header to show "Alpen Lodge — Confirmed Booking (3 Nights, Mar 27-30)" for the confirmed listing
 - [x] Update total to "VRBO + ~$758 est." with Res #56518539 confirmation note
+
+## Phase 35 — Weather Forecast + Mobile Responsiveness
+- [x] Add Lake Arrowhead weekend weather forecast widget to Cabin Airbnb page (March 27-30)
+- [x] Full mobile responsiveness audit and fixes across all pages
+- [x] Add conversation starter chips to Margaux chat (5 quick-start prompts)

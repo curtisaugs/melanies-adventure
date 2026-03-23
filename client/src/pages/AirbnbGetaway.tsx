@@ -35,6 +35,7 @@ import {
   Footprints,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import WeatherForecast from "@/components/WeatherForecast";
 import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 import { MapView } from "@/components/Map";
@@ -557,7 +558,7 @@ export default function AirbnbGetaway() {
       <Navigation />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/lake-arrowhead-sunset-fiery_9537f5b9.jpg')` }}
@@ -566,7 +567,7 @@ export default function AirbnbGetaway() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,10,20,0.75) 0%, transparent 50%)" }} />
 
         <div className="relative container">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl w-full">
 
             {/* Page label */}
             <motion.div
@@ -609,11 +610,11 @@ export default function AirbnbGetaway() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="rounded-2xl p-5 mb-8 flex flex-col sm:flex-row gap-5 items-start"
+              className="rounded-2xl p-4 sm:p-5 mb-6 sm:mb-8 flex flex-col gap-4 items-start"
               style={{ background: "rgba(52,211,153,0.07)", border: "2px solid rgba(52,211,153,0.35)" }}
             >
               {/* Property photo */}
-              <div className="w-full sm:w-40 h-28 rounded-xl overflow-hidden flex-shrink-0">
+              <div className="w-full h-36 sm:h-28 rounded-xl overflow-hidden flex-shrink-0">
                 <img
                   src={CONFIRMED_BOOKING.photoUrl}
                   alt={CONFIRMED_BOOKING.propertyName}
@@ -655,7 +656,7 @@ export default function AirbnbGetaway() {
                 href={CONFIRMED_BOOKING.vrboUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold transition-all hover:opacity-80"
+                className="self-start flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold transition-all hover:opacity-80"
                 style={{ background: "rgba(52,211,153,0.15)", border: "1px solid rgba(52,211,153,0.4)", color: "oklch(0.72 0.14 145)", fontFamily: "'Montserrat', sans-serif" }}
               >
                 <ExternalLink size={12} />
@@ -723,7 +724,7 @@ export default function AirbnbGetaway() {
                 Alpen Lodge — Your Home This Weekend
               </span>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
               {[
                 {
                   url: "https://d2xsxph8kpxj0f.cloudfront.net/118915275/i3aBqyUeBtoiGkHs9yqP6w/alpen-deck-lake_58d9f956.png",
@@ -783,6 +784,9 @@ export default function AirbnbGetaway() {
         </div>
       </section>
 
+      {/* Weather Forecast */}
+      <WeatherForecast />
+
       {/* Local Adventure Guide */}
       <section className="py-16" style={{ background: "rgba(8,10,20,0.6)" }}>
         <div className="container">
@@ -806,10 +810,10 @@ export default function AirbnbGetaway() {
 
               {/* Hikes */}
               <div
-                className="rounded-2xl p-6"
+                className="rounded-2xl p-4 sm:p-6"
                 style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <div className="flex items-center gap-3 mb-5">
+                <div className="flex items-center gap-3 mb-4 sm:mb-5">
                   <div className="p-2 rounded-lg" style={{ background: "rgba(52,211,153,0.12)" }}>
                     <TreePine size={18} style={{ color: "oklch(0.72 0.14 145)" }} />
                   </div>
@@ -1080,7 +1084,7 @@ export default function AirbnbGetaway() {
             {/* Map Container */}
             <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(201,168,76,0.2)" }}>
               <MapView
-                className="w-full h-[520px]"
+                className="w-full h-[300px] sm:h-[420px] md:h-[520px]"
                 initialCenter={{ lat: 34.2439, lng: -117.1889 }}
                 initialZoom={13}
                 onMapReady={(map) => {
@@ -1162,7 +1166,7 @@ export default function AirbnbGetaway() {
 
       {/* Margaux Chat Section */}
       <section className="py-20" style={{ background: "rgba(10,15,30,0.95)" }}>
-        <div className="container max-w-2xl">
+        <div className="container max-w-2xl px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1382,8 +1386,8 @@ export default function AirbnbGetaway() {
                       </div>
                     </div>
 
-                    <div className="overflow-x-auto">
-                      <table className="w-full">
+                    <div className="overflow-x-auto -mx-0">
+                      <table className="w-full min-w-[380px]">
                         <thead>
                           <tr className="border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                             <th className="px-6 py-3 text-left font-accent text-[0.6rem] tracking-widest uppercase text-ivory/40">Category</th>
@@ -1494,18 +1498,42 @@ You know this trip is a birthday gift from Curtis to Melanie. Be warm, celebrato
   };
 
   return (
-    <div
+      <div
       className="rounded-2xl overflow-hidden border"
       style={{ background: "rgba(8,12,25,0.8)", borderColor: "rgba(52,211,153,0.2)" }}
     >
       {/* Messages */}
-      <div className="p-5 space-y-4 min-h-[200px] max-h-[400px] overflow-y-auto">
+      <div className="p-4 sm:p-5 space-y-4 min-h-[180px] max-h-[350px] sm:max-h-[400px] overflow-y-auto">
         {messages.length === 0 && (
-          <div className="text-center py-8">
-            <Sparkles size={24} style={{ color: "oklch(0.72 0.14 145)" }} className="mx-auto mb-3" />
-            <p className="font-body text-sm text-ivory/40 italic">
-              Ask about packing for the Alpen Lodge, hikes for PennyLu and Kota, the best restaurants in the Village, what to stock the kitchen with, or how to plan each day of the trip.
-            </p>
+          <div className="py-6">
+            <div className="text-center mb-5">
+              <Sparkles size={22} style={{ color: "oklch(0.72 0.14 145)" }} className="mx-auto mb-2" />
+              <p className="font-body text-xs text-ivory/35 italic">
+                Ask Margaux anything about the trip — or tap a starter below.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {[
+                "Build me a day-by-day plan",
+                "What should we pack for the dogs?",
+                "Best dinner Friday night?",
+                "Morning hike for Saturday?",
+                "What to stock the kitchen with?",
+              ].map((chip) => (
+                <button
+                  key={chip}
+                  onClick={() => { setInput(chip); }}
+                  className="px-3 py-1.5 rounded-full font-body text-xs transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{
+                    background: "rgba(52,211,153,0.08)",
+                    border: "1px solid rgba(52,211,153,0.25)",
+                    color: "oklch(0.72 0.14 145)",
+                  }}
+                >
+                  {chip}
+                </button>
+              ))}
+            </div>
           </div>
         )}
         {messages.map((m, i) => (
@@ -1545,7 +1573,7 @@ You know this trip is a birthday gift from Curtis to Melanie. Be warm, celebrato
       </div>
 
       {/* Input */}
-      <div className="border-t px-4 py-3 flex gap-3" style={{ borderColor: "rgba(52,211,153,0.15)" }}>
+      <div className="border-t px-3 sm:px-4 py-3 flex gap-2 sm:gap-3" style={{ borderColor: "rgba(52,211,153,0.15)" }}>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
