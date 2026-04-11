@@ -223,3 +223,20 @@
 - [x] Add Lake Arrowhead weekend weather forecast widget to Cabin Airbnb page (March 27-30)
 - [x] Full mobile responsiveness audit and fixes across all pages
 - [x] Add conversation starter chips to Margaux chat (5 quick-start prompts)
+
+## Lola's Adventure (Queensland Road Trip)
+- [x] Deep research on 4 routes (North, South, Wild Card 1, Wild Card 2) + marine volunteer programs
+- [x] Generate 5 hero images (main, North, South, Rainforest, Outback)
+- [x] Upload personal photos to CDN (MG car, dive boat, Stormy, Curtis+Lola)
+- [x] Lola design tokens (deep ocean teal, coral, sandy cream, Space Grotesk + Syne fonts)
+- [x] LolaNavigation component
+- [x] LolaFooter component ("Made with ♥ by Dad")
+- [x] LolaHome page (hero, countdown to April 15, Dad's letter, 4 route cards)
+- [x] LolaNorth page (8-day Cairns & Daintree, day-by-day, marine bio notes, Stormy logistics)
+- [x] LolaSouth page (Whitsundays & Airlie Beach, sailing, Whitehaven Beach)
+- [x] LolaWildcardRainforest page (Eungella & Conway NP, platypus, waterfalls)
+- [x] LolaWildcardOutback page (Undara Lava Tubes, outback stars, wallabies)
+- [x] LolaMarineVolunteer page (6 programs, Dad's note about Malibu rehab work, JCU advantage)
+- [x] LolaScout AI concierge (snarky, Stormy-aware, 6 conversation starters)
+- [x] Dynamic page title (Lola vs Melanie routes)
+- [x] All routes wired in App.tsx

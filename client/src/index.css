@@ -71,6 +71,24 @@
   --rose-pink: oklch(0.78 0.16 355);      /* birthday rose pink */
   --rose-pink-light: oklch(0.88 0.10 355);/* blush */
   --teal: oklch(0.68 0.12 195);           /* Mediterranean teal */
+
+  /* ── Lola's Adventure design tokens ── */
+  --font-lola-display: 'Syne', system-ui, sans-serif;
+  --font-lola-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-lola-mono: 'DM Mono', monospace;
+
+  /* Deep ocean palette */
+  --ocean: oklch(0.28 0.12 210);           /* deep ocean dark */
+  --ocean-mid: oklch(0.35 0.14 205);       /* mid ocean */
+  --ocean-light: oklch(0.45 0.16 200);     /* bright ocean */
+  --reef-teal: oklch(0.62 0.18 195);       /* reef teal */
+  --reef-teal-bright: oklch(0.72 0.20 190);/* bright reef */
+  --coral-reef: oklch(0.72 0.22 28);       /* coral reef orange */
+  --coral-reef-light: oklch(0.82 0.16 28); /* soft coral */
+  --sand: oklch(0.90 0.06 75);             /* sandy cream */
+  --sand-warm: oklch(0.85 0.08 70);        /* warm sand */
+  --seafoam: oklch(0.78 0.10 165);         /* seafoam green */
+  --deep-navy: oklch(0.14 0.06 225);       /* deepest ocean */
 }
 
 :root {
@@ -330,6 +348,98 @@
   .glow-coral { box-shadow: 0 0 20px oklch(0.72 0.18 28 / 0.3); }
   .glow-lavender { box-shadow: 0 0 20px oklch(0.72 0.12 295 / 0.3); }
   .glow-gold { box-shadow: 0 0 20px oklch(0.72 0.12 75 / 0.3); }
+
+  /* ── Lola's Adventure utility classes ── */
+  .font-lola-display { font-family: var(--font-lola-display); }
+  .font-lola-body { font-family: var(--font-lola-body); }
+  .font-lola-mono { font-family: var(--font-lola-mono); }
+
+  .text-reef-teal { color: oklch(0.62 0.18 195); }
+  .text-reef-bright { color: oklch(0.72 0.20 190); }
+  .text-coral-reef { color: oklch(0.72 0.22 28); }
+  .text-sand { color: oklch(0.90 0.06 75); }
+  .text-seafoam { color: oklch(0.78 0.10 165); }
+
+  .glass-ocean {
+    background: oklch(0.14 0.08 220 / 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.62 0.18 195 / 0.25);
+    box-shadow: 0 8px 32px oklch(0 0 0 / 0.5), inset 0 1px 0 oklch(0.72 0.20 190 / 0.12);
+  }
+
+  .glass-reef {
+    background: oklch(0.20 0.10 205 / 0.80);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.62 0.18 195 / 0.40);
+    box-shadow: 0 8px 32px oklch(0.28 0.12 210 / 0.4), inset 0 1px 0 oklch(0.72 0.20 190 / 0.15);
+  }
+
+  .glass-coral-reef {
+    background: oklch(0.20 0.08 28 / 0.80);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.72 0.22 28 / 0.40);
+    box-shadow: 0 8px 32px oklch(0.72 0.22 28 / 0.15), inset 0 1px 0 oklch(0.82 0.16 28 / 0.15);
+  }
+
+  .lola-hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      oklch(0.14 0.06 225 / 0.15) 0%,
+      oklch(0.14 0.06 225 / 0.45) 40%,
+      oklch(0.14 0.06 225 / 0.88) 80%,
+      oklch(0.14 0.06 225 / 1) 100%
+    );
+  }
+
+  .reef-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, oklch(0.62 0.18 195), transparent);
+  }
+
+  .btn-reef {
+    background: linear-gradient(135deg, oklch(0.62 0.18 195), oklch(0.52 0.20 205));
+    color: oklch(0.97 0.01 80);
+    transition: all 0.3s ease;
+  }
+  .btn-reef:hover {
+    background: linear-gradient(135deg, oklch(0.72 0.20 190), oklch(0.62 0.22 200));
+    box-shadow: 0 8px 24px oklch(0.62 0.18 195 / 0.4);
+    transform: translateY(-1px);
+  }
+
+  .btn-coral-reef {
+    background: linear-gradient(135deg, oklch(0.72 0.22 28), oklch(0.62 0.24 22));
+    color: oklch(0.97 0.01 80);
+    transition: all 0.3s ease;
+  }
+  .btn-coral-reef:hover {
+    background: linear-gradient(135deg, oklch(0.78 0.22 28), oklch(0.70 0.24 22));
+    box-shadow: 0 8px 24px oklch(0.72 0.22 28 / 0.4);
+    transform: translateY(-1px);
+  }
+
+  /* Font weight aliases for Lola's pages */
+  .font-400 { font-weight: 400; }
+  .font-500 { font-weight: 500; }
+  .font-600 { font-weight: 600; }
+  .font-700 { font-weight: 700; }
+  .font-800 { font-weight: 800; }
+
+  .lola-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .lola-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px oklch(0 0 0 / 0.4), 0 0 0 1px oklch(0.62 0.18 195 / 0.3);
+  }
+
+  .glow-reef { box-shadow: 0 0 20px oklch(0.62 0.18 195 / 0.35); }
+  .glow-coral-reef { box-shadow: 0 0 20px oklch(0.72 0.22 28 / 0.35); }
+  .glow-seafoam { box-shadow: 0 0 20px oklch(0.78 0.10 165 / 0.35); }
 
   /* Scrollbar */
   ::-webkit-scrollbar {
