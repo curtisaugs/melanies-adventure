@@ -26,13 +26,13 @@ export default function LolaFooter() {
 
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {[
-              { label: "Home", href: "/lola" },
-              { label: "North ↑", href: "/lola/north" },
-              { label: "South ↓", href: "/lola/south" },
-              { label: "Rainforest", href: "/lola/wildcard-rainforest" },
-              { label: "Outback", href: "/lola/wildcard-outback" },
-              { label: "Volunteer", href: "/lola/marine-volunteer" },
-              { label: "Scout AI", href: "/lola/scout" },
+              { label: "Home", href: "/" },
+              { label: "North ↑", href: "/north" },
+              { label: "South ↓", href: "/south" },
+              { label: "Rainforest", href: "/wildcard-rainforest" },
+              { label: "Outback", href: "/wildcard-outback" },
+              { label: "Volunteer", href: "/marine-volunteer" },
+              { label: "Scout AI", href: "/scout" },
             ].map((link) => (
               <Link key={link.href} href={link.href}>
                 <span className="font-lola-body text-xs tracking-widest uppercase text-sand/40 hover:text-reef-teal transition-colors cursor-pointer">

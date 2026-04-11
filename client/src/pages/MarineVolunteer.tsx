@@ -111,7 +111,7 @@ export default function LolaMarineVolunteer() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, oklch(0.18 0.12 220) 0%, oklch(0.12 0.07 220) 100%)" }} />
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 30% 50%, oklch(0.62 0.18 195 / 0.3) 0%, transparent 60%), radial-gradient(circle at 70% 30%, oklch(0.65 0.22 30 / 0.2) 0%, transparent 50%)" }} />
         <div className="relative z-10 container">
-          <Link href="/lola">
+          <Link href="/">
             <button className="glass-ocean inline-flex items-center gap-2 px-4 py-2 rounded-full font-lola-mono text-xs tracking-widest uppercase text-reef-teal mb-10 hover:text-sand transition-colors">
               <ArrowLeft size={12} /> Back to Home
             </button>
@@ -280,22 +280,22 @@ export default function LolaMarineVolunteer() {
         <div className="container text-center">
           <p className="font-lola-mono text-xs tracking-widest uppercase text-reef-teal/60 mb-4">Ready to hit the road?</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/lola/north">
+            <Link href="/north">
               <button className="btn-reef inline-flex items-center gap-2 px-6 py-3 rounded-full font-lola-body text-sm">
                 North ↑ Cairns & Daintree
               </button>
             </Link>
-            <Link href="/lola/south">
+            <Link href="/south">
               <button className="glass-ocean inline-flex items-center gap-2 px-6 py-3 rounded-full font-lola-body text-sm text-sand/70 hover:text-reef-teal transition-colors">
                 South ↓ Whitsundays
               </button>
             </Link>
-            <Link href="/lola/wildcard-rainforest">
+            <Link href="/wildcard-rainforest">
               <button className="glass-ocean inline-flex items-center gap-2 px-6 py-3 rounded-full font-lola-body text-sm text-sand/70 hover:text-reef-teal transition-colors">
                 Wild Card 1 · Hidden Gems
               </button>
             </Link>
-            <Link href="/lola/wildcard-outback">
+            <Link href="/wildcard-outback">
               <button className="glass-ocean inline-flex items-center gap-2 px-6 py-3 rounded-full font-lola-body text-sm text-sand/70 hover:text-reef-teal transition-colors">
                 Wild Card 2 · Lava Tubes
               </button>

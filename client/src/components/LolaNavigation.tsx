@@ -8,13 +8,13 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Shell, Compass } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "/lola" },
-  { label: "North ↑", href: "/lola/north" },
-  { label: "South ↓", href: "/lola/south" },
-  { label: "Wild Card 1", href: "/lola/wildcard-rainforest" },
-  { label: "Wild Card 2", href: "/lola/wildcard-outback" },
-  { label: "Marine Volunteer", href: "/lola/marine-volunteer" },
-  { label: "Ask Scout", href: "/lola/scout" },
+  { label: "Home", href: "/" },
+  { label: "North ↑", href: "/north" },
+  { label: "South ↓", href: "/south" },
+  { label: "Wild Card 1", href: "/wildcard-rainforest" },
+  { label: "Wild Card 2", href: "/wildcard-outback" },
+  { label: "Marine Volunteer", href: "/marine-volunteer" },
+  { label: "Ask Scout", href: "/scout" },
 ];
 
 export default function LolaNavigation() {
@@ -48,7 +48,7 @@ export default function LolaNavigation() {
       >
         <div className="container flex items-center justify-between h-16 md:h-18">
           {/* Logo */}
-          <Link href="/lola">
+          <Link href="/">
             <div className="flex items-center gap-2.5 cursor-pointer group">
               <div className="glass-reef w-8 h-8 rounded-lg flex items-center justify-center">
                 <Shell size={16} className="text-reef-teal" />

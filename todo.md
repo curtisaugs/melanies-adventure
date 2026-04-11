@@ -240,3 +240,12 @@
 - [x] LolaScout AI concierge (snarky, Stormy-aware, 6 conversation starters)
 - [x] Dynamic page title (Lola vs Melanie routes)
 - [x] All routes wired in App.tsx
+## Standalone lolas-adventure Project (New Session)
+- [x] Fix stale tripBuilder import in server/routers.ts
+- [x] Add Scout AI tRPC router (scout.chat mutation with full system prompt)
+- [x] Fix Scout.tsx to use trpc.scout.chat instead of trpc.tripBuilder.chatWithMargaux
+- [x] Fix TypeScript error in Scout.tsx (content type assertion)
+- [x] Verify all 7 pages render correctly (Home, North, South, WildcardRainforest, WildcardOutback, MarineVolunteer, Scout)
+- [x] TypeScript: 0 errors
+- [x] Write vitest tests for Scout AI router (7 tests passing)
+- [ ] Save checkpoint and publish standalone site

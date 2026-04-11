@@ -52,7 +52,7 @@ function ScoutChat() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
-  const chatMutation = trpc.tripBuilder.chatWithMargaux.useMutation();
+  const chatMutation = trpc.scout.chat.useMutation();
   const isFirstRender = useRef(true);
 
   useEffect(() => {
@@ -71,13 +71,12 @@ function ScoutChat() {
     setMessages(next);
     setLoading(true);
     try {
-      const history = next.slice(0, -1);
+      const allMessages = next.map(m => ({ role: m.role, content: m.content }));
       const res = await chatMutation.mutateAsync({
-        message: msg,
-        history,
-        systemPrompt: SCOUT_SYSTEM_PROMPT,
+        messages: allMessages,
       });
-      setMessages([...next, { role: "assistant", content: res.reply }]);
+      const replyContent = typeof res.content === "string" ? res.content : "Sorry, hit a snag. Try again?";
+      setMessages([...next, { role: "assistant", content: replyContent }]);
     } catch {
       setMessages([...next, { role: "assistant", content: "Lost the signal out here. Try again?" }]);
     } finally {
@@ -207,7 +206,7 @@ export default function LolaScout() {
       <LolaNavigation />
 
       <div className="flex-1 container py-8">
-        <Link href="/lola">
+        <Link href="/">
           <button className="glass-ocean inline-flex items-center gap-2 px-4 py-2 rounded-full font-lola-mono text-xs tracking-widest uppercase text-reef-teal mb-6 hover:text-sand transition-colors">
             <ArrowLeft size={12} /> Back to Home
           </button>

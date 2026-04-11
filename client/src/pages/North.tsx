@@ -111,7 +111,7 @@ export default function LolaNorth() {
         <div className="absolute inset-0 lola-hero-overlay" />
         <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.14_0.06_225/0.6)] to-transparent" />
         <div className="relative z-10 container pb-16 pt-32">
-          <Link href="/lola">
+          <Link href="/">
             <button className="glass-ocean inline-flex items-center gap-2 px-4 py-2 rounded-full font-lola-mono text-xs tracking-widest uppercase text-reef-teal mb-8 hover:text-sand transition-colors">
               <ArrowLeft size={12} /> Back to Home
             </button>
@@ -289,22 +289,22 @@ export default function LolaNorth() {
         <div className="container text-center">
           <p className="font-lola-mono text-xs tracking-widest uppercase text-reef-teal/60 mb-4">Or explore another route</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/lola/south">
+            <Link href="/south">
               <button className="glass-ocean inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-lola-body text-sm text-sand/70 hover:text-reef-teal transition-colors">
                 South ↓ Whitsundays
               </button>
             </Link>
-            <Link href="/lola/wildcard-rainforest">
+            <Link href="/wildcard-rainforest">
               <button className="glass-ocean inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-lola-body text-sm text-sand/70 hover:text-reef-teal transition-colors">
                 Wild Card 1 · Eungella
               </button>
             </Link>
-            <Link href="/lola/wildcard-outback">
+            <Link href="/wildcard-outback">
               <button className="glass-ocean inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-lola-body text-sm text-sand/70 hover:text-reef-teal transition-colors">
                 Wild Card 2 · Lava Tubes
               </button>
             </Link>
-            <Link href="/lola/marine-volunteer">
+            <Link href="/marine-volunteer">
               <button className="btn-reef inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-lola-body text-sm">
                 <Fish size={13} /> Marine Volunteer
               </button>
